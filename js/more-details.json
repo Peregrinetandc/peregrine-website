@@ -1,0 +1,3 @@
+{
+    "content": "<p><strong>Expanded History:</strong> In our early years, we focused primarily on local partnerships. We quickly realized the growing demand for international collaboration and expanded our services to meet those needs.</p><p>We've faced many challenges along the way, but our commitment to our core values has always guided us. We're constantly learning and adapting to the ever-changing global landscape.</p>"
+}
