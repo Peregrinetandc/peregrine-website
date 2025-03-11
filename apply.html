@@ -1,0 +1,59 @@
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section id="application-form">
+        <div class="container">
+            <h2>Application Form</h2>
+
+            <form id="application-form" method="post" data-netlify="true" name="application">
+                <input type="hidden" name="form-name" value="application" />
+
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full_name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="program">Program of Interest:</label>
+                <select id="program" name="program" required>
+                    <option value="">-- Select a Program --</option>
+                    <option value="internship">Internship Program</option>
+                    <option value="apprenticeship">Apprenticeship Program</option>
+                    <option value="language-training">Language Training</option>
+                    <option value="translation">Translation Services</option>
+                    <option value="career-counseling">Career Counseling</option>
+                    <option value="digital-marketing">Digital Marketing Services</option>
+                </select>
+
+                 <label for="cover-letter">Cover Letter:</label>
+                <textarea id="cover-letter" name="cover_letter" required></textarea>
+
+                <label for="resume">Resume/CV:</label>
+                <input type="file" id="resume" name="resume">
+
+
+                <button type="submit" class="button">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+           <p>&copy; 2024 Peregrine T&C. All rights reserved.</p>
+            <nav>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
+```

@@ -5,46 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peregrine T&C</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <a href="/" class="logo">Peregrine T&C</a>
-                <div class="menu-toggle" onclick="toggleMenu()">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                  </div>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="about.html">About</a></li> 
-                    <li>
-                        <a href="#our-services">Services</a>
-                        <ul class="sub-menu">
-                            <li><a href="internship-programs.html">Internship Programs</a></li>
-                            <li><a href="apprenticeship-programs.html">Apprenticeship Programs</a></li>
-                            <li><a href="language-training.html">Language Training</a></li>
-                            <li><a href="translation-services.html">Translation Services</a></li>
-                            <li><a href="career-counseling.html">Career Counseling</a></li>
-                            <li><a href="digital-marketing-services.html">Digital Marketing Services</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <section id="hero">
         <div class="hero-container">
             <h1>Be a Global Citizen!</h1>
             <h2>Empower Your Future with Peregrine T&C</h2>
-            <p>In today's interconnected world, language skills and cultural understanding are more important than ever.</p>
-            <p>Peregrine T&C offers a range of programs to help you unlock your potential and achieve your global aspirations.</p>
+            <p>In today's interconnected world, language skills and cultural understanding are more important than ever. Peregrine T&C offers a range of programs to help you unlock your potential and achieve your global aspirations.</p>
             <a href="#contact" class="button">Contact Us</a>
         </div>
     </section>
@@ -76,15 +50,12 @@
 
             <p>Want to know more? Let's connect and discuss your specific needs.</p>
             <a href="#contact" class="button">Inquire Now</a>
+
             <div class="slider-container">
                 <div class="slider">
-                    <img src="images/image1.jpg" alt="Project 1" class="slide active">
-                    <img src="images/image2.jpg" alt="Project 2" class="slide">
-                    <img src="images/image3.jpg" alt="Project 3" class="slide">
-                     <img src="images/image4.jpg" alt="Project 4" class="slide">
-                </div>
-                <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
-                <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+                    </div>
+                <button class="slider-btn prev" aria-label="Previous Slide">&#10094;</button>
+                <button class="slider-btn next" aria-label="Next Slide">&#10095;</button>
             </div>
         </div>
     </section>
@@ -94,11 +65,17 @@
             <h2>Our Services</h2>
             <div class="services-grid">
                 <div class="service">
-                    <a href="internship-programs.html"><h3>Internship Programs</h3></a>
+                    <a href="internship-programs.html">
+                        <span class="new-badge">New</span>
+                        <h3>Internship Programs</h3>
+                    </a>
                     <p>Gain practical experience and develop essential skills.</p>
                 </div>
                 <div class="service">
-                    <a href="apprenticeship-programs.html"><h3>Apprenticeship Programs</h3></a>
+                    <a href="apprenticeship-programs.html">
+                    <span class="new-badge">New</span>
+                        <h3>Apprenticeship Programs</h3>
+                    </a>
                     <p>Immerse yourself in a structured learning environment.</p>
                 </div>
                 <div class="service">
@@ -197,7 +174,7 @@
 
     <footer>
         <div class="footer-container">
-            <p>&copy; 2025 Peregrine T&C. All rights reserved.</p>
+            <p>&copy; 2024 Peregrine T&C. All rights reserved.</p>
             <nav>
                 <ul class="footer-links">
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
@@ -209,12 +186,3 @@
     </footer>
 </body>
 </html>
-
-<div class="service">
-  <a href="internship-programs.html"><h3>Internship Programs <span class="new-tag">New</span></h3></a>
-  <p>Gain practical experience and develop essential skills.</p>
-</div>
-<div class="service">
-  <a href="apprenticeship-programs.html"><h3>Apprenticeship Programs <span class="new-tag">New</span></h3></a>
-  <p>Immerse yourself in a structured learning environment.</p>
-</div>

@@ -8,343 +8,318 @@
     --button-bg-color: var(--primary-color); /* Use variables */
     --button-text-color: #fff;
     --button-hover-bg-color: #003d7a; /* Darker on hover */
+    --header-bg-color: var(--secondary-color); /* Consistent header background */
+    --footer-bg-color: var(--primary-color);
+    --footer-text-color: #fff;
   }
-body {
-    font-family: 'Open Sans', sans-serif; /* Body font */
+  
+  body {
+    font-family: 'Open Sans', sans-serif; /* Google Fonts */
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: var(--text-color)
+    color: var(--text-color);
+    background-color: #fff; /* Main background */
   }
-  /* Header and Navigation Styles */
-header {
-    background-color: var(--secondary-color); /* Light gray background */
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif; /* Google Fonts */
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+  }
+  
+  h1 { font-size: 2.5em; } /* Responsive sizing */
+  h2 { font-size: 2em; }
+  h3 { font-size: 1.5em; }
+  
+  p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+  }
+  
+  a {
+    color: var(--link-color);
+    text-decoration: none; /* Remove underlines by default */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  a:hover {
+    color: var(--primary-color); /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover for clarity */
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 25px; /* Slightly smaller padding */
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove default button border */
+    cursor: pointer;
+    font-size: 1em; /* Consistent font size */
+    font-weight: 600; /* Slightly bolder buttons */
+  }
+  
+  .button:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  /* --- Containers (Consistent Max Width and Centering) --- */
+  
+  .container,
+  .hero-container,
+  .story-container,
+  .project-container,
+  .services-container,
+  .clients-container,
+  .mission-motivation-container,
+  .contact-container,
+  .footer-container {
+    max-width: 960px;  /* Max width for larger screens */
+    margin: 0 auto;    /* Center horizontally */
+    padding: 0 20px;  /* Consistent horizontal padding */
+  }
+  
+  /* --- Section Styles --- */
+  
+  section {
+    padding: 40px 0; /* Top and bottom padding */
+    margin-bottom: 20px; /* Space between sections */
+    text-align: center; /* Default text alignment */
+  }
+  
+  #hero {
+    background-color: var(--secondary-color);
+    padding: 60px 20px; /* Adjusted padding */
+    text-align: center;
+  }
+  
+  #our-story,
+  #our-services,
+  #mission-motivation {
+    background-color: #fff; /* White background */
+  }
+  
+  #our-project,
+  #our-clients,
+  #contact,#contact-form {
+    background-color: #f8f8f8; /* Light gray background */
+  }
+  
+  /* Consistent Heading Styles Within Sections */
+  section h2 {
+    font-size: 2.2em; /* Consistent h2 size */
+    color: var(--primary-color);
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  
+  section p {
+      font-size: 1.1em;
+      color: var(--text-color);
+      margin-bottom: 1em;
+      text-align: left; /* Left-align paragraph text */
+  }
+  
+  /* --- Header and Navigation --- */
+  
+  header {
+    background-color: var(--header-bg-color);
     padding: 10px 0;
     position: sticky;
-    top:0;
-    z-index: 100;
-
-}
-
-.nav-container {
+    top: 0;
+    z-index: 100; /* Ensure header stays on top */
+  }
+  
+  .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.nav-links {
+  }
+  
+  .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: none; /* Remove underline from logo link */
+  }
+  .logo img{
+      height: auto;
+      width: 150px;
+  }
+  /* Navigation Links */
+  .nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-}
-
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links a {
+      display: flex;
+  }
+  .nav-links li {
+      margin-right: 20px;
+  }
+  .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
     transition: color 0.3s ease;
-}
-.nav-links a:hover{
+  }
+  .nav-links a:hover{
     color: var(--primary-color);
-}
-/*Sub menu*/
-.sub-menu {
+  }
+  .nav-links a.active {
+      color: var(--accent-color);
+  }
+  
+  /* Submenu Styles */
+  .sub-menu {
     display: none;
     position: absolute;
     background-color: var(--secondary-color);
     list-style: none;
     padding: 0;
-    margin-top: 0px;
+    margin-top: 0px; /* Reduce margin */
     min-width: 200px; /* Adjust as needed */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: Add a subtle shadow */
-    z-index: 1;
-}
-
-.nav-links li:hover > .sub-menu {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow */
+    z-index: 101; /* Ensure submenu is above other content */
+  }
+  
+  .nav-links li:hover > .sub-menu {
     display: block;
-}
-
-.sub-menu li {
-    margin: 0; /* Remove margin for sub-menu items */
+  }
+  
+  .sub-menu li {
+    margin: 0;
     padding: 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.sub-menu li a {
-    display: block; /* Make the link fill the entire list item */
+    border-bottom: 1px solid #ddd; /* Separator between items */
+  }
+  .sub-menu li:last-child {
+      border-bottom: none;
+  }
+  
+  .sub-menu li a {
+    display: block;
     padding: 10px 15px;
-    color: var (--text-color);
+    color: var(--text-color);
     text-decoration: none;
     transition: background-color 0.3s ease;
-}
-.sub-menu li a:hover{
+  }
+  
+  .sub-menu li a:hover {
     background-color: #ddd;
     color: var(--primary-color);
-}
-
-  /* Mobile menu styles */
+  }
+  
+  /* Mobile Menu Toggle */
   .menu-toggle {
-    display: none; /* Hide by default on larger screens */
+    display: none; /* Hidden by default on larger screens */
     cursor: pointer;
   }
-
+  
   .bar {
     width: 25px;
     height: 3px;
     background-color: var(--text-color);
     margin: 5px 0;
-    transition: 0.4s;
+    transition: 0.4s; /* Smooth transition for hamburger animation */
   }
-  /* Hero Section Styles */
-  #hero {
-      background-color: var(--secondary-color); /* Light gray background - change this later! */
-      padding: 100px 20px; /* Add padding around the content */
-      text-align: center; /* Center the text within the section */
-  }
-
-  .hero-container {
-      max-width: 960px; /* Limit the width of the content for larger screens */
-      margin: 0 auto; /* Center the container horizontally */
-  }
-
-  h1 {
-      font-size: 3em; /* Make the heading large */
-      margin-bottom: 0.5em; /* Add some space below the heading */
-      color: var(--primary-color); /* Dark gray color - adjust as needed */
-  }
-
-  h2 {
-      font-size: 2em; /* Make the subheading smaller than h1 */
-      margin-bottom: 1em; /* Add some space below the subheading */
-      color: var(--primary-color); /* Slightly lighter gray - adjust as needed */
-  }
-
-  p {
-      font-size: 1.1em; /* Slightly larger than default font size */
-      margin-bottom: 1.5em; /* Add space below the paragraph */
-  }
-
-  .button {
-      display: inline-block; /* Allows us to style the link like a block-level element */
-      padding: 15px 30px; /* Add padding inside the button */
-      background-color: var(--button-bg-color); /* Blue background - change this! */
-      color: var(--button-text-color); /* White text */
-      text-decoration: none; /* Remove the underline from the link */
-      border-radius: 5px; /* Rounded corners */
-      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-  }
-
-  .button:hover {
-      background-color: var(--button-hover-bg-color); /* Darker blue on hover */
-  }
-  /* Our Story Section Styles */
-  #our-story {
-      padding: 60px 20px; /* Add padding, less than the hero */
-      background-color: #fff; /* White background */
-  }
-
-  .story-container {
-      max-width: 960px; /* Same max-width as hero-container */
-      margin: 0 auto; /* Center the container */
-  }
-
-  #our-story h2 { /* Target the h2 specifically within #our-story */
-      font-size: 2.5em; /* Slightly smaller than the hero h1 */
-      color: var(--primary-color);
-      margin-bottom: 1em;
-      text-align: center; /* Center the heading */
-  }
-
-  #our-story p {
-      font-size: 1.1em;
-      color: var(--text-color);
-      margin-bottom: 1em;
-  }
+  
+  /* --- Hero Section --- */
+  /* (Already well-structured, minor adjustments) */
+  
+  /* --- Our Story --- */
+  /* (Already well-structured) */
   #our-story .button {
-      margin: 0 auto;
-      display: block;
-      width: fit-content;
+    margin-top: 15px; /* Add some space above the button */
   }
-  /* Our Project Section Styles */
-  #our-project {
-      padding: 60px 20px;
-      background-color: #f8f8f8; /* Slightly different background */
-  }
-
-  .project-container {
-      max-width: 960px;
-      margin: 0 auto;
-  }
-
-  #our-project h2 {
-      font-size: 2.5em;
-      color: var(--primary-color);
-      margin-bottom: 1em;
-      text-align: center;
-  }
-
-  #our-project p {
-      font-size: 1.1em;
-      color: var(--text-color);
-      margin-bottom: 1em;
-  }
-
+  
+  /* --- Our Project --- */
   .project-list {
-      list-style: none; /* Remove default bullet points */
-      padding: 0; /* Remove default padding */
-      margin-bottom: 1.5em;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5em;
+    text-align: left; /* Left-align list */
   }
-
+  
   .project-list li {
-      padding-left: 1.5em; /* Add space for a custom bullet point */
-      margin-bottom: 0.5em;
-      position: relative; /* For positioning the custom bullet */
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+    position: relative;
   }
-
+  
   .project-list li::before {
-      content: "•"; /* Custom bullet point */
-      color: var(--primary-color); /* Blue color - match your button */
-      position: absolute;
-      left: 0; /* Position the bullet */
-      font-size: 1.5em;
-       top: -0.2em;
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+    top: -0.2em;
   }
-  #our-project .button{
-      margin: 0 auto;
-      display: block;
-      width: fit-content;
-  }
-  /* Our Services Section Styles */
-  #our-services {
-      padding: 60px 20px;
-      background-color: #fff; /* White background */
-  }
-
-  .services-container {
-      max-width: 960px;
-      margin: 0 auto;
-  }
-
-  #our-services h2 {
-      font-size: 2.5em;
-      color: var(--primary-color);
-      margin-bottom: 1em;
-      text-align: center;
-  }
-
+  
+  /* --- Our Services --- */
   .services-grid {
-      display: grid; /* Use CSS Grid for the layout */
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-      gap: 20px; /* Space between grid items */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px;
   }
-
+  
   .service {
-      padding: 20px;
-      border: 1px solid #ddd; /* Light border around each service */
-      border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left; /* Left-align service box content */
   }
-
+  
   .service h3 {
       font-size: 1.5em;
-      color: var(--primary-color); /* Blue heading - match your button */
+      color: var(--primary-color);
       margin-bottom: 0.5em;
   }
-
+  
   .service p {
       font-size: 1em;
       color: var(--text-color);
   }
-  #our-services .button{
-      margin: 0 auto;
-      display: block;
-      width: fit-content;
+  .new-badge {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    margin-left: 5px;
+    vertical-align: top;
   }
-  /* Our Clients Section Styles */
-  #our-clients {
-      padding: 60px 20px;
-      background-color: #f8f8f8; /* Light gray background */
-  }
-
-  .clients-container {
-      max-width: 960px;
-      margin: 0 auto;
-  }
-
-  #our-clients h2 {
-      font-size: 2.5em;
-      color: var(--primary-color);
-      margin-bottom: 1em;
-      text-align: center;
-  }
-
-  #our-clients p {
-      font-size: 1.1em;
-      color: var(--text-color);
-      margin-bottom: 1em;
-  }
-
+  
+  /* --- Our Clients --- */
   .clients-list {
       list-style: none;
       padding: 0;
       margin-bottom: 1.5em;
-      text-align: center; /* Center the list items */
-  }
-
-  .clients-list li {
-      display: inline-block; /* Display list items horizontally */
-      margin: 0 15px; /* Add space between items */
-      font-size: 1.2em;
-      color: var(--primary-color); /* Blue color */
-  }
-  #our-clients .button{
-      margin: 0 auto;
-      display: block;
-      width: fit-content;
-  }
-  /* Mission & Motivation Section Styles */
-  #mission-motivation {
-      padding: 60px 20px;
-      background-color: #fff; /* White background */
-  }
-
-  .mission-motivation-container {
-      max-width: 960px;
-      margin: 0 auto;
-  }
-
-  #mission-motivation h2 {
-      font-size: 2.5em;
-      color: var(--primary-color);
-      margin-bottom: 1em;
       text-align: center;
   }
-
-  .mission, .motivation, .values {
-      margin-bottom: 30px; /* Add space between the sections */
+  .clients-list li {
+      display: inline-block;
+      margin: 0 15px;
+      font-size: 1.2em;
+      color: var(--primary-color);
   }
-
+  
+  
+  /* --- Mission & Motivation --- */
+  .mission, .motivation, .values {
+      margin-bottom: 30px;
+  }
+  
   .mission h3, .motivation h3, .values h3 {
       font-size: 1.8em;
-      color: var(--primary-color); /* Blue color */
+      color: var(--primary-color);
       margin-bottom: 0.5em;
   }
-
+  
   .mission p, .motivation p, .values p {
       font-size: 1.1em;
       color: var(--text-color);
@@ -354,14 +329,15 @@ header {
       list-style: none; /* Remove default bullet points */
       padding: 0; /* Remove default padding */
       margin-bottom: 1.5em;
+      text-align: left;
   }
-
+  
   .values-list li {
       padding-left: 1.5em; /* Add space for a custom bullet point */
       margin-bottom: 0.5em;
       position: relative; /* For positioning the custom bullet */
   }
-
+  
   .values-list li::before {
       content: "•"; /* Custom bullet point */
       color: var(--primary-color); /* Blue color - match your button */
@@ -370,175 +346,183 @@ header {
       font-size: 1.5em;
        top: -0.2em;
   }
-  /* Contact Section Styles */
-  #contact {
-      padding: 60px 20px;
-      background-color: #f8f8f8; /* Light gray background */
-  }
-
-  .contact-container {
-      max-width: 960px;
-      margin: 0 auto;
-  }
-
-  #contact h2 {
-      font-size: 2.5em;
-      color: var(--primary-color);
-      margin-bottom: 1em;
+  
+  /* --- Contact --- */
+  .contact-info {
       text-align: center;
   }
-
-  #contact p {
-      font-size: 1.1em;
-      color: var(--text-color);
-      margin-bottom: 1em;
-  }
-
-  .contact-info {
-      text-align: center; /* Center the contact details */
-  }
-
   .contact-info p {
       margin-bottom: 0.5em;
   }
-
   .contact-info a {
-      color: var(--primary-color); /* Blue color for links */
-      text-decoration: none; /* Remove underline */
-  }
-
-  .contact-info a:hover {
-      text-decoration: underline; /* Add underline on hover */
-  }
-  /* Footer Styles */
-  footer {
-      background-color: var(--primary-color); /* Dark background */
-      color: #fff; /* White text */
-      padding: 20px 0;
-      text-align: center;
-  }
-
-  .footer-container {
-      max-width: 960px;
-      margin: 0 auto;
-  }
-
-  .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0; /* Add some space above the links */
-  }
-
-  .footer-links li {
-      display: inline-block;
-      margin: 0 10px;
-  }
-
-  .footer-links a {
-      color: #fff;
+      color: var(--link-color);
       text-decoration: none;
   }
-
-  .footer-links a:hover {
+  
+  .contact-info a:hover {
       text-decoration: underline;
   }
-  /* Media Queries for Responsiveness */
-
-  /* Small screens (phones) */
-  @media (max-width: 767px) {
-      h1 {
-          font-size: 2.5em; /* Smaller heading on phones */
-      }
-
-      h2 {
-          font-size: 1.8em;
-      }
-
-      .services-grid {
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns on phones */
-      }
-      .project-list li::before{
-          font-size: 1.3em;
-          top: -0.1em;
-      }
-       .values-list li::before{
-          font-size: 1.3em;
-          top: -0.1em;
-      }
-       /* Mobile menu styles */
-    .nav-links {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Adjust based on header height */
-        left: 0;
-        width: 100%;
-        background-color: var(--secondary-color);
-        }
-        .menu-toggle {
-        display: block;
-        }
-        .nav-links.show {
-        display: flex; /* Show links when menu is open */
-        }
-        .nav-links li{
-            margin: 0;
-            padding: 10px;
-        }
+  
+  /* --- Contact Form --- */
+  
+  #contact-form {
+    margin-top: 20px;
+    max-width: 600px; /* Limit form width */
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  /* Medium screens (tablets) */
-  @media (min-width: 768px) and (max-width: 991px) {
-      .services-grid {
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns for tablets */
-      }
-
-      /* Add to your existing style.css */
-.error-message {
-    color: red;
-    font-size: 0.8em;
-    margin-top: 5px;
-    display: block; /* Ensure it's displayed as a block */
-}
-
-.input-error {
-    border: 1px solid red;
-}
-.success-message {
-    color: green;
-    margin-top: 10px;
+  
+  #contact-form label {
+    display: block; /* Labels on their own line */
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  #contact-form input[type="text"],
+  #contact-form input[type="email"],
+  #contact-form textarea {
+    width: 100%;
     padding: 10px;
-    border: 1px solid green;
-    background-color: #e6ffe6; /* Light green background */
-}
-
-/* Active link styling */
-.nav-links a.active {
-    color: var(--accent-color); /* Or any other style you prefer */
-    /* Add any other styles for the active link, e.g., underline, bold */
+    margin-bottom: 15px; /* More space between fields */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in width */
   }
-
-  /* Add to your CSS */
-#logo {
-    height: 50px; /* Adjust as needed */
-    width: auto;  /* Maintain aspect ratio */
-    /* Add any other styling (margin, padding, etc.) */
-}
-
-/* Add to your CSS */
-#logo {
-    height: 50px; /* Adjust as needed */
-    width: auto;  /* Maintain aspect ratio */
-    /* Add any other styling (margin, padding, etc.) */
-}
-
-.new-tag {
-    background-color: #ff9900; /* Example: Orange background */
-    color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 0.7em;
-    margin-left: 5px;
-    vertical-align: top; /* Important for aligning with text */
-    /* Add any other styling (e.g., font-weight: bold;) */
-}
+  
+  #contact-form textarea {
+    height: 150px;
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  #contact-form button[type="submit"] {
+    display: block;
+    width: 100%; /* Full-width button */
+    padding: 12px 20px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  #contact-form button[type="submit"]:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  /* Form Error/Success Messages */
+  .error-message {
+      color: red;
+      font-size: 0.8em;
+      margin-top: -10px; /* Position close to input */
+      margin-bottom: 10px;
+      display: block;
+  }
+  
+  .input-error {
+      border-color: red; /* Red border on error */
+  }
+  
+  .success-message {
+      color: green;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid green;
+      background-color: #e6ffe6;
+  }
+  
+  
+  /* --- Footer --- */
+  /* (Already well-structured) */
+  
+  /* --- Slider --- */
+  
+  .slider-container {
+    position: relative;
+    width: 100%;
+    margin: 20px 0; /* Space above and below */
+    overflow: hidden;
+  }
+  
+  .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      display: flex; /* Use flexbox for centering */
+      justify-content: center; /* Horizontally center */
+      align-items: center;     /* Vertically center */
+  }
+  .slide img{
+      display: block;
+      max-width: 100%; /* Ensure images don't overflow */
+      max-height: 400px;
+      height: auto;
+      width: auto;
+  
+  }
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10; /* Above the images */
+    opacity: 0.8; /* Slightly transparent */
+    transition: opacity 0.3s ease; /* Fade on hover */
+  }
+  
+  .slider-btn:hover {
+    opacity: 1; /* Fully opaque on hover */
+  }
+  
+  .slider-btn.prev {
+    left: 0;
+  }
+  
+  .slider-btn.next {
+    right: 0;
+  }
+  
+  /* --- Media Queries (Responsiveness) --- */
+  
+  /* Mobile Styles (max-width: 767px) */
+  @media (max-width: 767px) {
+      /* Adjust font sizes for smaller screens */
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.8em; }
+      h3 { font-size: 1.4em; }
+  
+      /* Stack navigation links vertically */
+      .nav-links {
+          display: none; /* Hide by default */
+          flex-direction: column;
+          position: absolute;
+          top: 60px;  /* Adjust based on your header height */
+          left: 0;
+          width: 100%;
+          background-color: var(--header-bg-color);
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a shadow */
+      }
+  
+      .nav-links.show {
+          display: flex; /* Show when .show is added by JS */
+      }
+  
+      .nav-links li {
+          margin: 0;
+          padding: 10px 0;
+          text-align: center;
+      }
+      .nav-links li a{
+          display: block;
+          width: 100%;
