@@ -674,3 +674,73 @@ margin-top: 20px;
       padding: 10px;
   }
 }
+
+/* --- Styles for the orientation interest form --- */
+
+#orientation-interest-form {
+  max-width: 600px; /* Limit form width (adjust as needed) */
+  margin: 20px auto; /* Center the form horizontally */
+  padding: 20px;
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#orientation-interest-form div {
+  margin-bottom: 15px; /* Space between form fields */
+}
+
+#orientation-interest-form label {
+  display: block; /* Make labels block-level (full width) */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold;
+  text-align: left; /* Left-align labels */
+}
+
+#orientation-interest-form input[type="text"],
+#orientation-interest-form input[type="email"],
+#orientation-interest-form input[type="tel"],
+#orientation-interest-form select,
+#orientation-interest-form textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  border: 1px solid #ccc; /* Lighter border */
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in width */
+  font-size: 16px; /* Consistent font size */
+}
+
+#orientation-interest-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+#orientation-interest-form button[type="submit"] {
+  display: block;
+  width: 100%; /* Full-width button */
+  padding: 12px 20px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#orientation-interest-form button[type="submit"]:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Optional: Style the select dropdown arrow */
+#orientation-interest-form select {
+  appearance: none; /* Remove default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 30px; /* Make space for the arrow */
+}

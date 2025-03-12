@@ -16,7 +16,7 @@
 
     <div class="orientation-header">
         <div class="header-content">
-            <img src="header.jpg" alt="Header Image">
+            <img src="images/header.jpg" alt="Header Image">
             <div class="header-text">
                 <h1>MES Mampad College Internship Program</h1>
                 <h2>Orientation Session - April 16th, 2024</h2>
@@ -55,33 +55,49 @@
             <form id="orientation-interest-form" method="post" data-netlify="true" name="orientation-interest" netlify>
                 <input type="hidden" name="form-name" value="orientation-interest" />
 
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+                <div>  </* Wrap each label/input pair in a div */>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-                <label for="college">College/Institute:</label>
-                <input type="text" id="college" name="college" required>
+                <div>
+                    <label for="college">College/Institute:</label>
+                    <input type="text" id="college" name="college" required>
+                </div>
 
-                <label for="course">Course of Study:</label>
-                <input type="text" id="course" name="course" required>
+                <div>
+                   <label for="course">Course of Study:</label>
+                   <input type="text" id="course" name="course" required>
+                </div>
 
-                <label for="year">Current Year of Study:</label>
-                <input type="text" id="year" name="year" required>
+                <div>
+                  <label for="year">Current Year of Study:</label>
+                  <input type="text" id="year" name="year" required>
+                </div>
 
-                <label for="attendance">Will you be attending the orientation session?</label>
-                <select id="attendance" name="attendance" required>
-                    <option value="">-- Please Select --</option>
-                    <option value="yes">Yes, I will attend</option>
-                    <option value="no">No, I cannot attend</option>
-                    <option value="maybe">I'm not sure yet</option>
-                </select>
+                <div>
+                    <label for="attendance">Will you be attending the orientation session?</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">-- Please Select --</option>
+                        <option value="yes">Yes, I will attend</option>
+                        <option value="no">No, I cannot attend</option>
+                        <option value="maybe">I'm not sure yet</option>
+                    </select>
+                </div>
 
-                <label for="questions">Any questions you'd like answered during the session? (Optional)</label>
-                <textarea id="questions" name="questions"></textarea>
+                <div>
+                    <label for="questions">Any questions you'd like answered during the session? (Optional)</label>
+                    <textarea id="questions" name="questions"></textarea>
+                </div>
 
+                <div>
                 <button type="submit" class="button">Register Interest</button>
+                </div>
             </form>
           </div>
         </section>
