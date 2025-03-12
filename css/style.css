@@ -563,3 +563,124 @@ a:hover {
   margin-bottom: 0.5em;
   position: relative;
 }
+
+/* --- Orientation Header Styles --- */
+
+.orientation-header {
+  background-color: var(--primary-color); /* Or your chosen background */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out the logos */
+  width: 100%;
+  margin-bottom: 20px;
+}
+.header-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.header-logo-left,
+.header-logo-right {
+  max-width: 150px; /* Adjust as needed */
+  height: auto;
+}
+
+.header-subtitle {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+}
+
+.header-partnership {
+  font-style: italic;
+}
+
+.intro-text {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 2em;
+}
+
+.info-subtitle {
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+.guidelines-list, .expectations-list{
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5em;
+   text-align: left;
+}
+.guidelines-list li, .expectations-list li{
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+.list-icon{
+   margin-right: 8px; /* Spacing between icon and text */
+  color: var(--accent-color);
+}
+/* --- Form Block Styles (reuse and adapt from apply.html) --- */
+/* --- (Add styles from apply.html here, adapting class names if needed) --- */
+
+/* --- Styles for Terms of Service and Privacy Policy Pages --- */
+
+.page-title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.intro-paragraph {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 2em;
+}
+
+.info-block {
+  margin-bottom: 30px; /* Space between content blocks */
+   text-align: left;
+}
+
+.section-title {
+  font-size: 1.8em;
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+.last-updated {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.footer-link {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+/* Add to existing footer rule */
+.footer-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 960px; /* Consistent with other containers */
+margin: 0 auto;
+padding: 0 20px;
+}
