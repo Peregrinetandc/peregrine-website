@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peregrine T&C</title>
+    <meta name="description" content="Empower your future with Peregrine T&C. Language training, internships, career counseling, and digital marketing services.">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="js/script.js" defer></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <section id="hero">
-        <div class="hero-container">
+    <section id="hero" class="content-section">
+        <div class="hero-container container">
             <h1>Be a Global Citizen!</h1>
             <h2>Empower Your Future with Peregrine T&C</h2>
             <p>In today's interconnected world, language skills and cultural understanding are more important than ever. Peregrine T&C offers a range of programs to help you unlock your potential and achieve your global aspirations.</p>
@@ -23,20 +26,20 @@
         </div>
     </section>
 
-    <section id="our-story">
-        <div class="story-container">
+    <section id="our-story" class="content-section">
+        <div class="story-container container">
             <h2>Our Story</h2>
             <p>Peregrine T&C was born from a passion for learning and a desire to empower individuals. We started as a small team with a big dream: to provide quality education and career guidance.</p>
             <p>Today, we've grown into a leading provider of language training, internship programs, and career counseling services.</p>
-            <p>Our commitment to excellence and our dedication to our clients have fueled our growth. We're proud of what we've achieved, but we're even more excited about the future.</p>
+            <p>Our commitment to excellence and our dedication to our clients have fueled our growth.  We're proud of what we've achieved, but we're even more excited about the future.</p>
             <a href="https://wa.me/917012756374" class="button" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
             <button id="load-more-btn" class="button">Load More Details</button>
             <div id="more-details"></div>
         </div>
     </section>
 
-    <section id="our-project">
-        <div class="project-container">
+    <section id="our-project" class="content-section">
+        <div class="project-container container">
             <h2>Our Project</h2>
             <p>We're passionate about empowering individuals and organizations. Our projects are designed to make a positive impact and drive innovation.</p>
             <p>Here's a glimpse of what we're working on:</p>
@@ -46,23 +49,21 @@
                 <li><strong>Language Training:</strong> Bridging cultural gaps and fostering global communication.</li>
                 <li><strong>Career Counselling:</strong> Guiding students towards fulfilling careers.</li>
                 <li><strong>Digital Transformation:</strong> Helping businesses adapt to the digital age.</li>
-                <li><a href="internship-orientation.html">Internship Orientation</a></li>
             </ul>
 
             <p>Want to know more? Let's connect and discuss your specific needs.</p>
             <a href="#contact" class="button">Inquire Now</a>
-
-            <div class="slider-container">
+        </div>
+         <div class="slider-container">
                 <div class="slider">
-                    </div>
+                </div>
                 <button class="slider-btn prev" aria-label="Previous Slide">&#10094;</button>
                 <button class="slider-btn next" aria-label="Next Slide">&#10095;</button>
             </div>
-        </div>
     </section>
 
-    <section id="our-services">
-        <div class="services-container">
+    <section id="our-services" class="content-section">
+        <div class="services-container container">
             <h2>Our Services</h2>
             <div class="services-grid">
                 <div class="service">
@@ -74,7 +75,7 @@
                 </div>
                 <div class="service">
                     <a href="apprenticeship-programs.html">
-                    <span class="new-badge">New</span>
+                        <span class="new-badge">New</span>
                         <h3>Apprenticeship Programs</h3>
                     </a>
                     <p>Immerse yourself in a structured learning environment.</p>
@@ -100,87 +101,96 @@
         </div>
     </section>
 
-    <section id="our-clients">
-        <div class="clients-container">
-            <h2>Our Clients</h2>
-            <p>We're proud to have partnered with a diverse range of clients, including:</p>
-            <ul class="clients-list">
-                <li>MES Mampad College</li>
-                <li>Iynul Marif Dars</li>
-                <li>Al Bayan Academy</li>
-                <li>Eduford</li>
-            </ul>
-            <p>Our clients trust us to deliver exceptional results, time and again.</p>
-             <a href="https://wa.me/917012756374" class="button clients-button" target="_blank" rel="noopener noreferrer">Quick Chat</a>
+    <section id="our-clients" class="content-section">
+        <div class="clients-container container">
+          <h2>Our Clients</h2>
+          <p>We're proud to have partnered with a diverse range of clients, including:</p>
+             <div class="clients-grid">
+                <div class="client">
+                    <img src="images/mes-logo.png" alt="MES Mampad College" class="client-logo">
+                </div>
+                <div class="client">
+                    <img src="images/client2.png" alt="Iynul Marif Dars" class="client-logo">
+                </div>
+                <div class="client">
+                    <img src="images/client3.png" alt="Al Bayan Academy" class="client-logo">
+                </div>
+                <div class="client">
+                    <img src="images/client4.png" alt="Eduford" class="client-logo">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="mission-motivation">
-        <div class="mission-motivation-container">
+    <section id="mission-motivation" class="content-section">
+        <div class="mission-motivation-container container">
             <h2>Our Mission & Motivation</h2>
-
             <div class="mission">
                 <h3>Our Mission</h3>
                 <p>To empower individuals and organizations to achieve their full potential through innovative language training, career guidance, and technology solutions.</p>
             </div>
-
             <div class="motivation">
                 <h3>Our Motivation</h3>
                 <p>Our work is our passion. It's what drives us to strive for excellence and make a positive impact on the world. We're motivated by the opportunity to help individuals and organizations reach their full potential.</p>
             </div>
-            <div class = "values">
-              <h3>Our Values</h3>
-              <p> What sets us apart? Our unwavering commitment to these core values: </p>
-             <ul class="values-list">
-                <li><strong>Integrity:</strong> We believe in honesty, transparency, and ethical conduct.</li>
-                <li><strong>Excellence:</strong> We strive for excellence in everything we do.</li>
-                <li><strong>Innovation:</strong> We embrace new ideas and technologies.</li>
-                <li><strong>Collaboration:</strong> We work together to achieve common goals.</li>
-                <li><strong>Customer Focus:</strong> We are dedicated to meeting the needs of our clients.</li>
-            </ul>
+            <div class="values">
+                <h3>Our Values</h3>
+                <p>What sets us apart? Our unwavering commitment to these core values:</p>
+                <ul class="values-list">
+                    <li><strong>Integrity:</strong> We believe in honesty, transparency, and ethical conduct.</li>
+                    <li><strong>Excellence:</strong> We strive for excellence in everything we do.</li>
+                    <li><strong>Innovation:</strong> We embrace new ideas and technologies.</li>
+                    <li><strong>Collaboration:</strong> We work together to achieve common goals.</li>
+                    <li><strong>Customer Focus:</strong> We are dedicated to meeting the needs of our clients.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-container">
+    <section id="contact" class="content-section">
+        <div class="contact-container container">
             <h2>Work with Us</h2>
             <p>Ready to take your next step? Whether you're a student seeking career guidance, a professional looking to enhance your language skills, or a business in need of translation services, we're here to help.</p>
             <p>Let's collaborate and achieve great things together.</p>
-
             <div class="contact-info">
                 <p><strong>Phone:</strong> +91 7012756374</p>
                 <p><strong>Email:</strong> <a href="mailto:peregrine.contactus@gmail.com">peregrine.contactus@gmail.com</a></p>
                 <p><strong>Email:</strong> <a href="mailto:peregrine.ptc@gmail.com">peregrine.ptc@gmail.com</a></p>
             </div>
-          </div>
+        </div>
     </section>
-        <section id="contact-form">
-            <div class = "form-container">
-            <form  method="post" data-netlify="true" name="contact">
-                <input type="hidden" name="form-name" value="contact" />
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit" class="button">Submit</button>
-            </form>
+    <section id="contact-form" class="content-section">
+        <div class="form-container container">
+            <form method="post" data-netlify="true" name="contact" class="contact-form">
+            <input type="hidden" name="form-name" value="contact" />
+            <div class="form-group">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" required class="form-input">
             </div>
-        </section>
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message:</label>
+                <textarea id="message" name="message" required class="form-textarea"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button">Submit</button>
+            </div>
+        </form>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-container">
-            <p>&copy; 2025 Peregrine T&C. All rights reserved.</p>
+            <p class="copyright">&copy; 2024 Peregrine T&C. All rights reserved.</p>
             <nav>
                 <ul class="footer-links">
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="#contact" class="footer-link">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
