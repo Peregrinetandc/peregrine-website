@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /admin/  # Example: If you had an admin area
-Allow: /
