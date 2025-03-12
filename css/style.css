@@ -600,3 +600,77 @@ margin-top: 20px;
   margin-left: 20px;
   text-align: left;
 }
+
+/* --- Styles for Internship Orientation Page Header --- */
+
+.orientation-header {
+  background-color: var(--secondary-color); /* Or any background color you prefer */
+  padding: 30px 20px; /* Adjust padding as needed */
+  text-align: center; /* Center everything by default */
+  border-bottom: 2px solid var(--primary-color); /* Optional: Add a border */
+}
+
+.header-content {
+  display: flex;  /* Use Flexbox for layout */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space out the logos and text */
+  max-width: 960px; /* Consistent with other containers */
+  margin: 0 auto;  /* Center horizontally */
+}
+
+.header-logo-left,
+.header-logo-right {
+  width: 100px;  /* Adjust as needed based on your logo sizes */
+  height: auto; /* Maintain aspect ratio */
+}
+/* Style for right side logo*/
+.header-logo-right{
+  width: 80px;
+  height: auto;
+}
+
+.header-text {
+  flex: 1; /* Take up remaining space */
+  text-align: center; /* Center the text */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+.orientation-header h1 {
+  font-size: 2em; /* Adjust as needed */
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+}
+
+.orientation-header h2 {
+  font-size: 1.5em; /* Adjust as needed */
+  color: var(--text-color);
+  margin-bottom: 0.2em;
+}
+.orientation-header p{
+  text-align: center;
+}
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .header-content {
+      flex-direction: column; /* Stack elements vertically on small screens */
+  }
+
+  .header-logo-left,
+  .header-logo-right {
+      margin-bottom: 10px; /* Add space between logos on mobile */
+      width: 80px; /* Reduce logo size on mobile*/
+  }
+  .header-logo-right{
+      width: 60px;
+  }
+  .orientation-header h1 {
+      font-size: 1.8em; /* Reduce font size on mobile */
+  }
+
+  .orientation-header h2 {
+      font-size: 1.3em;
+  }
+  .orientation-header{
+      padding: 10px;
+  }
+}
