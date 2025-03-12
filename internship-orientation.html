@@ -6,15 +6,23 @@
     <title>Internship Orientation - Peregrine T&C</title>
     <meta name="description" content="Register your interest for the upcoming internship orientation session with Peregrine T&C and MES Mampad College.">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/script.js" defer></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    
+    <div class="orientation-header">
+        <div class="header-content">
+            <img src="images/logo.png" alt="Peregrine T&C Logo" class="header-logo-left">
+            <div class="header-text">
+                <h1>MES Mampad College Internship Program</h1>
+                <h2>Orientation Session - April 16th, 2024</h2>
+                 <p>In Collaboration with Peregrine T&C</p>
+            </div>
+            <img src="images/mes_logo.png" alt="MES Mampad College Emblem" class="header-logo-right">
+        </div>
+    </div>
 
     <section id="orientation-info">
         <div class="container">
@@ -38,11 +46,10 @@
                 <li><strong>Interactive Q&A:</strong> Get your queries answered by MES and Peregrine T&C representatives.</li>
             </ul>
 
-
             <h2>Register Here</h2>
             <p>Secure your spot by completing the form below:</p>
 
-            <form id="orientation-interest-form" method="post" data-netlify="true" name="orientation-interest" netlify>
+            <form id="orientation-interest-form" method="post" data-netlify="true" name="orientation-interest" enctype="multipart/form-data">
                 <input type="hidden" name="form-name" value="orientation-interest" />
 
                 <div>
@@ -94,7 +101,7 @@
 
         <footer>
             <div class="footer-container">
-               <p>&copy; 2025 Peregrine T&C. All rights reserved.</p>
+               <p>&copy; 2024 Peregrine T&C. All rights reserved.</p>
                 <nav>
                     <ul class="footer-links">
                         <li><a href="privacy-policy.html">Privacy Policy</a></li>
@@ -104,7 +111,7 @@
                 </nav>
             </div>
         </footer>
-        <script>
+<script>
         // Load header
         fetch('header.html')
             .then(response => response.text())
