@@ -4,74 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Peregrine T&C</title>
+    <meta name="description" content="Learn about Peregrine T&C's mission, history, team, and values.  We provide high-quality training and consulting services.">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <section id="about-us">
-        <div class="container">
-            <h2>About Peregrine Training & Consulting</h2>
-            <p>
-                Peregrine Training & Consulting is dedicated to providing high-quality training and consulting services
-                to individuals and organizations around the world. We believe in empowering people through education
-                and skill development, fostering global collaboration, and promoting career advancement.
-            </p>
+    <main>
+        <section id="about-us" class="content-section">
+            <div class="container">
+                <h1 class="page-title">About Peregrine Training & Consulting</h1>
 
-            <p>
-                Our team consists of experienced professionals with expertise in a wide range of fields, including
-                language training, translation, career counseling, digital marketing, and international internships.
-                We are committed to delivering tailored solutions that meet the unique needs of our clients.
-            </p>
+                <p class="intro-paragraph">Peregrine Training & Consulting is dedicated to providing high-quality training and consulting services to individuals and organizations around the world. We believe in empowering people through education and skill development, fostering global collaboration, and promoting career advancement.</p>
 
-            <h3>Our History</h3>
-            <p>
-              Founded in [Year], Peregrine T&C started with a vision to bridge the gap between education and
-              employment in a globalized world. We began by offering [mention initial services], and have since
-              expanded our services to include [mention current services], catering to a diverse clientele.
-           </p>
-
-            <h3>Our Team</h3>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="images/team-member-1.jpg" alt="Team Member 1" class="team-image">
-                    <h3>John Doe</h3>
-                    <p>CEO & Founder</p>
+                <div class="info-block">
+                    <h2 class="section-title">Our Story</h2>
+                    <p>Founded in [Year], Peregrine T&C started with a vision to bridge the gap between education and employment in a globalized world. We began by offering [mention initial services - e.g., language courses], and have since expanded our services to include [mention current services - e.g., internships, career counseling, digital marketing], catering to a diverse clientele.</p>
+                    <p>Our team consists of experienced professionals with expertise in a wide range of fields. We are committed to delivering tailored solutions that meet the unique needs of each client, helping them achieve their goals and thrive in a competitive environment.</p>
                 </div>
-                <div class="team-member">
-                    <img src="images/team-member-2.jpg" alt="Team Member 2" class="team-image">
-                    <h3>Jane Smith</h3>
-                    <p>Head of Training</p>
+
+                <div class="info-block">
+                    <h2 class="section-title">Our Team</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="images/team-member-1.jpg" alt="Muhammed Swalih T" class="team-image">
+                            <h3>Muhammed Swalih T</h3>
+                            <p class="team-title">CEO & Founder</p>
+                            <p class="team-bio"> [Add a short bio here - 2-3 sentences max.] </p>
+                        </div>
+                        <div class="team-member">
+                            <img src="images/team-member-2.jpg" alt="Anees" class="team-image">
+                            <h3>Anees</h3>
+                            <p class="team-title">Head of Training</p>
+                            <p class="team-bio">[Add a short bio here - 2-3 sentences max.]</p>
+                        </div>
+                        <!- Add more team members as needed -->
+                    </div>
                 </div>
-                <! Add more team members as needed -->
+
+                <div class="info-block">
+                    <h2 class="section-title">Our Values</h2>
+                     <ul class="values-list">
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Excellence:</strong> Strive for the highest standards in all our services.</li>
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Integrity:</strong> Uphold ethical principles and build trust with clients.</li>
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Collaboration:</strong> Foster partnerships and teamwork.</li>
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Innovation:</strong> Embrace new ideas and adapt to change.</li>
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Global Perspective:</strong> Promote cross-cultural understanding.</li>
+                    </ul>
+                </div>
             </div>
-
-            <h3>Our Values</h3>
-             <ul class="values-list">
-              <li><strong>Excellence:</strong> Strive for the highest standards in all our services.</li>
-              <li><strong>Integrity:</strong> Uphold ethical principles and build trust with clients.</li>
-              <li><strong>Collaboration:</strong> Foster partnerships and teamwork.</li>
-              <li><strong>Innovation:</strong> Embrace new ideas and adapt to change.</li>
-              <li><strong>Global Perspective:</strong> Promote cross-cultural understanding.</li>
-            </ul>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 Peregrine Training & Consulting. All rights reserved.</p>
+    <div class="footer-container">
+        <p class="copyright">&copy; 2024 Peregrine T&C. All rights reserved.</p>
+        <nav>
             <ul class="footer-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
+                <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+                <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
             </ul>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
+        </nav>
+    </div>
+</footer>
 </body>
 </html>

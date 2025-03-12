@@ -1,38 +1,47 @@
 /* --- General Styles --- */
 
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
     --primary-color: #0056b3;  /* Darker blue */
-    --secondary-color: #f5f5f5; /* Light gray (backgrounds) - more Mac-like */
-    --accent-color: #ff9900;   /* Orange (for emphasis) */
+    --secondary-color: #f5f5f7; /* Light gray (backgrounds) - more Mac-like */
+    --accent-color: #ff9900;   /* Orange (for highlights) */
     --text-color: #444;       /* Slightly darker text for better contrast */
     --link-color: #007bff;
     --button-bg-color: #007bff;
     --button-text-color: #fff;
     --button-hover-bg-color: #0056b3;
-    --header-bg-color: #fff;    /* White header */
+    --header-bg-color: #fff;  /* White header background */
     --footer-bg-color: #333;
     --footer-text-color: #fff;
-    --error-color: #dc3545;      /* Red for errors */
-    --success-color: #28a745;    /* Green for success */
+    --error-color: #dc354f;  /* Bootstrap-like red */
+    --success-color: #28a745; /* Bootstrap-like green */
+    --border-color: #ddd;     /* Light gray border */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --border-radius: 8px;   /* Rounded corners - Mac-like */
+    --font-family-sans: 'Inter', sans-serif; /* Use Inter */
+    --font-family-serif: Georgia, serif; /* Example serif font */
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-family-sans);
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: var(--text-color);
     background-color: #fff;
+    -webkit-font-smoothing: antialiased; /* For smoother fonts on macOS/iOS */
+    -moz-osx-font-smoothing: grayscale; /* For smoother fonts on macOS/iOS */
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;  /* Slightly lighter weight */
+    font-family: var(--font-family-sans);
+    font-weight: 600; /* Use a slightly lighter weight (600) */
     color: var(--primary-color);
     margin-bottom: 0.5em;
+    line-height: 1.2;
 }
 
 h1 { font-size: 2.5em; }
@@ -43,11 +52,10 @@ p {
     font-size: 1em;
     margin-bottom: 1em;
 }
-
 a {
     color: var(--link-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 a:hover {
@@ -57,43 +65,40 @@ a:hover {
 
 .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 22px;
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     transition: background-color 0.2s ease, transform 0.1s ease;
     border: none;
     cursor: pointer;
     font-size: 1em;
     font-weight: 500;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
 }
 
 .button:hover {
     background-color: var(--button-hover-bg-color);
-    transform: translateY(-1px);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .button:active {
     transform: translateY(0);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-
 /* --- Containers --- */
 
 .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* --- Section Styles --- */
-
-.content-section { /* Use a more descriptive class name */
-    padding: 40px 0;
-    margin-bottom: 20px;
+.content-section {
+    padding: 60px 0;  /* Increased vertical padding */
 }
 
 .content-section h2 {
@@ -102,7 +107,6 @@ a:hover {
     margin-bottom: 1em;
     text-align: center;
 }
-
 /* --- Top Bar (Optional) --- */
        .top-bar {
            background-color: var(--primary-color); /* Dark background */
@@ -144,66 +148,51 @@ a:hover {
               display: none; /* Hide top bar on mobile */
           }
         }
-
 /* --- Header and Navigation --- */
 
 .site-header {
-    background-color: var(--header-bg-color);
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 99; /* Below the top bar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  background-color: var(--header-bg-color);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-
-.navbar {} /* Placeholder - remove if not needed */
-
+/* Navbar styles */
+.navbar {}
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .logo-image {
-    height: 50px; /* Adjust as needed */
-    width: auto; /* Maintain aspect ratio */
-    border-radius: 50%;
-     object-fit: cover;
-    overflow: hidden;
+  height: 50px; /* You can adjust this */
+  width: auto;
+  border-radius: 50%; /* Circular logo */
+  object-fit: cover;
+  overflow: hidden;
 }
-
 .nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
 .nav-links li {
-    margin-right: 20px;
+  margin-right: 25px;
 }
-
 .nav-link {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;  /* Medium weight */
-    transition: color 0.3s ease;
-    display: block; /* Make the whole area clickable */
-    padding: 10px 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: block; /* Make the whole area clickable */
+  padding: 10px 15px;
 }
-
 .nav-link:hover {
-    color: var(--primary-color);
+   color: var(--primary-color);
 }
-
-.nav-link.active {
-    color: var(--accent-color);
-    font-weight: 600; /* Bold the active link */
-}
-
 /* --- Submenu Styles --- */
 
 .sub-menu {
@@ -212,16 +201,15 @@ a:hover {
     background-color: var(--secondary-color);
     list-style: none;
     padding: 0;
-    margin-top: 5px;
+    margin-top: 5px; /* Adjust as needed */
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1; /* Lower z-index than top bar */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow */
+    z-index: 101;
 }
 
 .has-submenu:hover .sub-menu {
     display: block;
 }
-
 .sub-menu li {
     margin: 0;
     padding: 0;
@@ -231,7 +219,6 @@ a:hover {
 .sub-menu li:last-child {
     border-bottom: none;
 }
-
 .sub-menu-link {
     display: block;
     padding: 10px 15px;
@@ -239,13 +226,10 @@ a:hover {
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
-
 .sub-menu-link:hover {
     background-color: #ddd;
     color: var(--primary-color);
 }
-
-/* --- New Badge --- */
 .new-badge {
     background-color: var(--accent-color);
     color: white;
@@ -264,12 +248,10 @@ a:hover {
     border: none;
     padding: 0;
 }
-
 .hamburger {
-    display: inline-block; /* Changed to inline-block */
+    display: inline-block;
     cursor: pointer;
 }
-
 .bar {
     width: 25px;
     height: 3px;
@@ -278,228 +260,306 @@ a:hover {
     transition: 0.4s;
     display: block; /* Important for proper display */
 }
-/* --- Mobile Styles --- */
-
-@media (max-width: 767px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Adjust as needed */
-        left: 0;
-        width: 100%;
-        background-color: var(--header-bg-color);
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-    .nav-links li{
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    .nav-links li a{
-        display: block;
-        width: 100%;
-    }
-
-    .menu-toggle {
-        display: block; /* Show on mobile */
-    }
-    .sub-menu {
-        position: static;
-        box-shadow: none;
-        width: 100%;
-        display: none;
-        background-color: transparent; /* Remove background in mobile view */
-        border: none;
-    }
-
-    .sub-menu li {
-        border-bottom: none; /* Remove borders in mobile view */
-    }
-
-    .sub-menu-link {
-        padding: 10px 20px; /* Adjust padding */
-    }
-     /* Animation for the hamburger icon */
-    .nav-links.show + .menu-toggle .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .nav-links.show + .menu-toggle .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-links.show + .menu-toggle .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-     .has-submenu.active .sub-menu {
-        display: block;
-    }
-}
 
 /* --- Hero Section --- */
 
 #hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg'); /* Use a background image */
     background-size: cover;
     background-position: center;
     color: #fff;
     text-align: center;
-    padding: 100px 0;
+    padding: 120px 20px; /* More padding */
 }
 
 #hero h1 {
-    font-size: 3em;
+    font-size: 3.5em; /* Larger heading */
     margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow */
 }
 
 #hero h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     margin-bottom: 1em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+#hero p {
+    font-size: 1.2em;
+    max-width: 700px; /* Limit paragraph width */
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 /* --- "Our Story" Section --- */
 .story-container {
-    text-align: center; /* Center-align the content */
+    text-align: center;
+}
+#our-story .button{
+     margin-top: 15px;
 }
 #our-story p {
-    margin-bottom: 1.5em; /* Increased spacing between paragraphs */
-    text-align: left;
+      text-align: left;
 }
-
 /* --- "Our Project" Section --- */
 
 .project-container {
-    text-align: center; /* Center the content */
+    text-align: center;
 }
-
 .project-list {
-    list-style: none;
+   list-style: none;
     padding: 0;
-    margin: 0;
-    text-align: left; /* Left-align list items */
-    display: inline-block; /* Allow text-align: center to work */
+    margin-bottom: 1.5em;
+    text-align: left; /* Left-align list */
+    display: inline-block;
 }
 
 .project-list li {
+   padding-left: 1.5em; /* Add space for a custom bullet point */
     margin-bottom: 0.5em;
-    padding-left: 1.2em; /* Add space for a custom bullet point */
     position: relative; /* For positioning the custom bullet */
 }
 
 .project-list li::before {
-    content: '•'; /* Custom bullet point */
-    color: var(--primary-color);
+    content: "•"; /* Custom bullet point */
+    color: var(--primary-color); /* Blue color - match your button */
     position: absolute;
-    left: 0;
+    left: 0; /* Position the bullet */
+    font-size: 1.5em;
+     top: -0.2em;
 }
-
-/* --- "Our Services" Section (Reverted to Grid) --- */
-
+/* --- "Our Services" Section --- */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Spacing between grid items */
-    margin-top: 20px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* More gap */
+    margin-top: 30px;
 }
 
 .service {
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    background-color: #fff; /* White background for service boxes */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border: 1px solid var(--border-color);
+    padding: 25px; /* More padding */
+    text-align: left;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* More subtle shadow */
 }
 
 .service:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
+    transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .service h3 {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.7em;
+    font-size: 1.6em; /* Slightly larger heading */
+    color: var(--primary-color);
+}
+
+.service p {
+    font-size: 1em;
+    color: var(--text-color);
 }
 
 .services-button {
-    margin-top: 20px; /* Space above the button */
+    margin-top: 20px;
 }
 
 /* --- "Our Clients" Section --- */
 
 .clients-container {
-    text-align: center;
-}
-.clients-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Spacing between logos */
-    padding: 20px 0; /* Add padding */
+     text-align: center; /* Center the content */
 }
 
-.client {
-  flex: 0 0 auto; /* Don't grow or shrink, just maintain width */
-  width: 150px;   /* Adjust as needed */
-  height: auto;   /* Adjust as needed, or remove for auto-height */
+.clients-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center horizontally */
+    gap: 20px; /* Spacing between logos */
+    padding: 20px 0;
 }
 
 .client-logo {
-    max-width: 100%; /* Ensure logos fit within their container */
-    height: auto;
-    filter: grayscale(50%); /* Optional: Add a grayscale effect */
+    max-width: 150px;  /* Adjust as needed */
+    height: auto;      /* Maintain aspect ratio */
+    filter: grayscale(70%); /* Slightly desaturated */
     transition: filter 0.3s ease;
-    display: block;
-     margin-left: auto;
-    margin-right: auto;
-
 }
 
 .client-logo:hover {
     filter: grayscale(0%); /* Remove grayscale on hover */
 }
+
+
 /* --- "Mission & Motivation" Section --- */
 
 .mission-motivation-container {
-    text-align: center; /* Center-align the content */
+    text-align: center;
 }
 
 .mission, .motivation, .values {
-    margin-bottom: 30px; /* Space between sections */
+    margin-bottom: 30px;
 }
 
-.values-list {
-    list-style: none;
-    padding: 0;
-     text-align: left; /* Left-align list items */
-    display: inline-block; /* Allow text-align: center to work */
-}
-.values-list li {
-     margin-bottom: 0.5em; /* Space between values */
-    padding-left: 1.2em; /* Add space for a custom bullet point */
-    position: relative; /* For positioning the custom bullet */
-}
-
-.values-list li::before {
-      content: '•'; /* Custom bullet point */
+.mission h3,
+.motivation h3,
+.values h3 {
+    font-size: 1.8em;
     color: var(--primary-color);
-    position: absolute;
-    left: 0;
+    margin-bottom: 0.5em;
 }
+
+.mission p, .motivation p, .values p {
+    font-size: 1.1em;
+     text-align: left;
+    color: var(--text-color);
+    margin-bottom: 1em;
+}
+.values-list {
+      list-style: none; /* Remove default bullet points */
+      padding: 0; /* Remove default padding */
+      margin-bottom: 1.5em;
+      text-align: left;
+  }
+
+  .values-list li {
+      padding-left: 1.5em; /* Add space for a custom bullet point */
+      margin-bottom: 0.5em;
+      position: relative; /* For positioning the custom bullet */
+  }
+
+  .values-list li::before {
+      content: "•"; /* Custom bullet point */
+      color: var(--primary-color); /* Blue color - match your button */
+      position: absolute;
+      left: 0; /* Position the bullet */
+      font-size: 1.5em;
+       top: -0.2em;
+  }
 
 /* --- Contact Section --- */
-#contact{
-     text-align: center;
-}
 .contact-info {
-    margin-top: 20px;
-    text-align: center; /* Center-align contact details */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .contact-info p {
+    margin-bottom: 0.5em;
+}
+
+.contact-info a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- Contact Form --- */
+
+#contact-form {
+  margin-top
+
+  /* --- About Page Specific Styles --- */
+
+.page-title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.intro-paragraph {
+  font-size: 1.1em;
+  line-height: 1.7; /* More generous line height */
+  margin-bottom: 2em;
+  text-align: left;
+}
+
+.info-block {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.8em;
+  color: var(--primary-color);
+  margin-bottom: 0.7em;
+  text-align: left; /* Left-align section titles */
+}
+
+/* Team Section */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 20px;
+  text-align: center; /* Center team member content */
+}
+
+.team-member {
+  padding: 15px; /* Add padding */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition on hover*/
+}
+.team-member:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-image {
+  width: 150px;      /* Fixed width for team images */
+  height: 150px;     /* Fixed height - make it a square */
+  border-radius: 50%;  /* Circular images */
+  object-fit: cover;   /* Ensure images cover the area without distortion */
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-member h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+  color: var(--primary-color)
+}
+.team-title{
+  font-size: 1em;
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.team-bio {
+  font-size: 0.9em;
+  color: var(--text-color);
+  text-align: center;
+}
+.values-list {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin-bottom: 1.5em;
+   text-align: left;
+}
+
+.values-list li {
+  padding-left: 1.5em; /* Add space for a custom bullet point */
+  margin-bottom: 0.5em;
+  position: relative; /* For positioning the custom bullet */
+}
+.list-icon {
+  margin-right: 8px; /* Spacing between icon and text */
+  color: var(--accent-color); /* Use your accent color */
+}
+.benefits-list, .opportunities-list, .process-list{
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5em;
+   text-align: left;
+}
+.benefits-list li, .opportunities-list li, .process-list li{
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+  position: relative;
+}
