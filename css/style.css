@@ -142,12 +142,14 @@
     align-items: center;
   }
   
-  .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: var(--primary-color);
-      text-decoration: none; /* Remove underline from logo link */
-  }
+  #logo {
+    height: 50px; /* Example height */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover;  /* Prevents distortion */
+    overflow: hidden;    /* Clips any overflow */
+}
+
   .logo img{
       height: auto;
       width: 150px;
