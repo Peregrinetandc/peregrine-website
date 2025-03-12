@@ -684,3 +684,55 @@ max-width: 960px; /* Consistent with other containers */
 margin: 0 auto;
 padding: 0 20px;
 }
+
+/* --- Styles for Privacy Policy and Terms of Service Pages --- */
+.page-title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.intro-paragraph {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 2em;
+}
+
+.info-block {
+  margin-bottom: 30px;
+   text-align: left;
+}
+
+.section-title {
+  font-size: 1.8em;
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+}
+
+.sub-section-title {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.last-updated {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 1em;
+}
+
+.footer-link {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+/* Add to existing footer rule */
+.footer-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
