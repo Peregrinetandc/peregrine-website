@@ -528,3 +528,75 @@
       .nav-links li a{
           display: block;
           width: 100%;
+
+          /* Styles for the internship orientation page */
+#orientation-info {
+  /* Add any overall styles for the section here */
+}
+
+#orientation-info h2 {
+  /* Styles for the main heading */
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#orientation-info h3 {
+  /* Styles for subheadings */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--primary-color); /* Example: Use your primary color */
+}
+
+#orientation-info ul {
+  /* Styles for unordered lists */
+  list-style: disc; /* Use standard bullet points */
+  margin-left: 20px; /* Indent the list */
+  text-align: left; /* Left-align list items */
+}
+
+#orientation-info ol {
+  /* Styles for ordered lists */
+  margin-left: 20px;
+  text-align: left;
+}
+
+#orientation-info li {
+  /* Styles for list items */
+  margin-bottom: 0.5em;
+}
+
+#orientation-interest-form {
+margin-top: 20px;
+  max-width: 600px; /* Limit form width */
+  margin-left: auto;
+  margin-right: auto;
+}
+#orientation-interest-form label{
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+#orientation-interest-form input[type="text"],
+#orientation-interest-form input[type="email"],
+#orientation-interest-form input[type="tel"],
+#orientation-interest-form select,
+#orientation-interest-form textarea{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#orientation-interest-form textarea{
+  height: 150px;
+  resize: vertical; /* Allow vertical resizing */
+}
+/* Add styles for form, similar to your contact form */
+/* You can reuse styles from your existing contact form */
+
+.guidelines-list {
+  list-style: disc; /* Or your preferred list style */
+  margin-left: 20px;
+  text-align: left;
+}
