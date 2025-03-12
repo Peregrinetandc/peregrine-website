@@ -736,3 +736,47 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 }
+
+/* --- "Our Clients" Section --- */
+
+.clients-container {
+  text-align: center; /* Center the logos */
+}
+
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow logos to wrap to the next line */
+  justify-content: center; /* Center logos horizontally */
+  gap: 30px; /* Increase spacing between logos */
+  padding: 20px 0;
+}
+
+.client {
+  flex: 0 0 auto;  /* Don't grow or shrink */
+  width: 150px;    /* Adjust this value as needed */
+  height: auto; /* Add a fixed height OR use padding-bottom for aspect ratio */
+}
+
+.client-logo {
+  max-width: 100%; /* Ensure logos don't overflow their container */
+  height: auto;    /* Maintain aspect ratio */
+  display: block;  /* Remove extra space below inline images */
+  margin: 0 auto; /* Center the logo within the .client div */
+   filter: grayscale(70%);
+  transition: filter 0.3s ease;
+}
+.client-logo:hover {
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .client {
+      width: 45%; /* Two logos per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .client {
+      width: 80%; /* One logo per row on very small screens */
+  }
+}
