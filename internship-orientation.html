@@ -16,7 +16,7 @@
 
     <div class="orientation-header">
         <div class="header-content">
-            <img src="images/header.jpg" alt="Header Image">
+            <img src="images/logo.png" alt="Peregrine T&C Logo" class="header-logo-left">
             <div class="header-text">
                 <h1>MES Mampad College Internship Program</h1>
                 <h2>Orientation Session - April 16th, 2024</h2>
@@ -55,7 +55,7 @@
             <form id="orientation-interest-form" method="post" data-netlify="true" name="orientation-interest" netlify>
                 <input type="hidden" name="form-name" value="orientation-interest" />
 
-                <div>  </* Wrap each label/input pair in a div */>
+                <div>
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
@@ -114,6 +114,13 @@
                 </nav>
             </div>
         </footer>
-
+        <script>
+        // Load header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

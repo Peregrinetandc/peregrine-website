@@ -744,3 +744,137 @@ margin-top: 20px;
   background-size: 20px;
   padding-right: 30px; /* Make space for the arrow */
 }
+
+/* --- Styles for Internship Orientation Page Header --- */
+
+.orientation-header {
+  /* Set the header image as a background image */
+  background-image: url('../images/header.jpg'); /* Correct path to your image */
+  background-size: cover; /*  Scale the image to cover the entire header */
+  background-position: center; /* Center the image within the header */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  padding: 30px 20px;  /* Keep padding */
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  /* Remove background color if you are using full image */
+  /* background-color: var(--secondary-color);  REMOVE or comment out this line */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative; /* Add relative positioning */
+  z-index: 2; /* Ensure content is above the background */
+  color: white; /* Set text color to white for contrast */
+}
+
+/*  Rest of your header styles (for logos, text, etc.) remain mostly the same */
+
+.header-logo-left,
+.header-logo-right {
+  width: 100px;
+  height: auto;
+}
+
+.header-logo-right {
+  width: 80px;
+  height: auto;
+}
+
+.header-text {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.orientation-header h1 {
+  font-size: 2em;
+  color: white; /* White text for contrast */
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
+}
+
+.orientation-header h2 {
+  font-size: 1.5em;
+  color: white;  /* White text for contrast */
+  margin-bottom: 0.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
+}
+.orientation-header p{
+  text-align: center;
+  color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .header-content {
+      flex-direction: column;
+  }
+
+  .header-logo-left,
+  .header-logo-right {
+      margin-bottom: 10px;
+      width: 80px;
+  }
+
+  .header-logo-right {
+      width: 60px;
+  }
+
+  .orientation-header h1 {
+      font-size: 1.8em;
+  }
+
+  .orientation-header h2 {
+      font-size: 1.3em;
+  }
+  .orientation-header{
+      padding: 50px 20px; /* Add padding for better spacing on mobile*/
+  }
+}
+/* --- Styles for the internship orientation page --- */
+#orientation-info {
+  /* Add any overall styles for the section here */
+}
+
+#orientation-info h2 {
+  /* Styles for the main heading */
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#orientation-info h3 {
+  /* Styles for subheadings */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--primary-color); /* Example: Use your primary color */
+}
+
+#orientation-info ul {
+  /* Styles for unordered lists */
+  list-style: disc; /* Use standard bullet points */
+  margin-left: 20px; /* Indent the list */
+  text-align: left; /* Left-align list items */
+}
+
+#orientation-info ol {
+  /* Styles for ordered lists */
+  margin-left: 20px;
+  text-align: left;
+}
+
+#orientation-info li {
+  /* Styles for list items */
+  margin-bottom: 0.5em;
+}
+/* --- Styles for the orientation interest form --- */
+
+#orientation-interest-form {
+  max-width: 600px; /* Limit form width (adjust as needed) */
+  margin: 20px auto; /* Center the form horizontally */
+  padding: 20px;
+  background-color: #fff; /* White background */
