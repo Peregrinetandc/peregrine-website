@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship Orientation - MES Mampad College & Peregrine T&C</title>
+    <title>Internship Orientation - MES Mampad College &amp; Peregrine T&C</title>
     <meta name="description" content="Register for the internship orientation session with Peregrine T&C and MES Mampad College.">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/internship-orientation.css"> 
     <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
     <header class="orientation-header">
         <div class="header-content container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Peregrine T&C Logo" class="header-logo-left">
+                <img src="images/mes_logo.png" alt="MES Mampad College Emblem" class="header-logo-right">
+            </div>
             <div class="header-text">
                 <h1 class="header-title">MES Mampad College Internship Program</h1>
                 <h2 class="header-subtitle">Orientation Session - April 16th, 2025</h2>
                 <p class="header-partnership">In Collaboration with Peregrine T&C</p>
-            </div>
-             <div class="logo-container">
-                <img src="images/logo.png" alt="Peregrine T&C Logo" class="header-logo-left">
-                <img src="images/mes_logo.png" alt="MES Mampad College Emblem" class="header-logo-right">
             </div>
         </div>
     </header>
@@ -35,112 +38,94 @@
                 <p class="intro-text">Are you a student at MES Mampad College—or an affiliated institution of the University of Calicut—eager to kickstart your industry experience?  Join us for an orientation session to explore the internship program, learn about key opportunities, and understand the application process.</p>
 
                 <div class="info-block">
-                <h2 class="section-title">Mandatory Internship Rules - University of Calicut (FYUGP)</h2>
-                <p class="info-subtitle">Essential to Complete the Course:</p>
-                <ul class="guidelines-list">
-                    <li><strong>Mandatory 2-Credit Internship:</strong> Complete during the first six semesters.</li>
-                    <li><strong>Minimum Engagement:</strong> At least 60 hours of practical experience.</li>
-                    <li><strong>Flexible Placement:</strong> Options include industry, research labs, or academic institutions.</li>
-                    <li><strong>Supervision Required:</strong> Oversight by an approved faculty or industry professional.</li>
-                    <li><strong>Documentation:</strong> Maintain a log book and submit a final report; placement must be pre-approved.</li>
-                </ul>
+                    <h2 class="section-title">Mandatory Internship Rules - University of Calicut (FYUGP)</h2>
+                    <p class="info-subtitle">Essential to Complete the Course:</p>
+                    <ul class="guidelines-list">
+                        <li><strong>Mandatory 2-Credit Internship:</strong> Complete during the first six semesters.</li>
+                        <li><strong>Minimum Engagement:</strong> At least 60 hours of practical experience.</li>
+                        <li><strong>Flexible Placement:</strong> Options include industry, research labs, or academic institutions.</li>
+                        <li><strong>Supervision Required:</strong> Oversight by an approved faculty or industry professional.</li>
+                        <li><strong>Documentation:</strong> Maintain a log book and submit a final report; placement must be pre-approved.</li>
+                    </ul>
                 </div>
 
                 <div class="info-block">
-                <h2 class="section-title">What to Expect from Us</h2>
-                <ul class="expectations-list">
-                    <li><span class="list-icon">✓</span> <strong>Program Overview:</strong> Insights into the MES Internship Program.</li>
-                    <li><span class="list-icon">✓</span> <strong>Internship Opportunities:</strong> Explore various projects and roles.</li>
-                    <li><span class="list-icon">✓</span> <strong>Application Process:</strong> Step-by-step guide to registration and deadlines.</li>
-                    <li><span class="list-icon">✓</span> <strong>Interactive Q&A:</strong> Get your queries answered by MES and Peregrine T&C representatives.</li>
-                </ul>
+                    <h2 class="section-title">What to Expect from Us</h2>
+                    <ul class="expectations-list">
+                        <li><span class="list-icon">✓</span> <strong>Program Overview:</strong> Insights into the MES Internship Program.</li>
+                        <li><span class="list-icon">✓</span> <strong>Internship Opportunities:</strong> Explore various projects and roles.</li>
+                        <li><span class="list-icon">✓</span> <strong>Application Process:</strong> Step-by-step guide to registration and deadlines.</li>
+                        <li><span class="list-icon">✓</span> <strong>Interactive Q&A:</strong> Get your queries answered by MES and Peregrine T&C representatives.</li>
+                    </ul>
                 </div>
 
                 <div class="form-block">
-                  <h2 class="section-title">Register Here</h2>
-                  <p class="form-intro">Secure your spot by completing the form below:</p>
+                    <h2 class="section-title">Register Here</h2>
+                    <p class="form-intro">Secure your spot by completing the form below:</p>
 
-                  <form id="orientation-interest-form" method="post" data-netlify="true" name="orientation-interest" enctype="multipart/form-data" class="registration-form">
-                    <input type="hidden" name="form-name" value="orientation-interest" />
+                    <form id="orientation-interest-form" method="post" data-netlify="true" name="orientation-interest" enctype="multipart/form-data" class="registration-form">
+                        <input type="hidden" name="form-name" value="orientation-interest" />
 
-                      <div class="form-group">
-                          <label for="name" class="form-label">Full Name:</label>
-                          <input type="text" id="name" name="name" required class="form-input">
-                      </div>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name:</label>
+                            <input type="text" id="name" name="name" required class="form-input">
+                        </div>
 
-                      <div class="form-group">
-                          <label for="email" class="form-label">Email Address:</label>
-                          <input type="email" id="email" name="email" required class="form-input">
-                      </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address:</label>
+                            <input type="email" id="email" name="email" required class="form-input">
+                        </div>
 
-                      <div class="form-group">
-                          <label for="college" class="form-label">College/Institute:</label>
-                          <input type="text" id="college" name="college" required class="form-input">
-                      </div>
+                        <div class="form-group">
+                            <label for="college" class="form-label">College/Institute:</label>
+                            <input type="text" id="college" name="college" required class="form-input">
+                        </div>
 
-                      <div class="form-group">
-                         <label for="course" class="form-label">Course of Study:</label>
-                         <input type="text" id="course" name="course" required class="form-input">
-                      </div>
+                        <div class="form-group">
+                            <label for="course" class="form-label">Course of Study:</label>
+                            <input type="text" id="course" name="course" required class="form-input">
+                        </div>
 
-                      <div class="form-group">
-                        <label for="year" class="form-label">Current Year of Study:</label>
-                        <input type="text" id="year" name="year" required class="form-input">
-                      </div>
+                        <div class="form-group">
+                            <label for="year" class="form-label">Current Year of Study:</label>
+                            <input type="text" id="year" name="year" required class="form-input">
+                        </div>
 
-                      <div class="form-group">
-                          <label for="attendance" class="form-label">Will you be attending the orientation session?</label>
-                          <select id="attendance" name="attendance" required class="form-select">
-                              <option value="" disabled selected>-- Please Select --</option>
-                              <option value="yes">Yes, I will attend</option>
-                              <option value="no">No, I cannot attend</option>
-                              <option value="maybe">I'm not sure yet</option>
-                          </select>
-                      </div>
+                        <div class="form-group">
+                            <label for="attendance" class="form-label">Will you be attending the orientation session?</label>
+                            <select id="attendance" name="attendance" required class="form-select">
+                                <option value="" disabled selected>-- Please Select --</option>
+                                <option value="yes">Yes, I will attend</option>
+                                <option value="no">No, I cannot attend</option>
+                                <option value="maybe">I'm not sure yet</option>
+                            </select>
+                        </div>
 
-                      <div class="form-group">
-                          <label for="questions" class="form-label">Any questions you'd like answered during the session? (Optional)</label>
-                          <textarea id="questions" name="questions" class="form-textarea"></textarea>
-                      </div>
+                        <div class="form-group">
+                            <label for="questions" class="form-label">Any questions you'd like answered during the session? (Optional)</label>
+                            <textarea id="questions" name="questions" class="form-textarea"></textarea>
+                        </div>
 
-                      <div class="form-group">
-                        <button type="submit" class="button button-primary">Register Now</button>
-                      </div>
-                  </form>
+                        <div class="form-group">
+                            <button type="submit" class="button button-primary">Register Now</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-      <div class="footer-container">
-          <p class="copyright">&copy; 2025 Peregrine T&C. All rights reserved.</p>
-          <nav>
-              <ul class="footer-links">
-                  <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
-                  <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
-                  <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
-              </ul>
-          </nav>
-      </div>
-    </footer>
-    <script>
-        // Load header (using best practices)
-        fetch('header.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error("Error loading header:", error);
-                //  Display a user-friendly error message, or fallback content.
-                document.getElementById('header-placeholder').innerHTML = `<div class="header-error">Error loading header. Please refresh the page.</div>`;
-            });
-    </script>
+    <div class="footer-container">
+        <p class="copyright">&copy; 2025 Peregrine T&C. All rights reserved.</p>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+                <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
 </body>
 </html>

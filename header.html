@@ -1,30 +1,32 @@
-<header>
-    <nav>
+<header class="site-header">
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="images/logo.png" alt="Peregrine T&C Logo" id="logo">
+            <a href="/" class="logo-link">
+                <img src="images/logo.png" alt="Peregrine T&C Logo" class="logo-image">
             </a>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Navigation">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </button>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li>
-                    <a href="/#our-services">Services</a>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="has-submenu">
+                    <a href="/#our-services" class="nav-link">Services</a>
                     <ul class="sub-menu">
-                        <li><a href="internship-programs.html">Internship Programs</a><span class="new-badge">New</span></li>
-                        <li><a href="apprenticeship-programs.html">Apprenticeship Programs</a><span class="new-badge">New</span></li>
-                        <li><a href="language-training.html">Language Training</a></li>
-                        <li><a href="translation-services.html">Translation Services</a></li>
-                        <li><a href="career-counseling.html">Career Counseling</a></li>
-                        <li><a href="digital-marketing-services.html">Digital Marketing Services</a></li>
-                         <li><a href="apply.html">Apply</a></li>
+                        <li><a href="internship-programs.html" class="sub-menu-link">Internship Programs</a><span class="new-badge">New</span></li>
+                        <li><a href="apprenticeship-programs.html" class="sub-menu-link">Apprenticeship Programs</a><span class="new-badge">New</span></li>
+                        <li><a href="language-training.html" class="sub-menu-link">Language Training</a></li>
+                        <li><a href="translation-services.html" class="sub-menu-link">Translation Services</a></li>
+                        <li><a href="career-counseling.html" class="sub-menu-link">Career Counseling</a></li>
+                        <li><a href="digital-marketing-services.html" class="sub-menu-link">Digital Marketing Services</a></li>
+                        <li><a href="apply.html" class="sub-menu-link">Apply</a></li>
                     </ul>
                 </li>
-                <li><a href="/#contact">Contact</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
