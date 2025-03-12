@@ -10,6 +10,23 @@ document.addEventListener('DOMContentLoaded', function() {
         inputElement.focus();
     }
 
+    // --- Conditional Scroll for Services Link ---
+document.querySelectorAll('.nav-links a[href="#our-services"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+            // We're on the homepage, so use smooth scrolling
+            const targetElement = document.querySelector('#our-services');
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // We're NOT on the homepage, so redirect to the homepage first
+            window.location.href = '/#our-services';
+        }
+    });
+});
+
     function clearError(inputElement) {
         inputElement.classList.remove('input-error');
         const errorSpan = inputElement.parentNode.querySelector('.error-message');
@@ -115,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formElements = form.elements;
             let isValid = true;
 
+            //Clear previous errors.
             for (let i = 0; i < formElements.length; i++) {
                 if (formElements[i].tagName === "INPUT" || formElements[i].tagName === "SELECT" || formElements[i].tagName === "TEXTAREA")
                     clearError(formElements[i]);
@@ -168,13 +186,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Image Slider ---
     function initializeSlider() {
-        let slideIndex = 0;
-        const slides = document.getElementsByClassName("slide");
+        const sliderContainer = document.querySelector('.slider-container');
         const prevButton = document.querySelector('.slider-btn.prev');
         const nextButton = document.querySelector('.slider-btn.next');
+
+        // Check if the slider elements exist before proceeding
+        if (!sliderContainer || !prevButton || !nextButton) {
+            return;
+        }
+        const imageUrls = [
+            'images/image1.jpg',
+            'images/image2.jpg',
+            'images/image3.jpg',
+            'images/image4.jpg',
+        ];
+
+        imageUrls.forEach(url => {
+            const slide = document.createElement('div');
+            slide.classList.add('slide');
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = "Slider Image"; // Add alt text for accessibility
+            slide.appendChild(img);
+            sliderContainer.querySelector('.slider').appendChild(slide);
+        });
+
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slider .slide'); // Select *after* adding slides.
         let slideInterval;
 
-        function showSlides() {
+       function showSlides() {
             if (slides.length === 0) return;
 
             for (let i = 0; i < slides.length; i++) {
@@ -218,14 +259,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        if (prevButton) {
-            prevButton.addEventListener('click', prevSlide);
-        }
-        if (nextButton) {
-            nextButton.addEventListener('click', nextSlide);
-        }
+        prevButton.addEventListener('click', prevSlide);
+        nextButton.addEventListener('click', nextSlide);
+        startSlider();
 
-        startSlider(); // Start the slider *after* defining all functions
     }
     // --- Load More Details ---
 
@@ -244,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .then(data => {
                         moreDetailsDiv.innerHTML = data.content;
-                        loadMoreBtn.style.display = 'none';
+                        loadMoreBtn.style.display = 'none'; // Hide button after loading
                     })
                     .catch(error => {
                         console.error('Error fetching data:', error);
@@ -256,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- GSAP Animations ---
 
      function initializeGSAPAnimations() {
-        if (typeof gsap !== 'undefined') {
+        if (typeof gsap !== 'undefined') { // Check if GSAP is loaded
             gsap.from(".hero-container h1", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
             gsap.from(".hero-container h2", { duration: 1, y: -50, opacity: 0, ease: "power2.out", delay: 0.5 });
             gsap.from(".hero-container p", { duration: 1, opacity: 0, ease: "power2.out", delay: 1 });
@@ -270,8 +307,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: section,
-                        start: "top 80%",
-                        toggleActions: "play none none none"
+                        start: "top 80%",  // When the top of the section hits 80% of the viewport
+                        toggleActions: "play none none none" // Play the animation once
                     }
                 });
             });
