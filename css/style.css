@@ -522,3 +522,211 @@ footer {
     .nav-links {
         display: none; /* Hide by default */
         flex-direction: column;
+
+        /* --- Header and Navigation --- */
+
+.site-header {
+  background-color: var(--header-bg-color);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  /* Your existing styles for .nav-container */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px; /* Or your preferred max-width */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-link {
+  /* Styles for the logo link (if needed) */
+}
+
+.logo-image {
+  height: 50px; /* Or your desired height */
+  width: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Vertically center links */
+}
+
+.nav-links li {
+  margin-right: 20px; /* Spacing between links */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
+  display: block; /* Important for consistent padding */
+  padding: 10px 15px; /* Add padding for clickability */
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  color: var(--accent-color);
+}
+
+/* --- Submenu Styles --- */
+
+.sub-menu {
+  display: none; /* Hide by default */
+  position: absolute;
+  background-color: var(--secondary-color);
+  list-style: none;
+  padding: 0;
+  margin-top: 5px; /* Adjust as needed */
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 101;
+}
+
+.has-submenu:hover .sub-menu {
+  display: block; /* Show on hover */
+}
+
+.sub-menu li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.sub-menu li:last-child {
+  border-bottom: none;
+}
+
+.sub-menu-link {
+  display: block;
+  padding: 10px 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sub-menu-link:hover {
+  background-color: #ddd;
+  color: var(--primary-color);
+}
+.new-badge {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+/* --- Mobile Menu Toggle --- */
+
+.menu-toggle {
+  display: none; /* Hide by default on larger screens */
+  cursor: pointer;
+  background: none; /* Remove default button styles */
+  border: none;
+  padding: 0; /* Remove default padding */
+}
+
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px 0;
+  transition: 0.4s;
+  display: block; /* Make sure bars are block-level */
+}
+
+
+/* --- Mobile Styles (max-width: 767px) --- */
+@media (max-width: 767px) {
+    .nav-links {
+        display: none; /* Hide by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background-color: var(--header-bg-color);
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+    }
+.nav-links li a{
+    display: block;
+     width: 100%;
+}
+    .menu-toggle {
+        display: block; /* Show on mobile */
+    }
+
+    /* Hide the submenu on mobile by default */
+     .sub-menu {
+       position: static; /* Remove absolute positioning */
+       box-shadow: none; /* Remove the shadow */
+       width: 100%; /* Take full width */
+       display: none; /* Hide by default */
+       background-color: transparent; /* Remove background */
+       border: none;
+   }
+
+   /* Remove border from submenu items on mobile */
+   .sub-menu li {
+       border-bottom: none;
+   }
+
+   /* Style submenu links for mobile */
+   .sub-menu-link {
+       padding: 10px 20px; /* More padding for touch targets */
+   }
+
+   /* Show submenu when parent is active (clicked) */
+   .has-submenu.active .sub-menu {
+     display: block;
+   }
+
+    /* Style the hamburger icon when the menu is open */
+    .nav-links.show + .menu-toggle .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Rotate first bar */
+    }
+
+    .nav-links.show + .menu-toggle .bar:nth-child(2) {
+        opacity: 0; /* Hide middle bar */
+    }
+
+    .nav-links.show + .menu-toggle .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); /* Rotate last bar */
+    }
+}
