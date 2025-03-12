@@ -1,391 +1,721 @@
-/* --- General Styles --- */
+/* General Styles */
 :root {
-  --primary-color: #0056b3; /* Darker blue */
-  --secondary-color: #f0f0f0; /* Light gray (for backgrounds) */
-  --accent-color: #ff9900; /* Orange (for emphasis) */
-  --text-color: #333;
-  --link-color: #007bff;
-  --button-bg-color: #0056b3; /* Use variables */
-  --button-text-color: #fff;
-  --button-hover-bg-color: #003d7a; /* Darker on hover */
-  --header-bg-color: #f0f0f0; /* Consistent header background */
-  --footer-bg-color: #0056b3;
-  --footer-text-color: #fff;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif; /* Google Fonts */
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  color: var(--text-color);
-  background-color: #fff; /* Main background */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif; /* Google Fonts */
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 0.5em;
-}
-
-h1 { font-size: 2.5em; } /* Responsive sizing */
-h2 { font-size: 2em; }
-h3 { font-size: 1.5em; }
-
-p {
-  font-size: 1em;
-  margin-bottom: 1em;
-  text-align: left;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none; /* Remove underlines by default */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
-}
-
-a:hover {
-  color: var(--primary-color); /* Darker blue on hover */
-  text-decoration: underline; /* Add underline on hover for clarity */
-}
-
-.button {
-  display: inline-block;
-  padding: 12px 25px; /* Slightly smaller padding */
-  background-color: var(--button-bg-color);
-  color: var(--button-text-color);
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  border: none; /* Remove default button border */
-  cursor: pointer;
-  font-size: 1em; /* Consistent font size */
-  font-weight: 600; /* Slightly bolder buttons */
-}
-
-.button:hover {
-  background-color: var(--button-hover-bg-color);
-}
-
-/* --- Containers (Consistent Max Width and Centering) --- */
-
-.container, .hero-container, .story-container, .project-container,
-.services-container, .clients-container, .mission-motivation-container,
-.contact-container, .footer-container {
-  max-width: 960px;  /* Max width for larger screens */
-  margin: 0 auto;    /* Center horizontally */
-  padding: 0 20px;  /* Consistent horizontal padding */
-}
-
-/* --- Section Styles --- */
-
-section {
-  padding: 40px 0; /* Top and bottom padding */
-  margin-bottom: 20px; /* Space between sections */
-  text-align: center; /* Default text alignment */
-}
-
-#hero {
-  background-color: var(--secondary-color);
-  padding: 60px 20px; /* Adjusted padding */
-  text-align: center;
-}
-
-#our-story, #our-services, #mission-motivation {
-  background-color: #fff; /* White background */
-}
-
-#our-project, #our-clients, #contact, #contact-form {
-  background-color: #f8f8f8; /* Light gray background */
-}
-
-/* Consistent Heading Styles Within Sections */
-section h2 {
-  font-size: 2.2em; /* Consistent h2 size */
-  color: var(--primary-color);
-  margin-bottom: 1em;
-  text-align: center;
-}
-
-section p {
-  font-size: 1.1em;
-  color: var(--text-color);
-  margin-bottom: 1em;
-  text-align: left; /* Left-align paragraph text */
-}
-
-/* --- Header and Navigation --- */
-
-header {
-  background-color: var(--header-bg-color);
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100; /* Ensure header stays on top */
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#logo {
+    --primary-color: #0056b3; /* Darker blue */
+    --secondary-color: #f0f0f0; /* Light gray (for backgrounds) */
+    --accent-color: #ff9900; /* Orange (for emphasis) */
+    --text-color: #333;
+    --link-color: #007bff;
+    --button-bg-color: var(--primary-color); /* Use variables */
+    --button-text-color: #fff;
+    --button-hover-bg-color: #003d7a; /* Darker on hover */
+    --header-bg-color: var(--secondary-color); /* Consistent header background */
+    --footer-bg-color: var(--primary-color);
+    --footer-text-color: #fff;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif; /* Google Fonts */
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: #fff; /* Main background */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif; /* Google Fonts */
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+  }
+  
+  h1 { font-size: 2.5em; } /* Responsive sizing */
+  h2 { font-size: 2em; }
+  h3 { font-size: 1.5em; }
+  
+  p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+  }
+  
+  a {
+    color: var(--link-color);
+    text-decoration: none; /* Remove underlines by default */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  a:hover {
+    color: var(--primary-color); /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover for clarity */
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 25px; /* Slightly smaller padding */
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove default button border */
+    cursor: pointer;
+    font-size: 1em; /* Consistent font size */
+    font-weight: 600; /* Slightly bolder buttons */
+  }
+  
+  .button:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  /* --- Containers (Consistent Max Width and Centering) --- */
+  
+  .container,
+  .hero-container,
+  .story-container,
+  .project-container,
+  .services-container,
+  .clients-container,
+  .mission-motivation-container,
+  .contact-container,
+  .footer-container {
+    max-width: 960px;  /* Max width for larger screens */
+    margin: 0 auto;    /* Center horizontally */
+    padding: 0 20px;  /* Consistent horizontal padding */
+  }
+  
+  /* --- Section Styles --- */
+  
+  section {
+    padding: 40px 0; /* Top and bottom padding */
+    margin-bottom: 20px; /* Space between sections */
+    text-align: center; /* Default text alignment */
+  }
+  
+  #hero {
+    background-color: var(--secondary-color);
+    padding: 60px 20px; /* Adjusted padding */
+    text-align: center;
+  }
+  
+  #our-story,
+  #our-services,
+  #mission-motivation {
+    background-color: #fff; /* White background */
+  }
+  
+  #our-project,
+  #our-clients,
+  #contact,#contact-form {
+    background-color: #f8f8f8; /* Light gray background */
+  }
+  
+  /* Consistent Heading Styles Within Sections */
+  section h2 {
+    font-size: 2.2em; /* Consistent h2 size */
+    color: var(--primary-color);
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  
+  section p {
+      font-size: 1.1em;
+      color: var(--text-color);
+      margin-bottom: 1em;
+      text-align: left; /* Left-align paragraph text */
+  }
+  
+  /* --- Header and Navigation --- */
+  
+  header {
+    background-color: var(--header-bg-color);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensure header stays on top */
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #logo {
     height: 50px; /* Example height */
     width: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Makes it circular */
     object-fit: cover;  /* Prevents distortion */
     overflow: hidden;    /* Clips any overflow */
 }
-.logo img{
-    height: auto;
-    width: 150px;
-}
-/* Navigation Links */
-.nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-    display: flex;
-}
-.nav-links li {
-    margin-right: 20px;
-}
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-.nav-links a:hover{
-  color: var(--primary-color);
-}
-.nav-links a.active {
-    color: var(--accent-color);
-}
 
-/* Submenu Styles */
-.sub-menu {
-  display: none;
-  position: absolute;
-  background-color: var(--secondary-color);
-  list-style: none;
-  padding: 0;
-  margin-top: 0px; /* Reduce margin */
-  min-width: 200px; /* Adjust as needed */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow */
-  z-index: 101; /* Ensure submenu is above other content */
-}
-
-.nav-links li:hover > .sub-menu {
-  display: block;
-}
-
-.sub-menu li {
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ddd; /* Separator between items */
-}
-.sub-menu li:last-child {
-    border-bottom: none;
-}
-
-.sub-menu li a {
-  display: block;
-  padding: 10px 15px;
-  color: var(--text-color);
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.sub-menu li a:hover {
-  background-color: #ddd;
-  color: var(--primary-color);
-}
-
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none; /* Hidden by default on larger screens */
-  cursor: pointer;
-}
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: var(--text-color);
-  margin: 5px 0;
-  transition: 0.4s; /* Smooth transition for hamburger animation */
-}
-
-/* --- Hero Section --- */
-/* (Already well-structured, minor adjustments) */
-
-/* --- Our Story --- */
-/* (Already well-structured) */
-#our-story .button {
-  margin-top: 15px; /* Add some space above the button */
-}
-
-/* --- Our Project --- */
-.project-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5em;
-  text-align: left; /* Left-align list */
-}
-
-.project-list li {
-  padding-left: 1.5em;
-  margin-bottom: 0.5em;
-  position: relative;
-}
-
-.project-list li::before {
-  content: "•";
-  color: var(--primary-color);
-  position: absolute;
-  left: 0;
-  font-size: 1.5em;
-  top: -0.2em;
-}
-
-/* --- Our Services --- */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-  gap: 20px;
-}
-
-.service {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  text-align: left; /* Left-align service box content */
-}
-
-.service h3 {
-    font-size: 1.5em;
-    color: var(--primary-color);
-    margin-bottom: 0.5em;
-}
-
-.service p {
-    font-size: 1em;
+  .logo img{
+      height: auto;
+      width: 150px;
+  }
+  /* Navigation Links */
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+      display: flex;
+  }
+  .nav-links li {
+      margin-right: 20px;
+  }
+  .nav-links a {
+    text-decoration: none;
     color: var(--text-color);
-}
-.new-badge {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-size: 0.7em;
-  margin-left: 5px;
-  vertical-align: top;
-}
-
-/* --- Our Clients --- */
-.clients-list {
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover{
+    color: var(--primary-color);
+  }
+  .nav-links a.active {
+      color: var(--accent-color);
+  }
+  
+  /* Submenu Styles */
+  .sub-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--secondary-color);
+    list-style: none;
+    padding: 0;
+    margin-top: 0px; /* Reduce margin */
+    min-width: 200px; /* Adjust as needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow */
+    z-index: 101; /* Ensure submenu is above other content */
+  }
+  
+  .nav-links li:hover > .sub-menu {
+    display: block;
+  }
+  
+  .sub-menu li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ddd; /* Separator between items */
+  }
+  .sub-menu li:last-child {
+      border-bottom: none;
+  }
+  
+  .sub-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sub-menu li a:hover {
+    background-color: #ddd;
+    color: var(--primary-color);
+  }
+  
+  /* Mobile Menu Toggle */
+  .menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: 0.4s; /* Smooth transition for hamburger animation */
+  }
+  
+  /* --- Hero Section --- */
+  /* (Already well-structured, minor adjustments) */
+  
+  /* --- Our Story --- */
+  /* (Already well-structured) */
+  #our-story .button {
+    margin-top: 15px; /* Add some space above the button */
+  }
+  
+  /* --- Our Project --- */
+  .project-list {
     list-style: none;
     padding: 0;
     margin-bottom: 1.5em;
-    text-align: center;
-}
-.clients-list li {
-    display: inline-block;
-    margin: 0 15px;
-    font-size: 1.2em;
-    color: var(--primary-color);
-}
-
-
-/* --- Mission & Motivation --- */
-.mission, .motivation, .values {
-    margin-bottom: 30px;
-}
-
-.mission h3, .motivation h3, .values h3 {
-    font-size: 1.8em;
-    color: var(--primary-color);
+    text-align: left; /* Left-align list */
+  }
+  
+  .project-list li {
+    padding-left: 1.5em;
     margin-bottom: 0.5em;
-}
-
-.mission p, .motivation p, .values p {
-    font-size: 1.1em;
-    color: var(--text-color);
-    margin-bottom: 1em;
-}
- .values-list {
-    list-style: none; /* Remove default bullet points */
-    padding: 0; /* Remove default padding */
-    margin-bottom: 1.5em;
-    text-align: left;
-}
-
-.values-list li {
-    padding-left: 1.5em; /* Add space for a custom bullet point */
-    margin-bottom: 0.5em;
-    position: relative; /* For positioning the custom bullet */
-}
-
-.values-list li::before {
-    content: "•"; /* Custom bullet point */
-    color: var(--primary-color); /* Blue color - match your button */
+    position: relative;
+  }
+  
+  .project-list li::before {
+    content: "•";
+    color: var(--primary-color);
     position: absolute;
-    left: 0; /* Position the bullet */
+    left: 0;
     font-size: 1.5em;
-     top: -0.2em;
+    top: -0.2em;
+  }
+  
+  /* --- Our Services --- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px;
+  }
+  
+  .service {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left; /* Left-align service box content */
+  }
+  
+  .service h3 {
+      font-size: 1.5em;
+      color: var(--primary-color);
+      margin-bottom: 0.5em;
+  }
+  
+  .service p {
+      font-size: 1em;
+      color: var(--text-color);
+  }
+  .new-badge {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    margin-left: 5px;
+    vertical-align: top;
+  }
+  
+  /* --- Our Clients --- */
+  .clients-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5em;
+      text-align: center;
+  }
+  .clients-list li {
+      display: inline-block;
+      margin: 0 15px;
+      font-size: 1.2em;
+      color: var(--primary-color);
+  }
+  
+  
+  /* --- Mission & Motivation --- */
+  .mission, .motivation, .values {
+      margin-bottom: 30px;
+  }
+  
+  .mission h3, .motivation h3, .values h3 {
+      font-size: 1.8em;
+      color: var(--primary-color);
+      margin-bottom: 0.5em;
+  }
+  
+  .mission p, .motivation p, .values p {
+      font-size: 1.1em;
+      color: var(--text-color);
+      margin-bottom: 1em;
+  }
+   .values-list {
+      list-style: none; /* Remove default bullet points */
+      padding: 0; /* Remove default padding */
+      margin-bottom: 1.5em;
+      text-align: left;
+  }
+  
+  .values-list li {
+      padding-left: 1.5em; /* Add space for a custom bullet point */
+      margin-bottom: 0.5em;
+      position: relative; /* For positioning the custom bullet */
+  }
+  
+  .values-list li::before {
+      content: "•"; /* Custom bullet point */
+      color: var(--primary-color); /* Blue color - match your button */
+      position: absolute;
+      left: 0; /* Position the bullet */
+      font-size: 1.5em;
+       top: -0.2em;
+  }
+  
+  /* --- Contact --- */
+  .contact-info {
+      text-align: center;
+  }
+  .contact-info p {
+      margin-bottom: 0.5em;
+  }
+  .contact-info a {
+      color: var(--link-color);
+      text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+      text-decoration: underline;
+  }
+  
+  /* --- Contact Form --- */
+  
+  #contact-form {
+    margin-top: 20px;
+    max-width: 600px; /* Limit form width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #contact-form label {
+    display: block; /* Labels on their own line */
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  #contact-form input[type="text"],
+  #contact-form input[type="email"],
+  #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* More space between fields */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+  
+  #contact-form textarea {
+    height: 150px;
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  #contact-form button[type="submit"] {
+    display: block;
+    width: 100%; /* Full-width button */
+    padding: 12px 20px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  #contact-form button[type="submit"]:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  /* Form Error/Success Messages */
+  .error-message {
+      color: red;
+      font-size: 0.8em;
+      margin-top: -10px; /* Position close to input */
+      margin-bottom: 10px;
+      display: block;
+  }
+  
+  .input-error {
+      border-color: red; /* Red border on error */
+  }
+  
+  .success-message {
+      color: green;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid green;
+      background-color: #e6ffe6;
+  }
+  
+  
+  /* --- Footer --- */
+  /* (Already well-structured) */
+  
+  /* --- Slider --- */
+  
+  .slider-container {
+    position: relative;
+    width: 100%;
+    margin: 20px 0; /* Space above and below */
+    overflow: hidden;
+  }
+  
+  .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      display: flex; /* Use flexbox for centering */
+      justify-content: center; /* Horizontally center */
+      align-items: center;     /* Vertically center */
+  }
+  .slide img{
+      display: block;
+      max-width: 100%; /* Ensure images don't overflow */
+      max-height: 400px;
+      height: auto;
+      width: auto;
+  
+  }
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10; /* Above the images */
+    opacity: 0.8; /* Slightly transparent */
+    transition: opacity 0.3s ease; /* Fade on hover */
+  }
+  
+  .slider-btn:hover {
+    opacity: 1; /* Fully opaque on hover */
+  }
+  
+  .slider-btn.prev {
+    left: 0;
+  }
+  
+  .slider-btn.next {
+    right: 0;
+  }
+  
+  /* --- Media Queries (Responsiveness) --- */
+  
+  /* Mobile Styles (max-width: 767px) */
+  @media (max-width: 767px) {
+      /* Adjust font sizes for smaller screens */
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.8em; }
+      h3 { font-size: 1.4em; }
+  
+      /* Stack navigation links vertically */
+      .nav-links {
+          display: none; /* Hide by default */
+          flex-direction: column;
+          position: absolute;
+          top: 60px;  /* Adjust based on your header height */
+          left: 0;
+          width: 100%;
+          background-color: var(--header-bg-color);
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a shadow */
+      }
+  
+      .nav-links.show {
+          display: flex; /* Show when .show is added by JS */
+      }
+  
+      .nav-links li {
+          margin: 0;
+          padding: 10px 0;
+          text-align: center;
+      }
+      .nav-links li a{
+          display: block;
+          width: 100%;
+
+          /* Styles for the internship orientation page */
+#orientation-info {
+  /* Add any overall styles for the section here */
 }
 
-/* --- Contact --- */
-.contact-info {
-    text-align: center;
-}
-.contact-info p {
-    margin-bottom: 0.5em;
-}
-.contact-info a {
-    color: var(--link-color);
-    text-decoration: none;
+#orientation-info h2 {
+  /* Styles for the main heading */
+  text-align: center;
+  margin-bottom: 1em;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
+#orientation-info h3 {
+  /* Styles for subheadings */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--primary-color); /* Example: Use your primary color */
 }
 
-/* --- Contact Form --- */
+#orientation-info ul {
+  /* Styles for unordered lists */
+  list-style: disc; /* Use standard bullet points */
+  margin-left: 20px; /* Indent the list */
+  text-align: left; /* Left-align list items */
+}
 
-#contact-form {
-  margin-top: 20px;
+#orientation-info ol {
+  /* Styles for ordered lists */
+  margin-left: 20px;
+  text-align: left;
+}
+
+#orientation-info li {
+  /* Styles for list items */
+  margin-bottom: 0.5em;
+}
+
+#orientation-interest-form {
+margin-top: 20px;
   max-width: 600px; /* Limit form width */
   margin-left: auto;
   margin-right: auto;
 }
-
-#contact-form label {
-  display: block; /* Labels on their own line */
-  margin-bottom: 5px;
-  font-weight: bold;
+#orientation-interest-form label{
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
 }
-
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form textarea {
+#orientation-interest-form input[type="text"],
+#orientation-interest-form input[type="email"],
+#orientation-interest-form input[type="tel"],
+#orientation-interest-form select,
+#orientation-interest-form textarea{
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px; /* More space between fields */
+  margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box; /* Include padding and border in width */
+  box-sizing: border-box;
 }
-
-#contact-form textarea {
+#orientation-interest-form textarea{
   height: 150px;
   resize: vertical; /* Allow vertical resizing */
 }
+/* Add styles for form, similar to your contact form */
+/* You can reuse styles from your existing contact form */
 
-#contact-form button[type="submit"] {
+.guidelines-list {
+  list-style: disc; /* Or your preferred list style */
+  margin-left: 20px;
+  text-align: left;
+}
+
+/* --- Styles for Internship Orientation Page Header --- */
+
+.orientation-header {
+  background-color: var(--secondary-color); /* Or any background color you prefer */
+  padding: 30px 20px; /* Adjust padding as needed */
+  text-align: center; /* Center everything by default */
+  border-bottom: 2px solid var(--primary-color); /* Optional: Add a border */
+}
+
+.header-content {
+  display: flex;  /* Use Flexbox for layout */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space out the logos and text */
+  max-width: 960px; /* Consistent with other containers */
+  margin: 0 auto;  /* Center horizontally */
+}
+
+.header-logo-left,
+.header-logo-right {
+  width: 100px;  /* Adjust as needed based on your logo sizes */
+  height: auto; /* Maintain aspect ratio */
+}
+/* Style for right side logo*/
+.header-logo-right{
+  width: 80px;
+  height: auto;
+}
+
+.header-text {
+  flex: 1; /* Take up remaining space */
+  text-align: center; /* Center the text */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+.orientation-header h1 {
+  font-size: 2em; /* Adjust as needed */
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+}
+
+.orientation-header h2 {
+  font-size: 1.5em; /* Adjust as needed */
+  color: var(--text-color);
+  margin-bottom: 0.2em;
+}
+.orientation-header p{
+  text-align: center;
+}
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .header-content {
+      flex-direction: column; /* Stack elements vertically on small screens */
+  }
+
+  .header-logo-left,
+  .header-logo-right {
+      margin-bottom: 10px; /* Add space between logos on mobile */
+      width: 80px; /* Reduce logo size on mobile*/
+  }
+  .header-logo-right{
+      width: 60px;
+  }
+  .orientation-header h1 {
+      font-size: 1.8em; /* Reduce font size on mobile */
+  }
+
+  .orientation-header h2 {
+      font-size: 1.3em;
+  }
+  .orientation-header{
+      padding: 10px;
+  }
+}
+
+/* --- Styles for the orientation interest form --- */
+
+#orientation-interest-form {
+  max-width: 600px; /* Limit form width (adjust as needed) */
+  margin: 20px auto; /* Center the form horizontally */
+  padding: 20px;
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#orientation-interest-form div {
+  margin-bottom: 15px; /* Space between form fields */
+}
+
+#orientation-interest-form label {
+  display: block; /* Make labels block-level (full width) */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold;
+  text-align: left; /* Left-align labels */
+}
+
+#orientation-interest-form input[type="text"],
+#orientation-interest-form input[type="email"],
+#orientation-interest-form input[type="tel"],
+#orientation-interest-form select,
+#orientation-interest-form textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  border: 1px solid #ccc; /* Lighter border */
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in width */
+  font-size: 16px; /* Consistent font size */
+}
+
+#orientation-interest-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+#orientation-interest-form button[type="submit"] {
   display: block;
   width: 100%; /* Full-width button */
   padding: 12px 20px;
@@ -399,334 +729,302 @@ header {
   transition: background-color 0.3s ease;
 }
 
-#contact-form button[type="submit"]:hover {
+#orientation-interest-form button[type="submit"]:hover {
   background-color: var(--button-hover-bg-color);
 }
 
-/* Form Error/Success Messages */
-.error-message {
-    color: red;
-    font-size: 0.8em;
-    margin-top: -10px; /* Position close to input */
-    margin-bottom: 10px;
-    display: block;
+/* Optional: Style the select dropdown arrow */
+#orientation-interest-form select {
+  appearance: none; /* Remove default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 30px; /* Make space for the arrow */
 }
 
-.input-error {
-    border-color: red; /* Red border on error */
-}
+/* --- Styles for Internship Orientation Page Header --- */
 
-.success-message {
-    color: green;
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid green;
-    background-color: #e6ffe6;
-}
-
-
-/* --- Footer --- */
-/* (Already well-structured) */
-footer {
-  background-color: var(--footer-bg-color);
-  color: var(--footer-text-color);
-  padding: 20px 0;
+.orientation-header {
+  /* Set the header image as a background image */
+  background-image: url('../images/header.jpg'); /* Correct path to your image */
+  background-size: cover; /*  Scale the image to cover the entire header */
+  background-position: center; /* Center the image within the header */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  padding: 30px 20px;  /* Keep padding */
   text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  /* Remove background color if you are using full image */
+  /* background-color: var(--secondary-color);  REMOVE or comment out this line */
 }
 
-.footer-container {
+.header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex; /* For horizontal links */
-}
-
-.footer-links li {
-  margin-left: 20px; /* Space between links */
-}
-.footer-links li a{
-    color: white;
-}
-/* --- Slider --- */
-
-.slider-container {
-  position: relative;
-  width: 100%;
-  margin: 20px 0; /* Space above and below */
-  overflow: hidden;
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Horizontally center */
-    align-items: center;     /* Vertically center */
-}
-.slide img{
-    display: block;
-    max-width: 100%; /* Ensure images don't overflow */
-    max-height: 400px;
-    height: auto;
-    width: auto;
-
-}
-
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10; /* Above the images */
-  opacity: 0.8; /* Slightly transparent */
-  transition: opacity 0.3s ease; /* Fade on hover */
-}
-
-.slider-btn:hover {
-  opacity: 1; /* Fully opaque on hover */
-}
-
-.slider-btn.prev {
-  left: 0;
-}
-
-.slider-btn.next {
-  right: 0;
-}
-
-/* --- Media Queries (Responsiveness) --- */
-
-/* Mobile Styles (max-width: 767px) */
-@media (max-width: 767px) {
-    /* Adjust font sizes for smaller screens */
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.8em; }
-    h3 { font-size: 1.4em; }
-
-    /* Stack navigation links vertically */
-    .nav-links {
-        display: none; /* Hide by default */
-        flex-direction: column;
-
-        /* --- Header and Navigation --- */
-
-.site-header {
-  background-color: var(--header-bg-color);
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar {
-  /* Your existing styles for .nav-container */
-}
-
-.nav-container {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  max-width: 960px; /* Or your preferred max-width */
+  max-width: 960px;
   margin: 0 auto;
+  position: relative; /* Add relative positioning */
+  z-index: 2; /* Ensure content is above the background */
+  color: white; /* Set text color to white for contrast */
+}
+
+/*  Rest of your header styles (for logos, text, etc.) remain mostly the same */
+
+.header-logo-left,
+.header-logo-right {
+  width: 100px;
+  height: auto;
+}
+
+.header-logo-right {
+  width: 80px;
+  height: auto;
+}
+
+.header-text {
+  flex: 1;
+  text-align: center;
   padding: 0 20px;
 }
 
-.logo-link {
-  /* Styles for the logo link (if needed) */
+.orientation-header h1 {
+  font-size: 2em;
+  color: white; /* White text for contrast */
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
 }
 
-.logo-image {
-  height: 50px; /* Or your desired height */
-  width: auto;
-  border-radius: 50%;
-  object-fit: cover;
-  overflow: hidden;
+.orientation-header h2 {
+  font-size: 1.5em;
+  color: white;  /* White text for contrast */
+  margin-bottom: 0.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
+}
+.orientation-header p{
+  text-align: center;
+  color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
 }
 
-.nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center; /* Vertically center links */
-}
-
-.nav-links li {
-  margin-right: 20px; /* Spacing between links */
-}
-
-.nav-link {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: bold;
-  transition: color 0.3s ease;
-  display: block; /* Important for consistent padding */
-  padding: 10px 15px; /* Add padding for clickability */
-}
-
-.nav-link:hover {
-  color: var(--primary-color);
-}
-
-.nav-link.active {
-  color: var(--accent-color);
-}
-
-/* --- Submenu Styles --- */
-
-.sub-menu {
-  display: none; /* Hide by default */
-  position: absolute;
-  background-color: var(--secondary-color);
-  list-style: none;
-  padding: 0;
-  margin-top: 5px; /* Adjust as needed */
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 101;
-}
-
-.has-submenu:hover .sub-menu {
-  display: block; /* Show on hover */
-}
-
-.sub-menu li {
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.sub-menu li:last-child {
-  border-bottom: none;
-}
-
-.sub-menu-link {
-  display: block;
-  padding: 10px 15px;
-  color: var(--text-color);
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.sub-menu-link:hover {
-  background-color: #ddd;
-  color: var(--primary-color);
-}
-.new-badge {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 0.7em;
-    margin-left: 5px;
-    vertical-align: top;
-}
-
-/* --- Mobile Menu Toggle --- */
-
-.menu-toggle {
-  display: none; /* Hide by default on larger screens */
-  cursor: pointer;
-  background: none; /* Remove default button styles */
-  border: none;
-  padding: 0; /* Remove default padding */
-}
-
-.hamburger {
-    display: inline-block;
-    cursor: pointer;
-}
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: var(--text-color);
-  margin: 5px 0;
-  transition: 0.4s;
-  display: block; /* Make sure bars are block-level */
-}
-
-
-/* --- Mobile Styles (max-width: 767px) --- */
+/* Responsive adjustments */
 @media (max-width: 767px) {
-    .nav-links {
-        display: none; /* Hide by default */
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Adjust based on your header height */
-        left: 0;
-        width: 100%;
-        background-color: var(--header-bg-color);
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    }
-    .nav-links.show {
-        display: flex;
-    }
+  .header-content {
+      flex-direction: column;
+  }
 
-    .nav-links li {
-        margin: 0;
-        padding: 0;
-        text-align: center;
+  .header-logo-left,
+  .header-logo-right {
+      margin-bottom: 10px;
+      width: 80px;
+  }
 
-    }
-.nav-links li a{
-    display: block;
-     width: 100%;
+  .header-logo-right {
+      width: 60px;
+  }
+
+  .orientation-header h1 {
+      font-size: 1.8em;
+  }
+
+  .orientation-header h2 {
+      font-size: 1.3em;
+  }
+  .orientation-header{
+      padding: 50px 20px; /* Add padding for better spacing on mobile*/
+  }
 }
-    .menu-toggle {
-        display: block; /* Show on mobile */
-    }
+/* --- Styles for the internship orientation page --- */
+#orientation-info {
+  /* Add any overall styles for the section here */
+}
 
-    /* Hide the submenu on mobile by default */
-     .sub-menu {
-       position: static; /* Remove absolute positioning */
-       box-shadow: none; /* Remove the shadow */
-       width: 100%; /* Take full width */
-       display: none; /* Hide by default */
-       background-color: transparent; /* Remove background */
-       border: none;
+#orientation-info h2 {
+  /* Styles for the main heading */
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#orientation-info h3 {
+  /* Styles for subheadings */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--primary-color); /* Example: Use your primary color */
+}
+
+#orientation-info ul {
+  /* Styles for unordered lists */
+  list-style: disc; /* Use standard bullet points */
+  margin-left: 20px; /* Indent the list */
+  text-align: left; /* Left-align list items */
+}
+
+#orientation-info ol {
+  /* Styles for ordered lists */
+  margin-left: 20px;
+  text-align: left;
+}
+
+#orientation-info li {
+  /* Styles for list items */
+  margin-bottom: 0.5em;
+}
+/* --- Styles for the orientation interest form --- */
+
+#orientation-interest-form {
+  max-width: 600px; /* Limit form width (adjust as needed) */
+  margin: 20px auto; /* Center the form horizontally */
+  padding: 20px;
+  background-color: #fff; /* White background */
+
+  /* --- Styles for Internship Orientation Page Header --- */
+
+.orientation-header {
+  background-image: url('../images/header.jpg'); /* Correct path to your image */
+   background-size: cover; /*  Scale the image to cover the entire header */
+   background-position: center; /* Center the image within the header */
+   background-repeat: no-repeat; /* Prevent the image from repeating */
+   padding: 30px 20px;  /* Keep padding */
+   text-align: center;
+   border-bottom: 2px solid var(--primary-color);
+   /* Remove background color if you are using full image */
+   /* background-color: var(--secondary-color);  REMOVE or comment out this line */
+}
+
+.header-content {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   max-width: 960px;
+   margin: 0 auto;
+   position: relative; /* Add relative positioning */
+   z-index: 2; /* Ensure content is above the background */
+   color: white; /* Set text color to white for contrast */
+}
+
+/*  Rest of your header styles (for logos, text, etc.) remain mostly the same */
+
+.header-logo-left,
+.header-logo-right {
+   width: 100px;
+   height: auto;
+}
+/* Style for right side logo*/
+.header-logo-right{
+   width: 80px;
+   height: auto;
+}
+
+.header-text {
+   flex: 1;
+   text-align: center;
+   padding: 0 20px;
+}
+
+.orientation-header h1 {
+   font-size: 2em;
+   color: white; /* White text for contrast */
+   margin-bottom: 0.5em;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
+}
+
+.orientation-header h2 {
+   font-size: 1.5em;
+   color: white;  /* White text for contrast */
+   margin-bottom: 0.2em;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
+}
+.orientation-header p{
+   text-align: center;
+   color: white;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add a text shadow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+   .header-content {
+       flex-direction: column;
    }
 
-   /* Remove border from submenu items on mobile */
-   .sub-menu li {
-       border-bottom: none;
+   .header-logo-left,
+   .header-logo-right {
+       margin-bottom: 10px;
+       width: 80px;
    }
 
-   /* Style submenu links for mobile */
-   .sub-menu-link {
-       padding: 10px 20px; /* More padding for touch targets */
+   .header-logo-right {
+       width: 60px;
    }
 
-   /* Show submenu when parent is active (clicked) */
-   .has-submenu.active .sub-menu {
-     display: block;
+   .orientation-header h1 {
+       font-size: 1.8em;
    }
 
-    /* Style the hamburger icon when the menu is open */
-    .nav-links.show + .menu-toggle .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg); /* Rotate first bar */
-    }
+   .orientation-header h2 {
+       font-size: 1.3em;
+   }
+   .orientation-header{
+       padding: 50px 20px; /* Add padding for better spacing on mobile*/
+   }
+}
+/* --- Styles for the orientation interest form --- */
 
-    .nav-links.show + .menu-toggle .bar:nth-child(2) {
-        opacity: 0; /* Hide middle bar */
-    }
+#orientation-interest-form {
+   max-width: 600px; /* Limit form width (adjust as needed) */
+   margin: 20px auto; /* Center the form horizontally */
+   padding: 20px;
+   background-color: #fff; /* White background */
+   border: 1px solid #ddd; /* Subtle border */
+   border-radius: 5px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+#orientation-interest-form div {
+   margin-bottom: 15px; /* Space between form fields */
+}
 
-    .nav-links.show + .menu-toggle .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg); /* Rotate last bar */
-    }
+#orientation-interest-form label {
+   display: block; /* Make labels block-level (full width) */
+   margin-bottom: 5px; /* Space between label and input */
+   font-weight: bold;
+   text-align: left; /* Left-align labels */
+}
+#orientation-interest-form input[type="text"],
+#orientation-interest-form input[type="email"],
+#orientation-interest-form input[type="tel"],
+#orientation-interest-form select,
+#orientation-interest-form textarea {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc; /* Lighter border */
+   border-radius: 4px;
+   box-sizing: border-box; /* Include padding and border in width */
+   font-size: 16px; /* Consistent font size */
+}
+
+#orientation-interest-form textarea {
+   resize: vertical; /* Allow vertical resizing */
+}
+
+#orientation-interest-form button[type="submit"] {
+   display: block;
+   width: 100%; /* Full-width button */
+   padding: 12px 20px;
+   background-color: var(--button-bg-color);
+   color: var(--button-text-color);
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 1em;
+   font-weight: 600;
+   transition: background-color 0.3s ease;
+}
+#orientation-interest-form button[type="submit"]:hover {
+   background-color: var(--button-hover-bg-color);
+}
+.guidelines-list {
+   list-style: disc; /* Or your preferred list style */
+   margin-left: 20px;
+   text-align: left;
 }
