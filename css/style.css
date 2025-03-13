@@ -580,3 +580,41 @@ img {
     max-width: 600px;
     height: auto;
 }
+/* Professional logo styling */
+.professional-logo {
+    max-width: 150px; /* Adjust the size as needed */
+    height: auto;
+    display: block;
+    margin: auto;
+    padding: 10px 0;
+}
+
+/* Ensure all images are responsive and centered */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific adjustments for certain images */
+.custom-image {
+    width: 300px; /* Adjust the size as needed */
+    height: auto;
+}
+
+.responsive-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Professional logo styling */
+.professional-logo {
+    max-width: 150px; /* Adjust the size as needed */
+    height: auto;
+    display: block;
+    margin: auto;
+    padding: 10px 0;
+}
