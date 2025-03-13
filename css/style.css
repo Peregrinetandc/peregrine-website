@@ -159,7 +159,6 @@ a:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 /* Navbar styles */
-.navbar {}
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -779,4 +778,62 @@ align-items: center;
   .client {
       width: 80%; /* One logo per row on very small screens */
   }
+}
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+  justify-content: center; /* Center logos horizontally */
+  align-items: center;     /*  NEW: Vertically center logos */
+  gap: 30px; /* Spacing between logos */
+  padding: 20px 0; /* Add padding */
+}
+
+.client {
+  flex: 0 0 auto;  /* Don't grow or shrink, just use the width defined below */
+  width: 150px;    /* Adjust as needed - this is the *maximum* width */
+  height: auto;   /* NEW - allows for variable height based on aspect ratio.
+                  /* Or, set an explicit height and use object-fit (see below) */
+  text-align: center; /* Center the image within the div */
+}
+.client-logo {
+  max-width: 100%; /* This is CRUCIAL for responsiveness */
+  height: auto;      /* This is CRUCIAL for maintaining aspect ratio */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: grayscale(70%); /* Slightly desaturated */
+  transition: filter 0.3s ease;
+}
+.client-logo:hover {
+  filter: grayscale(0%);
+}
+
+
+/* Responsive adjustments (optional, but highly recommended) */
+@media (max-width: 767px) {
+  .client {
+      width: 45%; /* Two logos per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .client {
+      width: 80%; /* One logo per row on very small screens */
+  }
+}
+
+.client {
+  flex: 0 0 auto;
+  width: 150px; /*  Set a maximum width */
+  height: 80px;  /*  Set a FIXED height */
+  text-align: center;
+}
+
+.client-logo {
+  max-width: 100%;
+  height: 100%;    /*  Fill the height of the container */
+  width: auto;      /*  Allow width to adjust proportionally */
+  object-fit: contain; /*  This is key */
+  display: block;
+  margin: 0 auto;
 }
