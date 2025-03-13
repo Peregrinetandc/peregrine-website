@@ -18,15 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
             ease: "power1.inOut",
         })
         .to(inputElement, {
-            backgroundColor: "#f8d7da",
+            backgroundColor: "#f8d7da", // Light red background
             duration: 0.2,
-        }, "-=0.2")
-        .from(errorSpan, {
-             opacity: 0,
-             y: -10,
-             duration: 0.3,
-             ease: "power2.out"
-        }, "-=0.1");
+        }, "-=0.2") // Overlap with the shake
+        .from(errorSpan, {  // Animate error message appearance
+            opacity: 0,
+            y: -10,
+            duration: 0.3,
+            ease: "power2.out"
+        }, "-=0.1"); // Slight delay
 
         inputElement.focus();
     }
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\@[^\s@]+$/;
         return emailRegex.test(email);
     }
 
@@ -92,16 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-                gsap.from(".site-header", {
-                    opacity: 0,
-                    y: -50,
-                    duration: 1,
-                    ease: "power3.out",
-                    onComplete: () => {
-                      addMenuToggleListeners();
-                      updateActiveNavLink();
-                    }
-                });
+                addMenuToggleListeners(); // Call *after* header is loaded
+                updateActiveNavLink();  // Call *after* header is loaded
+                // Initialize slider and GSAP animations *after* header is loaded
+                initSlider();
+                initGSAPAnimations();
             })
             .catch(error => {
                 console.error('Error loading header:', error);
@@ -109,13 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorDiv.classList.add('header-error');
                 errorDiv.textContent = 'Error loading header. Please refresh the page.';
                 document.getElementById('header-placeholder').appendChild(errorDiv);
-
-                gsap.from(errorDiv, {
-                    opacity: 0,
-                    y: -20,
-                    duration: 0.5,
-                    ease: "power2.out"
-                });
             });
     }
 
@@ -142,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (menuToggle && navLinks) {
             menuToggle.addEventListener('click', toggleMenu);
         }
-
         document.querySelectorAll('.has-submenu > a').forEach(link => {
             link.addEventListener('click', function(event) {
                 if (window.innerWidth <= 767) {
@@ -193,16 +180,11 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.remove('active');
             const href = link.getAttribute('href');
 
-            // Use startsWith to handle both / and index.html
             if (path === '/' || path.endsWith('index.html')) {
                 if (href === '/') {
                     link.classList.add('active');
                 }
-            } else if (path.endsWith(href)) { // Corrected this line
-                link.classList.add('active');
-            }
-            // Special case for #our-services on the home page (Optional)
-            else if ((path === '/' || path.endsWith('index.html')) && href === '#our-services') {
+            } else if (path.endsWith(href)) {
                 link.classList.add('active');
             }
 
@@ -226,40 +208,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Slider ---
     function initSlider() {
-        const slider = document.querySelector('.slider');
+        const sliderContainer = document.querySelector('.slider-container');
         const prevButton = document.querySelector('.slider-btn.prev');
         const nextButton = document.querySelector('.slider-btn.next');
 
-        if (!slider || !prevButton || !nextButton) {
+        if (!sliderContainer || !prevButton || !nextButton) {
             console.warn("Slider elements not found. Skipping slider initialization.");
             return;
         }
 
-      const images = [
-        'images/slider-image1.jpg',
-        'images/slider-image2.jpg',
-        'images/slider-image3.jpg',
-        // Add more image paths as needed, make sure these paths are correct!
-    ];
+        const imageUrls = [
+            'images/slider-image1.jpg',
+            'images/slider-image2.jpg',
+            'images/slider-image3.jpg',
+            'images/slider-image4.jpg'
+        ];
 
-    let currentSlide = 0;
+        let currentSlide = 0;
 
-    // Dynamically create slides (CORRECTED to use provided image array)
-    images.forEach(imagePath => {
-        const slide = document.createElement('div');
-        slide.classList.add('slide');
-        const img = document.createElement('img');
-        img.src = imagePath;
-        img.alt = "Slider Image"; // ALWAYS add alt text
-        slide.appendChild(img);
-        slider.appendChild(slide);
-    });
+        const slider = document.querySelector('.slider');
+        imageUrls.forEach(url => {
+            const slide = document.createElement('div');
+            slide.classList.add('slide');
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = "Slider Image";
+            slide.appendChild(img);
+            slider.appendChild(slide);
+        });
 
+        const slides = document.querySelectorAll('.slider .slide');
 
         function showSlide(index) {
+            if (slides.length === 0) return;
+
             if (index < 0) {
-                currentSlide = images.length - 1;
-            } else if (index >= images.length) {
+                currentSlide = slides.length - 1;
+            } else if (index >= slides.length) {
                 currentSlide = 0;
             } else {
                 currentSlide = index;
@@ -277,6 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gsap.fromTo(prevButton, { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 });
             showSlide(currentSlide - 1);
         });
+
         nextButton.addEventListener('click', () => {
             gsap.fromTo(nextButton, { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 });
             showSlide(currentSlide + 1);
@@ -285,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide);
 
         let autoSlideInterval = setInterval(() => {
-          showSlide(currentSlide + 1);
+            showSlide(currentSlide + 1);
         }, 5000);
     }
 
@@ -305,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ease: "power1.inOut"
             });
 
-            fetch('more-details.json')
+            fetch('data/more-details.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
@@ -319,23 +305,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const detailsFragment = document.createDocumentFragment();
 
-                    data.details.forEach((detailHtml, index) => { // Added index here
+                    data.details.forEach((detailHtml, index) => {
                         const tempDiv = document.createElement('div');
                         tempDiv.innerHTML = detailHtml;
-                        detailsFragment.appendChild(tempDiv); // Append directly
+                        detailsFragment.appendChild(tempDiv);
 
                         gsap.fromTo(tempDiv, {opacity: 0, y: 20}, {
                             opacity: 1,
                             y: 0,
                             duration: 0.5,
                             ease: "power2.out",
-                            delay: 0.1 * index, // Use the index for staggered delay
+                            delay: 0.1 * index,
                         });
                     });
 
-                    moreDetailsDiv.appendChild(detailsFragment); // Append the fragment *once*
+                    moreDetailsDiv.appendChild(detailsFragment);
                     moreDetailsDiv.style.display = 'block';
-
                 })
                 .catch(error => {
                     console.error('Error loading more details:', error);
@@ -352,7 +337,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         duration: 0.5,
                         ease: "power2.out"
                     });
-
                     moreDetailsDiv.style.display = 'block';
                 });
         });
@@ -393,15 +377,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (!hasErrors) {
-               const submitButton = contactForm.querySelector('button[type="submit"]');
+                const submitButton = contactForm.querySelector('button[type="submit"]');
 
                 submitButton.disabled = true;
                 gsap.to(submitButton, {
-                  scale: 0.9,
-                  duration: 0.2,
-                  yoyo: true,
-                  repeat: -1,
-                  ease: "power1.inOut"
+                    scale: 0.9,
+                    duration: 0.2,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: "power1.inOut"
                 });
 
                 const formData = new FormData(contactForm);
@@ -417,27 +401,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitButton.style.transform = '';
 
                     if (response.ok) {
-                       displaySuccessMessage(contactForm);
+                        displaySuccessMessage(contactForm);
                         contactForm.reset();
                     } else {
-                         displayError(messageInput,"An error occurred. Please try again"); // Corrected typo
+                        displayError(messageInput, "An error occurred. Please try again");
                     }
                 })
                 .catch(error => {
-                  gsap.killTweensOf(submitButton);
-                  submitButton.disabled = false;
-                   submitButton.style.transform = '';
-                  displayError(messageInput,"An error occurred. Please try again"); // Corrected typo
+                    gsap.killTweensOf(submitButton);
+                    submitButton.disabled = false;
+                    submitButton.style.transform = '';
+                    displayError(messageInput, "An error occurred. Please try again");
                 });
             }
         });
     }
 
-    // --- GSAP Animations ---
-    function initGSAPAnimations() {
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from("#hero h1", { opacity: 0, y: -50, duration: 1, ease: "power3.out" });
-        gs
-
-        fetch('header.html') // This line is in the loadHeader function
+    loadHeader();
+    loadMoreDetails();
+    setupFormValidation();
+});

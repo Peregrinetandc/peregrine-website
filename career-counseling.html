@@ -6,6 +6,13 @@
     <title>Career Counseling Services | Navigate Your Career Path with Peregrine T&C</title>
     <meta name="description" content="Benefit from Peregrine T&C's Career Counseling Services, offering personalized guidance to help you achieve your professional goals. Start your journey today.">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -13,40 +20,44 @@
 
     <section id="career-counseling">
         <div class="container">
-            <h1>Career Counseling Services at Peregrine T&C</h1>
+            <h1 class="page-title">Career Counseling Services at Peregrine T&C</h1>
 
-            <p>Embarking on a career journey can be both exciting and challenging. Peregrine T&C's Career Counseling Services are here to provide personalized guidance, helping you make informed decisions and achieve your professional aspirations.</p>
+            <p class="intro-paragraph">Embarking on a career journey can be both exciting and challenging. Peregrine T&C's Career Counseling Services are here to provide personalized guidance, helping you make informed decisions and achieve your professional aspirations.</p>
 
             <h2>Why Seek Career Counseling?</h2>
-            <ul>
+            <ul class="benefits-list">
                 <li><strong>Clarify Career Goals:</strong> Identify your strengths, interests, and values to choose a fulfilling career path.</li>
                 <li><strong>Navigate Transitions:</strong> Receive support during career changes, whether it's entering the job market, switching fields, or advancing in your current role.</li>
                 <li><strong>Enhance Job Search Strategies:</strong> Learn effective job hunting techniques, including resume building and interview preparation.</li>
             </ul>
 
             <h2>Our Counseling Approach</h2>
-            <ul>
+            <ul class="approach-list">
                 <li><strong>Personalized Assessments:</strong> Utilize tools and discussions to understand your unique skills and aspirations.</li>
                 <li><strong>Goal Setting:</strong> Collaborate to define clear, achievable career objectives.</li>
                 <li><strong>Ongoing Support:</strong> Benefit from continuous guidance, resources, and motivation throughout your career development process.</li>
             </ul>
 
             <h2>Services Offered</h2>
-            <ul>
+            <ul class="services-list">
                 <li><strong>One-on-One Counseling:</strong> Individual sessions tailored to your specific needs and goals.</li>
                 <li><strong>Workshops and Seminars:</strong> Group sessions on various topics, including resume writing, interview skills, and job market trends.</li>
                 <li><strong>Job Placement Assistance:</strong> Support in connecting with potential employers and job opportunities.</li>
             </ul>
 
             <h2>Testimonials</h2>
-            <blockquote>
-                <p>"The career counseling I received was transformative, providing clarity and direction that led to my dream job."</p>
-            </blockquote>
-            <blockquote>
-                <p>"Peregrine T&C's team offered invaluable insights and support during my career transition."</p>
-            </blockquote>
+            <div class="testimonials">
+                <blockquote>
+                    <p>"The career counseling I received was transformative, providing clarity and direction that led to my dream job."</p>
+                    <cite>- Past Client</cite>
+                </blockquote>
+                <blockquote>
+                    <p>"Peregrine T&C's team offered invaluable insights and support during my career transition."</p>
+                    <cite>- Past Client</cite>
+                </blockquote>
+            </div>
 
-            <a href="#contact" class="button">Get Started</a>
+            <a href="#contact" class="button button-primary">Get Started</a>
         </div>
     </section>
 
@@ -55,15 +66,29 @@
             <p>&copy; 2025 Peregrine T&C. All rights reserved.</p>
             <nav>
                 <ul class="footer-links">
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </footer>
-    <script src="js/script.js" defer></script>
-</body>
-</html>
+    <script>
+        // Load header (using best practices)
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error("Error loading header:", error);
+                document.getElementById('header-placeholder').innerHTML = `<div class="header-error">Error loading header. Please refresh the page.</div>`;
+            });
+    </script>
 </body>
 </html>

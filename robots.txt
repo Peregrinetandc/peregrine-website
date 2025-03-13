@@ -1,0 +1,21 @@
+# Allow all user agents to crawl the entire site
+User-agent: *
+Disallow:
+
+# Disallow specific crawlers from accessing specific folders
+User-agent: BadBot
+Disallow: /private/
+Disallow: /temp/
+
+# Disallow all crawlers from accessing certain pages
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+
+# Allow Googlebot to access everything except the admin section
+User-agent: Googlebot
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.peregrinetandc.info/sitemap.xml

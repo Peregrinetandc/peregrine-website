@@ -11,16 +11,15 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="js/script.js" defer></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
-
     <main>
         <section id="hero" class="content-section">
-            <div class="hero-container container">
+            <div class="container">
                 <h1>Be a Global Citizen!</h1>
                 <h2>Empower Your Future with Peregrine T&C</h2>
                 <p>In today's interconnected world, language skills and cultural understanding are more important than ever. Peregrine T&C offers a range of programs to help you unlock your potential and achieve your global aspirations.</p>
@@ -29,7 +28,7 @@
         </section>
 
         <section id="our-story" class="content-section">
-            <div class="story-container container">
+            <div class="container">
                 <h2>Our Story</h2>
                 <p>Peregrine T&C was born from a passion for learning and a desire to empower individuals. We started as a small team with a big dream: to provide quality education and career guidance.</p>
                 <p>Today, we've grown into a leading provider of language training, internship programs, and career counseling services.</p>
@@ -41,33 +40,43 @@
         </section>
 
         <section id="our-project" class="content-section">
-            <div class="project-container container">
+            <div class="container">
                 <h2>Our Project</h2>
                 <p>We're passionate about empowering individuals and organizations. Our projects are designed to make a positive impact and drive innovation.</p>
                 <p>Here's a glimpse of what we're working on:</p>
-
                 <ul class="project-list">
                     <li><strong>Internship Programs:</strong> Nurturing future leaders through hands-on experience.</li>
                     <li><strong>Language Training:</strong> Bridging cultural gaps and fostering global communication.</li>
                     <li><strong>Career Counselling:</strong> Guiding students towards fulfilling careers.</li>
                     <li><strong>Digital Transformation:</strong> Helping businesses adapt to the digital age.</li>
                 </ul>
-
                 <p>Want to know more? Let's connect and discuss your specific needs.</p>
                 <a href="#contact" class="button">Inquire Now</a>
             </div>
-            <div class="slider-container">
-                <div class="slider">
-                    <!- Images will be added dynamically by JavaScript -->
-                </div>
-                <button class="slider-btn prev" aria-label="Previous Slide">&#10094;</button>
-                <button class="slider-btn next" aria-label="Next Slide">&#10095;</button>
-            </div>
+        </section>
 
+        <section id="image-slider" class="content-section">
+            <div class="container">
+                <h2>Image Slider</h2>
+                <div class="slider-container">
+                    <div class="slider">
+                        <img src="images/bg.jpeg" alt="Background Image">
+                        <img src="images/consulting.html.jpeg" alt="Consulting">
+                        <img src="images/header.jpeg" alt="Header Image">
+                        <img src="images/header.jpg" alt="Header Image">
+                        <img src="images/iynulbayan.jpeg" alt="Iynulbayan">
+                        <img src="images/logo.png" alt="Logo">
+                        <img src="images/mes_logo.png" alt="MES Logo">
+                        <img src="images/Poster.jpeg" alt="Poster">
+                    </div>
+                    <button class="slider-btn prev" aria-label="Previous Slide">&#10094;</button>
+                    <button class="slider-btn next" aria-label="Next Slide">&#10095;</button>
+                </div>
+            </div>
         </section>
 
         <section id="our-services" class="content-section">
-            <div class="services-container container">
+            <div class="container">
                 <h2>Our Services</h2>
                 <div class="services-grid">
                     <div class="service">
@@ -85,19 +94,27 @@
                         <p>Immerse yourself in a structured learning environment.</p>
                     </div>
                     <div class="service">
-                        <a href="language-training.html"><h3>Language Training</h3></a>
+                        <a href="language-training.html">
+                            <h3>Language Training</h3>
+                        </a>
                         <p>Master foreign languages and improve your communication skills.</p>
                     </div>
                     <div class="service">
-                        <a href="translation-services.html"><h3>Translation Services</h3></a>
+                        <a href="translation-services.html">
+                            <h3>Translation Services</h3>
+                        </a>
                         <p>Accurate and professional translation services in multiple languages.</p>
                     </div>
                     <div class="service">
-                        <a href="career-counseling.html"><h3>Career Counseling</h3></a>
+                        <a href="career-counseling.html">
+                            <h3>Career Counseling</h3>
+                        </a>
                         <p>Receive expert guidance to achieve your career goals.</p>
                     </div>
                     <div class="service">
-                        <a href="digital-marketing-services.html"><h3>Digital Marketing Services</h3></a>
+                        <a href="digital-marketing-services.html">
+                            <h3>Digital Marketing Services</h3>
+                        </a>
                         <p>Enhance your online presence and attract more customers.</p>
                     </div>
                 </div>
@@ -105,8 +122,8 @@
             </div>
         </section>
 
-         <section id="our-clients" class="content-section">
-            <div class="clients-container container">
+        <section id="our-clients" class="content-section">
+            <div class="container">
                 <h2>Our Clients</h2>
                 <p>We're proud to have partnered with a diverse range of clients, including:</p>
                 <div class="clients-grid">
@@ -123,11 +140,12 @@
                         <img src="images/client4.png" alt="Eduford Logo" class="client-logo">
                     </div>
                 </div>
+                <p style="text-align: center;"><em>"Our clients are our best projects."</em></p>
             </div>
         </section>
 
         <section id="mission-motivation" class="content-section">
-            <div class="mission-motivation-container container">
+            <div class="container">
                 <h2>Our Mission & Motivation</h2>
                 <div class="mission">
                     <h3>Our Mission</h3>
@@ -140,7 +158,7 @@
                 <div class="values">
                     <h3>Our Values</h3>
                     <p>What sets us apart? Our unwavering commitment to these core values:</p>
-                     <ul class="values-list">
+                    <ul class="values-list">
                         <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Integrity:</strong> We believe in honesty, transparency, and ethical conduct.</li>
                         <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Excellence:</strong> We strive for excellence in everything we do.</li>
                         <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Innovation:</strong> We embrace new ideas and technologies.</li>
@@ -159,7 +177,7 @@
         </section>
 
         <section id="contact" class="content-section">
-            <div class="contact-container container">
+            <div class="container">
                 <h2>Work with Us</h2>
                 <p>Ready to take your next step? Whether you're a student seeking career guidance, a professional looking to enhance your language skills, or a business in need of translation services, we're here to help.</p>
                 <p>Let's collaborate and achieve great things together.</p>
@@ -172,7 +190,7 @@
         </section>
 
         <section id="contact-form" class="content-section">
-            <div class="form-container container">
+            <div class="container">
                 <form method="post" data-netlify="true" name="contact" class="contact-form">
                     <input type="hidden" name="form-name" value="contact" />
                     <div class="form-group">
@@ -196,7 +214,7 @@
     </main>
 
     <footer>
-        <div class="footer-container">
+        <div class="container">
             <p class="copyright">&copy; 2024 Peregrine T&C. All rights reserved.</p>
             <nav>
                 <ul class="footer-links">
@@ -207,5 +225,23 @@
             </nav>
         </div>
     </footer>
+    <script>
+        // Load header (using best practices)
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error("Error loading header:", error);
+                document.getElementById('header-placeholder').innerHTML = `<div class="header-error">Error loading header. Please refresh the page.</div>`;
+            });
+    </script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

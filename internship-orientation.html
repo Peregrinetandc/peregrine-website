@@ -10,7 +10,7 @@
     <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
@@ -21,7 +21,6 @@
 
     <header class="orientation-header">
         <div class="header-content container">
-            
             <div class="header-text">
                 <h1 class="header-title">MES Mampad College Internship Program</h1>
                 <h2 class="header-subtitle">Orientation Session - April 16th, 2025</h2>
@@ -33,7 +32,7 @@
     <main>
         <section id="orientation-info" class="content-section">
             <div class="container">
-                <p class="intro-text">Are you a student at MES Mampad College—or an affiliated institution of the University of Calicut—eager to kickstart your industry experience?  Join us for an orientation session to explore the internship program, learn about key opportunities, and understand the application process.</p>
+                <p class="intro-text">Are you a student at MES Mampad College—or an affiliated institution of the University of Calicut—eager to kickstart your industry experience? Join us for an orientation session to explore the internship program, learn about key opportunities, and understand the application process.</p>
 
                 <div class="info-block">
                     <h2 class="section-title">Mandatory Internship Rules - University of Calicut (FYUGP)</h2>
@@ -114,19 +113,33 @@
     </main>
 
     <footer>
-    <div class="footer-container">
-        <p class="copyright">&copy; 2025 Peregrine T&C. All rights reserved.</p>
-        <nav>
-            <ul class="footer-links">
-                <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
-                <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
-                <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
-</footer>
-<script src="js/script.js" defer></script>
-</body>
-</html>
+        <div class="footer-container">
+            <p>&copy; 2025 Peregrine T&C. All rights reserved.</p>
+            <nav>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="index.html#contact" class="footer-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        // Load header (using best practices)
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error("Error loading header:", error);
+                document.getElementById('header-placeholder').innerHTML = `<div class="header-error">Error loading header. Please refresh the page.</div>`;
+            });
+    </script>
 </body>
 </html>
