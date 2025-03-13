@@ -560,3 +560,23 @@ ul.benefits-list li {
 .service:hover {
     transform: scale(1.05);
 }
+/* Adjust image sizes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific adjustments for certain images */
+.custom-image {
+    width: 300px;
+    height: auto;
+}
+
+.responsive-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
