@@ -2,11 +2,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Helper Functions ---
     function displayError(inputElement, message) {
+        const tl = gsap.timeline();
+
         const errorSpan = document.createElement('span');
         errorSpan.classList.add('error-message');
         errorSpan.textContent = message;
         inputElement.classList.add('input-error');
         inputElement.parentNode.insertBefore(errorSpan, inputElement.nextSibling);
+
+        tl.to(inputElement, {
+            x: 10,
+            duration: 0.1,
+            repeat: 5,
+            yoyo: true,
+            ease: "power1.inOut",
+        })
+        .to(inputElement, {
+            backgroundColor: "#f8d7da",
+            duration: 0.2,
+        }, "-=0.2")
+        .from(errorSpan, {
+             opacity: 0,
+             y: -10,
+             duration: 0.3,
+             ease: "power2.out"
+        }, "-=0.1");
+
         inputElement.focus();
     }
 
@@ -14,7 +35,17 @@ document.addEventListener('DOMContentLoaded', function() {
         inputElement.classList.remove('input-error');
         const errorSpan = inputElement.parentNode.querySelector('.error-message');
         if (errorSpan) {
-            errorSpan.remove();
+            gsap.to(errorSpan, {
+                opacity: 0,
+                y: -10,
+                duration: 0.3,
+                ease: "power2.in",
+                onComplete: () => errorSpan.remove()
+            });
+            gsap.to(inputElement, {
+                backgroundColor: "",
+                duration: 0.3
+            });
         }
     }
 
@@ -29,9 +60,25 @@ document.addEventListener('DOMContentLoaded', function() {
         successMessage.textContent = "Thank you! Your message has been sent successfully.";
         formElement.parentNode.insertBefore(successMessage, formElement.nextSibling);
 
-        setTimeout(() => {
-            successMessage.remove();
-        }, 5000);
+        gsap.fromTo(successMessage, {
+            opacity: 0,
+            y: -20
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "power2.out",
+            onComplete: () => {
+                gsap.to(successMessage, {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.5,
+                    delay: 4,
+                    ease: "power2.in",
+                    onComplete: () => successMessage.remove()
+                });
+            }
+        });
     }
 
     // --- Header Loading ---
@@ -45,12 +92,30 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-                addMenuToggleListeners(); // Call *after* header is loaded
-                updateActiveNavLink();    // Call *after* header is loaded
+                gsap.from(".site-header", {
+                    opacity: 0,
+                    y: -50,
+                    duration: 1,
+                    ease: "power3.out",
+                    onComplete: () => {
+                      addMenuToggleListeners();
+                      updateActiveNavLink();
+                    }
+                });
             })
             .catch(error => {
                 console.error('Error loading header:', error);
-                document.getElementById('header-placeholder').innerHTML = '<div class="header-error">Error loading header. Please refresh the page.</div>';
+                const errorDiv = document.createElement('div');
+                errorDiv.classList.add('header-error');
+                errorDiv.textContent = 'Error loading header. Please refresh the page.';
+                document.getElementById('header-placeholder').appendChild(errorDiv);
+
+                gsap.from(errorDiv, {
+                    opacity: 0,
+                    y: -20,
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
             });
     }
 
@@ -58,6 +123,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleMenu() {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('show');
+
+        gsap.fromTo(navLinks, {
+            opacity: 0,
+            x: -20
+        }, {
+            opacity: 1,
+            x: 0,
+            duration: 0.3,
+            ease: "power2.out"
+        });
     }
 
     function addMenuToggleListeners() {
@@ -67,23 +142,45 @@ document.addEventListener('DOMContentLoaded', function() {
         if (menuToggle && navLinks) {
             menuToggle.addEventListener('click', toggleMenu);
         }
-      // --- Mobile Submenu Toggle ---
-        document.querySelectorAll('.has-submenu > a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            // Only prevent default if on mobile (where submenus are handled differently)
-            if (window.innerWidth <= 767) {
-                event.preventDefault();
-                const submenu = this.nextElementSibling; // Get the .sub-menu
-                const parentLi = this.parentElement;    // Get the .has-submenu <li>
 
-                // Toggle visibility of the submenu
-                if (submenu) {
-                    submenu.classList.toggle('show-sub-menu'); // Add/remove class
-                    parentLi.classList.toggle('active');      // Add/remove active class on parent
+        document.querySelectorAll('.has-submenu > a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                if (window.innerWidth <= 767) {
+                    event.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    const parentLi = this.parentElement;
+
+                    if (submenu) {
+                        if (submenu.classList.contains('show-sub-menu')) {
+                            gsap.to(submenu, {
+                                height: 0,
+                                opacity: 0,
+                                duration: 0.3,
+                                ease: "power2.in",
+                                onComplete: () => {
+                                    submenu.classList.remove('show-sub-menu');
+                                    parentLi.classList.remove('active');
+                                    submenu.style.height = '';
+                                    submenu.style.opacity = '';
+                                }
+                            });
+                        } else {
+                            submenu.classList.add('show-sub-menu');
+                            parentLi.classList.add('active');
+                            gsap.fromTo(submenu, {
+                                height: 0,
+                                opacity: 0,
+                            }, {
+                                height: "auto",
+                                opacity: 1,
+                                duration: 0.3,
+                                ease: "power2.out"
+                            });
+                        }
+                    }
                 }
-            }
+            });
         });
-    });
     }
 
     // --- Active Navigation Link Highlighting ---
@@ -92,24 +189,40 @@ document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelectorAll('.nav-links a');
 
         navLinks.forEach(link => {
+            const wasActive = link.classList.contains('active');
             link.classList.remove('active');
             const href = link.getAttribute('href');
 
+            // Use startsWith to handle both / and index.html
             if (path === '/' || path.endsWith('index.html')) {
                 if (href === '/') {
                     link.classList.add('active');
                 }
-            }
-            else if (path.endsWith(href)) {
+            } else if (path.endsWith(href)) { // Corrected this line
                 link.classList.add('active');
             }
-             // Special case for #our-services on the home page
+            // Special case for #our-services on the home page (Optional)
             else if ((path === '/' || path.endsWith('index.html')) && href === '#our-services') {
                 link.classList.add('active');
             }
+
+            if (wasActive !== link.classList.contains('active')) {
+                if (link.classList.contains('active')) {
+                    gsap.fromTo(link, { color: link.style.color || 'initial' }, {
+                        color: "var(--accent-color)",
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                } else {
+                    gsap.to(link, {
+                        color: "var(--text-color)",
+                        duration: 0.3,
+                        ease: "power2.in"
+                    });
+                }
+            }
         });
     }
-
 
     // --- Slider ---
     function initSlider() {
@@ -119,28 +232,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!slider || !prevButton || !nextButton) {
             console.warn("Slider elements not found. Skipping slider initialization.");
-            return; // Exit if slider elements are missing
+            return;
         }
 
-        const images = [
-            'images/slider-image1.jpg',
-            'images/slider-image2.jpg',
-            'images/slider-image3.jpg',
-            // Add more image paths as needed
-        ];
+      const images = [
+        'images/slider-image1.jpg',
+        'images/slider-image2.jpg',
+        'images/slider-image3.jpg',
+        // Add more image paths as needed, make sure these paths are correct!
+    ];
 
-        let currentSlide = 0;
+    let currentSlide = 0;
 
-        // Dynamically create slides
-        images.forEach(imagePath => {
-            const slide = document.createElement('div');
-            slide.classList.add('slide');
-            const img = document.createElement('img');
-            img.src = imagePath;
-            img.alt = "Slider Image"; // Add alt text for accessibility
-            slide.appendChild(img);
-            slider.appendChild(slide);
-        });
+    // Dynamically create slides (CORRECTED to use provided image array)
+    images.forEach(imagePath => {
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+        const img = document.createElement('img');
+        img.src = imagePath;
+        img.alt = "Slider Image"; // ALWAYS add alt text
+        slide.appendChild(img);
+        slider.appendChild(slide);
+    });
 
 
         function showSlide(index) {
@@ -153,26 +266,45 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const translateValue = -currentSlide * 100 + '%';
-            slider.style.transform = 'translateX(' + translateValue + ')';
+            gsap.to(slider, {
+                x: translateValue,
+                duration: 0.8,
+                ease: "power3.out"
+            });
         }
 
-        prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
-        nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+        prevButton.addEventListener('click', () => {
+            gsap.fromTo(prevButton, { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 });
+            showSlide(currentSlide - 1);
+        });
+        nextButton.addEventListener('click', () => {
+            gsap.fromTo(nextButton, { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 });
+            showSlide(currentSlide + 1);
+        });
 
-        // Initial slide
         showSlide(currentSlide);
+
+        let autoSlideInterval = setInterval(() => {
+          showSlide(currentSlide + 1);
+        }, 5000);
     }
 
-
     // --- "Load More Details" ---
-
     function loadMoreDetails() {
         const loadMoreBtn = document.getElementById('load-more-btn');
         const moreDetailsDiv = document.getElementById('more-details');
 
-        if (!loadMoreBtn || !moreDetailsDiv) return; // Exit if elements are missing
+        if (!loadMoreBtn || !moreDetailsDiv) return;
 
         loadMoreBtn.addEventListener('click', function() {
+            gsap.to(loadMoreBtn, {
+                scale: 0.9,
+                duration: 0.2,
+                yoyo: true,
+                repeat: -1,
+                ease: "power1.inOut"
+            });
+
             fetch('more-details.json')
                 .then(response => {
                     if (!response.ok) {
@@ -181,31 +313,59 @@ document.addEventListener('DOMContentLoaded', function() {
                     return response.json();
                 })
                 .then(data => {
-                    data.details.forEach(detailHtml => {
-                        moreDetailsDiv.innerHTML += detailHtml;
+                    gsap.killTweensOf(loadMoreBtn);
+                    loadMoreBtn.style.transform = '';
+                    loadMoreBtn.style.display = 'none';
+
+                    const detailsFragment = document.createDocumentFragment();
+
+                    data.details.forEach((detailHtml, index) => { // Added index here
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = detailHtml;
+                        detailsFragment.appendChild(tempDiv); // Append directly
+
+                        gsap.fromTo(tempDiv, {opacity: 0, y: 20}, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.5,
+                            ease: "power2.out",
+                            delay: 0.1 * index, // Use the index for staggered delay
+                        });
                     });
-                    moreDetailsDiv.style.display = 'block'; // Show the div
-                    loadMoreBtn.style.display = 'none'; // Hide the button
+
+                    moreDetailsDiv.appendChild(detailsFragment); // Append the fragment *once*
+                    moreDetailsDiv.style.display = 'block';
+
                 })
                 .catch(error => {
                     console.error('Error loading more details:', error);
-                    moreDetailsDiv.innerHTML = '<p class="error-message">Error loading more details. Please try again later.</p>';
+                    gsap.killTweensOf(loadMoreBtn);
+                    loadMoreBtn.style.transform = '';
+                    const errorP = document.createElement('p');
+                    errorP.classList.add('error-message');
+                    errorP.textContent = 'Error loading more details. Please try again later.';
+                    moreDetailsDiv.appendChild(errorP);
+
+                    gsap.from(errorP, {
+                        opacity: 0,
+                        y: -20,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+
                     moreDetailsDiv.style.display = 'block';
                 });
         });
     }
 
-
     // --- Form Validation ---
-
     function setupFormValidation() {
         const contactForm = document.querySelector('.contact-form');
-        if (!contactForm) return; // Exit if form not found
+        if (!contactForm) return;
 
         contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default submission
+            event.preventDefault();
 
-            // Clear previous errors
             const inputs = contactForm.querySelectorAll('.form-input, .form-textarea');
             inputs.forEach(clearError);
 
@@ -233,7 +393,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (!hasErrors) {
-                // Form is valid, submit via Netlify (since you're using data-netlify="true")
+               const submitButton = contactForm.querySelector('button[type="submit"]');
+
+                submitButton.disabled = true;
+                gsap.to(submitButton, {
+                  scale: 0.9,
+                  duration: 0.2,
+                  yoyo: true,
+                  repeat: -1,
+                  ease: "power1.inOut"
+                });
+
                 const formData = new FormData(contactForm);
 
                 fetch("/", {
@@ -242,155 +412,30 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: new URLSearchParams(formData).toString()
                 })
                 .then(response => {
+                    gsap.killTweensOf(submitButton);
+                    submitButton.disabled = false;
+                    submitButton.style.transform = '';
+
                     if (response.ok) {
                        displaySuccessMessage(contactForm);
-                        contactForm.reset(); // Clear the form
+                        contactForm.reset();
                     } else {
-                         displayError(messageInput,"An error occoured. Please try again");
+                         displayError(messageInput,"An error occurred. Please try again"); // Corrected typo
                     }
                 })
                 .catch(error => {
-                     displayError(messageInput,"An error occoured. Please try again");
+                  gsap.killTweensOf(submitButton);
+                  submitButton.disabled = false;
+                   submitButton.style.transform = '';
+                  displayError(messageInput,"An error occurred. Please try again"); // Corrected typo
                 });
             }
         });
     }
 
-
     // --- GSAP Animations ---
-
     function initGSAPAnimations() {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Animate hero section elements
         gsap.from("#hero h1", { opacity: 0, y: -50, duration: 1, ease: "power3.out" });
-        gsap.from("#hero h2", { opacity: 0, y: -50, duration: 1, delay: 0.5, ease: "power3.out" });
-        gsap.from("#hero p", { opacity: 0, y: -50, duration: 1, delay: 1, ease: "power3.out" });
-        gsap.from("#hero .button", { opacity: 0, y: 50, duration: 1, delay: 1.5, ease: "power3.out" });
-
-        // Animate section headings on scroll
-        document.querySelectorAll('.content-section h2').forEach(heading => {
-            gsap.from(heading, {
-                scrollTrigger: {
-                    trigger: heading,
-                    start: "top 80%", // Trigger when top of heading is 80% in view
-                },
-                opacity: 0,
-                y: -30,
-                duration: 0.8,
-                ease: "power2.out"
-            });
-        });
-
-        // Animate services grid items on scroll (example)
-        document.querySelectorAll('.services-grid .service').forEach((service, index) => {
-            gsap.from(service, {
-                scrollTrigger: {
-                    trigger: service,
-                    start: "top 80%",
-                },
-                opacity: 0,
-                y: 50,
-                duration: 0.6,
-                delay: index * 0.2, // Stagger the animations
-                ease: "power2.out"
-            });
-        });
-
-        // Animate the "Our Story" section
-        gsap.from("#our-story p", {
-            scrollTrigger: {
-                trigger: "#our-story p",
-                start: "top 80%"
-            },
-            opacity: 0,
-            x: -50,
-            duration: 1,
-            ease: "power3.out",
-            stagger: 0.2 // Stagger the animation of each paragraph
-        });
-
-        // Animate the "Our Project" section
-        gsap.from("#our-project .project-list li", {
-            scrollTrigger: {
-                trigger: "#our-project .project-list",
-                start: "top 80%"
-            },
-            opacity: 0,
-            x: -50,
-            duration: 0.8,
-            ease: "power2.out",
-            stagger: 0.2
-        });
-
-           // Animate the client logos
-        gsap.from("#our-clients .client-logo", {
-            scrollTrigger: {
-                trigger: "#our-clients .clients-grid",
-                start: "top 80%",
-            },
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.6,
-            ease: "power2.out",
-            stagger: 0.2,
-        });
-
-        gsap.from("#mission-motivation .mission, #mission-motivation .motivation, #mission-motivation .values", {
-            scrollTrigger: {
-                trigger: "#mission-motivation",
-                start: "top 80%"
-            },
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: "power3.out",
-            stagger: 0.3
-        });
-
-        gsap.from("#contact .contact-info", {
-            scrollTrigger: {
-                trigger: "#contact",
-                start: "top 80%",
-            },
-            opacity: 0,
-            x: -50,
-            duration: 1,
-            ease: "power3.out",
-        });
-    }
-
-      // Smooth Scrolling
-    function smoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    // Calculate the offset.  This is crucial for fixed headers.
-                    const headerHeight = document.querySelector('.site-header').offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = targetPosition - headerHeight;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    }
-
-    // --- Initialization ---
-
-    loadHeader();       // Load the header
-    initSlider();       // Initialize the slider
-    loadMoreDetails(); // Set up "Load More Details"
-    setupFormValidation(); // Form validation
-    initGSAPAnimations();    // Start GSAP animations
-    smoothScroll();
-
-});
+        gs
