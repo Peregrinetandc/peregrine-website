@@ -3,211 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peregrine T&C - Empower Your Future</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Peregrine T&C - Empowering Global Citizens</title>
+    <meta name="description" content="Peregrine T&C: Language training, internships, career counseling, and digital marketing services for global success.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+    <div id="header-placeholder"></div>
 
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Peregrine Logo">
-            <span>Peregrine T&C</span>
+    <main>
+        <section id="hero" class="content-section">
+            <div class="hero-container container">
+                <h1>Be a Global Citizen!</h1>
+                <h2>Empower Your Future with Peregrine T&C</h2>
+                <p>In today's interconnected world, language skills and cultural understanding are more important than ever. Peregrine T&C offers a range of programs to help you unlock your potential and achieve your global aspirations.</p>
+                <a href="#contact" class="button">Contact Us</a>
+            </div>
+        </section>
+
+        <section id="our-story" class="content-section">
+            <div class="story-container container">
+                <h2>Our Story</h2>
+                <p>Peregrine T&C was born from a passion for learning and a desire to empower individuals. We started as a small team with a big dream: to provide quality education and career guidance.</p>
+                <p>Today, we've grown into a leading provider of language training, internship programs, and career counseling services.</p>
+                <p>Our commitment to excellence and our dedication to our clients have fueled our growth. We're proud of what we've achieved, but we're even more excited about the future.</p>
+                <a href="https://wa.me/917012756374" class="button" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+                <button id="load-more-btn" class="button">Load More Details</button>
+                <div id="more-details" style="display: none;"></div>
+            </div>
+        </section>
+
+        <section id="our-project" class="content-section">
+            <div class="project-container container">
+                <h2>Our Project</h2>
+                <p>We're passionate about empowering individuals and organizations. Our projects are designed to make a positive impact and drive innovation.</p>
+                <p>Here's a glimpse of what we're working on:</p>
+
+                <ul class="project-list">
+                    <li><strong>Internship Programs:</strong> Nurturing future leaders through hands-on experience.</li>
+                    <li><strong>Language Training:</strong> Bridging cultural gaps and fostering global communication.</li>
+                    <li><strong>Career Counselling:</strong> Guiding students towards fulfilling careers.</li>
+                    <li><strong>Digital Transformation:</strong> Helping businesses adapt to the digital age.</li>
+                </ul>
+
+                <p>Want to know more? Let's connect and discuss your specific needs.</p>
+                <a href="#contact" class="button">Inquire Now</a>
+            </div>
+            <div class="slider-container">
+                <div class="slider">
+                    <!- Images will be added dynamically by JavaScript -->
+                </div>
+                <button class="slider-btn prev" aria-label="Previous Slide">&#10094;</button>
+                <button class="slider-btn next" aria-label="Next Slide">&#10095;</button>
+            </div>
+
+        </section>
+
+        <section id="our-services" class="content-section">
+            <div class="services-container container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service">
+                        <a href="internship-programs.html">
+                            <span class="new-badge">New</span>
+                            <h3>Internship Programs</h3>
+                        </a>
+                        <p>Gain practical experience and develop essential skills.</p>
+                    </div>
+                    <div class="service">
+                        <a href="apprenticeship-programs.html">
+                            <span class="new-badge">New</span>
+                            <h3>Apprenticeship Programs</h3>
+                        </a>
+                        <p>Immerse yourself in a structured learning environment.</p>
+                    </div>
+                    <div class="service">
+                        <a href="language-training.html"><h3>Language Training</h3></a>
+                        <p>Master foreign languages and improve your communication skills.</p>
+                    </div>
+                    <div class="service">
+                        <a href="translation-services.html"><h3>Translation Services</h3></a>
+                        <p>Accurate and professional translation services in multiple languages.</p>
+                    </div>
+                    <div class="service">
+                        <a href="career-counseling.html"><h3>Career Counseling</h3></a>
+                        <p>Receive expert guidance to achieve your career goals.</p>
+                    </div>
+                    <div class="service">
+                        <a href="digital-marketing-services.html"><h3>Digital Marketing Services</h3></a>
+                        <p>Enhance your online presence and attract more customers.</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/917012756374" class="button services-button" target="_blank" rel="noopener noreferrer">Instant Support</a>
+            </div>
+        </section>
+
+         <section id="our-clients" class="content-section">
+            <div class="clients-container container">
+                <h2>Our Clients</h2>
+                <p>We're proud to have partnered with a diverse range of clients, including:</p>
+                <div class="clients-grid">
+                    <div class="client">
+                        <img src="images/mes-logo.png" alt="MES Mampad College Logo" class="client-logo">
+                    </div>
+                    <div class="client">
+                        <img src="images/client2.png" alt="Iynul Marif Dars Logo" class="client-logo">
+                    </div>
+                    <div class="client">
+                        <img src="images/client3.png" alt="Al Bayan Academy Logo" class="client-logo">
+                    </div>
+                    <div class="client">
+                        <img src="images/client4.png" alt="Eduford Logo" class="client-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mission-motivation" class="content-section">
+            <div class="mission-motivation-container container">
+                <h2>Our Mission & Motivation</h2>
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>To empower individuals and organizations to achieve their full potential through innovative language training, career guidance, and technology solutions.</p>
+                </div>
+                <div class="motivation">
+                    <h3>Our Motivation</h3>
+                    <p>Our work is our passion. It's what drives us to strive for excellence and make a positive impact on the world. We're motivated by the opportunity to help individuals and organizations reach their full potential.</p>
+                </div>
+                <div class="values">
+                    <h3>Our Values</h3>
+                    <p>What sets us apart? Our unwavering commitment to these core values:</p>
+                     <ul class="values-list">
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Integrity:</strong> We believe in honesty, transparency, and ethical conduct.</li>
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Excellence:</strong> We strive for excellence in everything we do.</li>
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Innovation:</strong> We embrace new ideas and technologies.</li>
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Collaboration:</strong> We work together to achieve common goals.</li>
+                        <li><span class="list-icon"><i class="fas fa-check-circle"></i></span> <strong>Customer Focus:</strong> We are dedicated to meeting the needs of our clients.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="content-section">
+            <div class="container">
+                <h2 class="section-title">News &amp; Updates</h2>
+                <p>Stay tuned for the latest news and updates from Peregrine T&C!</p>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="contact-container container">
+                <h2>Work with Us</h2>
+                <p>Ready to take your next step? Whether you're a student seeking career guidance, a professional looking to enhance your language skills, or a business in need of translation services, we're here to help.</p>
+                <p>Let's collaborate and achieve great things together.</p>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> +91 7012756374</p>
+                    <p><strong>Email:</strong> <a href="mailto:peregrine.contactus@gmail.com">peregrine.contactus@gmail.com</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:peregrine.ptc@gmail.com">peregrine.ptc@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form" class="content-section">
+            <div class="form-container container">
+                <form method="post" data-netlify="true" name="contact" class="contact-form">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" id="name" name="name" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message:</label>
+                        <textarea id="message" name="message" required class="form-textarea"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p class="copyright">&copy; 2024 Peregrine T&C. All rights reserved.</p>
+            <nav>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="#contact" class="footer-link">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#orientation">Orientation</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-
-<!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h1>Be a Global Citizen!</h1>
-        <p>Empower Your Future with Peregrine T&C</p>
-        <p class="hero-subtext">
-            In today's interconnected world, language skills and cultural understanding are more important than ever. 
-            Peregrine T&C offers a range of programs to help you unlock your potential and achieve your global aspirations.
-        </p>
-        <a href="https://wa.me/917012756374" target="_blank" class="cta-button">Inquire Now</a>
-    </div>
-</section>
-
-
-
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-container">
-            <div class="service-card" onclick="location.href='apprenticeship.html'">
-                <h3>Apprenticeship Programs</h3>
-                <p>Immerse yourself in a structured learning environment.</p>
-            </div>
-            <div class="service-card" onclick="location.href='translation.html'">
-                <h3>Translation Services</h3>
-                <p>Accurate and professional translation services in multiple languages.</p>
-            </div>
-            <div class="service-card" onclick="location.href='digital-marketing.html'">
-                <h3>Digital Marketing Services</h3>
-                <p>Enhance your online presence and attract more customers.</p>
-            </div>
-            <div class="service-card" onclick="location.href='consulting.html'">
-                <h3>Consulting Services</h3>
-                <p>Expert business and career guidance tailored for you.</p>
-            </div>
-            <div class="service-card" onclick="location.href='language-training.html'">
-                <h3>Language Training</h3>
-                <p>Improve your language skills with expert instructors.</p>
-            </div>
-            <div class="service-card" onclick="location.href='corporate-training.html'">
-                <h3>Internship Programs</h3>
-                <p>Gain practical experience and develop essential skills.</p>
-            </div>
-        </div>
-    </section>
-    <section class="peregrine-internship" id="orientation">
-        <h2>MES Mampad College Internship Program</h2>
-        <p><strong>Orientation Session - April 16th, 2025</strong></p>
-        <p>In Collaboration with Peregrine T&C</p>
-    
-        <p>Are you a student at MES Mampad College—or an affiliated institution of the University of Calicut—eager to kickstart your industry experience?</p>
-        <p> us for an orientation session to explore the internship program, learn about key opportunities, and understand the application process.</p>
-    
-        <h3>Mandatory Internship Rules - University of Calicut (FYUGP)</h3>
-        <ul class="peregrine-list">
-            <li class="peregrine-list-item"><strong>Mandatory 2-Credit Internship:</strong> Complete during the first six semesters.</li>
-            <li class="peregrine-list-item"><strong>Minimum Engagement:</strong> At least 60 hours of practical experience.</li>
-            <li class="peregrine-list-item"><strong>Flexible Placement:</strong> Options include industry, research labs, or academic institutions.</li>
-            <li class="peregrine-list-item"><strong>Supervision Required:</strong> Oversight by an approved faculty or industry professional.</li>
-            <li class="peregrine-list-item"><strong>Documentation:</strong> Maintain a log book and submit a final report; placement must be pre-approved.</li>
-        </ul>
-    
-        <h3>Register Here</h3>
-        <p>Secure your spot by completing the form below:</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsoXXFDaN7sAcElDoHZxB-8a2C2ntD1OLa9MjhSeFrfhMH1g/viewform?usp=header" class="peregrine-register" target="_blank">Register Now</a>
-    </section>
-    
-    <section class="peregrine-internship">
-        <h2>Summer Internship Program</h2>
-        <p><strong>Orientation Session - June 20th, 2025</strong></p>
-        <p>In Collaboration with Peregrine T&C</p>
-    
-        <p>This internship program provides hands-on experience in various industries. Perfect for students looking to gain real-world exposure and improve their skills.</p>
-    
-        <h3>Internship Highlights</h3>
-        <ul class="peregrine-list">
-            <li class="peregrine-list-item"><strong>Project-Based Learning:</strong> Work on real-world projects.</li>
-            <li class="peregrine-list-item"><strong>Industry Mentorship:</strong> Learn from experienced professionals.</li>
-            <li class="peregrine-list-item"><strong>Certification:</strong> Get a certificate upon completion.</li>
-            <li class="peregrine-list-item"><strong>Flexible Schedule:</strong> Choose a time that fits your studies.</li>
-        </ul>
-    
-        <h3>Register Here</h3>
-        <p>Secure your spot by completing the form below:</p>
-        <a href="https://forms.gle/TE7AApHKZfcPV9z86" class="peregrine-register" target="_blank">Register Now</a>
-    </section>
-    
-
-    <section id="about" id="our-story" class="futuristic-section">
-        <h2>Our Story</h2>
-        <p>Peregrine T&C was born from a passion for learning and a desire to empower individuals. We started as a small team with a big dream: to provide quality education and career guidance.</p>
-        <p>Today, we've grown into a leading provider of language training, internship programs, and career counseling services.</p>
-    </section>
-    
-    <!-- Our Project -->
-    <section id="our-project" class="futuristic-section">
-        <h2>Our Project</h2>
-        <p>We're passionate about empowering individuals and organizations. Our projects are designed to make a positive impact and drive innovation.</p>
-        <ul class="futuristic-list">
-            <li><b>Internship Programs:</b> Nurturing future leaders through hands-on experience.</li>
-            <li><b>Language Training:</b> Bridging cultural gaps and fostering global communication.</li>
-            <li><b>Career Counselling:</b> Guiding students towards fulfilling careers.</li>
-            <li><b>Digital Transformation:</b> Helping businesses adapt to the digital age.</li>
-        </ul>
-    </section>    
-    <!-- Mission & Values -->
-    <section id="mission-values" class="futuristic-section">
-        <h2>Our Mission & Motivation</h2>
-        <h3>Our Mission</h3>
-        <p>To empower individuals and organizations to achieve their full potential through innovative language training, career guidance, and technology solutions.</p>
-        <h3>Our Motivation</h3>
-        <p>Our work is our passion. It's what drives us to strive for excellence and make a positive impact on the world. We're motivated by the opportunity to help individuals and organizations reach their full potential.</p>
-        <h3>Our Values</h3>
-        <ul class="futuristic-list">
-            <li><b>Integrity:</b> We believe in honesty, transparency, and ethical conduct.</li>
-            <li><b>Excellence:</b> We strive for excellence in everything we do.</li>
-            <li><b>Innovation:</b> We embrace new ideas and technologies.</li>
-            <li><b>Collaboration:</b> We work together to achieve common goals.</li>
-            <li><b>Customer Focus:</b> We are dedicated to meeting the needs of our clients.</li>
-        </ul>
-    </section>
-<!-- Our Clients Section -->
-<section id="our-clients" class="futuristic-section">
-    <h2>Our Clients</h2>
-    <p>We're proud to have partnered with a diverse range of clients, including:</p>
-    <div class="client-carousel">
-        <div class="client-track">
-            <div class="client-card">
-                <img src="mes_logo.png" alt="MES Mampad College Logo">
-                <span>MES Mampad College</span>
-            </div>
-            <div class="client-card">
-                <img src="iynulbayan.jpeg" alt="Iynul Marif Dars Logo">
-                <span>Iynul Marif Dars</span>
-            </div>
-            <div class="client-card">
-                <img src="albayan.jpeg" alt="Al Bayan Academy Logo">
-                <span>Al Bayan Academy</span>
-            </div>
-            <div class="client-card">
-                <img src="eduford.jpeg" alt="Eduford Logo">
-                <span>Eduford</span>
-            </div>
-            <!-- Duplicated for smooth infinite scrolling -->
-            <div class="client-card">
-                <img src="mes_logo.png" alt="MES Mampad College Logo">
-                <span>MES Mampad College</span>
-            </div>
-            <div class="client-card">
-                <img src="iynulbayan.jpeg" alt="Iynul Marif Dars Logo">
-                <span>Iynul Marif Dars</span>
-            </div>
-            <div class="client-card">
-                <img src="albayan.jpeg" alt="Al Bayan Academy Logo">
-                <span>Al Bayan Academy</span>
-            </div>
-            <div class="client-card">
-                <img src="eduford.jpeg" alt="Eduford Logo">
-                <span>Eduford</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Contact Section -->
-<section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <p>We’d love to hear from you! Get in touch with us through the following channels:</p>
-
-    <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:info@peregrinetc.com">info@peregrinetc.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+917012756374">+91 7012756374</a></p>
-        <p><strong>Address:</strong> Peregrine T&C, Your City, Your Country</p>
-    </div>
-
-</section>
-    
-    <section class="work-with-us" id="contact">
-        <h2>Work with Us</h2>
-        <p>Ready to take your next step? Whether you're a student seeking career guidance, a professional looking to enhance your language skills, or a business in need of translation services, we're here to help.</p>
-        <a href="https://forms.gle/TE7AApHKZfcPV9z86" class="google-form-link" target="_blank">Fill Out Our Form</a>
-    </section>
+    </footer>
 </body>
 </html>
