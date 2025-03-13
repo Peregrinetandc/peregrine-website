@@ -321,3 +321,9 @@ document.querySelectorAll('.nav-links a[href="#our-services"]').forEach(link => 
     initializeGSAPAnimations(); // Initialize GSAP animations
 
 });
+// ... other code ...
+if (loadMoreBtn && moreDetailsDiv) {
+    loadMoreBtn.addEventListener('click', function() {
+        fetch('data/more-details.json') // Correct path and file extension
+            .then(response => {
+// ... rest of your fetch code ...
