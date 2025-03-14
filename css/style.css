@@ -65,6 +65,19 @@ header .logo:hover {
     text-shadow: 0px 0px 10px rgba(255, 152, 0, 0.8);
 }
 
+/* 🚀 Logo Image */
+header .logo-image {
+    width: 100px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure it covers the area */
+    transition: all 0.3s ease-in-out;
+}
+
+header .logo-image:hover {
+    transform: scale(1.1);
+}
+
 /* 🚀 Navigation Menu */
 nav ul {
     list-style: none;
@@ -468,13 +481,29 @@ ul.benefits-list li {
     animation: fadeIn 1s ease-in-out;
 }
 
-ul.benefits-list {
+/* 🚀 Heading */
+.career-counseling h1 {
+    font-size: 2.5rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #009688;
+    text-shadow: 0px 0px 10px rgba(39, 174, 96, 0.5);
+    margin-bottom: 10px;
+}
+
+/* 🚀 Paragraphs */
+.career-counseling p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* 🚀 Benefits List */
+.career-counseling .benefits-list {
     text-align: left;
     list-style: none;
     padding: 0;
 }
 
-ul.benefits-list li {
+.career-counseling .benefits-list li {
     font-size: 18px;
     padding: 10px;
     border-left: 5px solid #009688;
@@ -483,69 +512,21 @@ ul.benefits-list li {
     border-radius: 5px;
 }
 
-/* 🚀 Language Training Section */
-.language-training {
-    margin-top: 120px;
-    padding: 60px 20px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
-}
-
-ul.benefits-list {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-}
-
-ul.benefits-list li {
+/* 🚀 Call-to-Action Button */
+.career-counseling .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #009688, #ff9800);
+    color: white;
     font-size: 18px;
-    padding: 10px;
-    border-left: 5px solid #009688;
-    margin-bottom: 10px;
-    background: rgba(0, 150, 136, 0.1);
-    border-radius: 5px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* 🚀 Internship Section */
-.internship {
-    margin-top: 120px;
-    padding: 60px 20px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
+.career-counseling .cta-button:hover {
+    background: linear-gradient(135deg, #ff9800, #009688);
+    transform: scale(1.1);
 }
-
-ul.benefits-list {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-}
-
-ul.benefits-list li {
-    font-size: 18px;
-    padding: 10px;
-    border-left: 5px solid #009688;
-    margin-bottom: 10px;
-    background: rgba(0, 150, 136, 0.1);
-    border-radius: 5px;
-}
-
-/* 🚀 Internship Grid */
-.services-grid {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.service {
-    flex: 1 1 calc(33.333% - 20px);
