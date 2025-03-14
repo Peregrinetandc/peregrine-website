@@ -530,3 +530,17 @@ ul.benefits-list li {
     background: linear-gradient(135deg, #ff9800, #009688);
     transform: scale(1.1);
 }
+/* 🚀 Logo Image */
+header .logo-image {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure it covers the area */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* 🚀 Logo Image Hover Effect */
+header .logo-image:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
