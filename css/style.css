@@ -252,7 +252,6 @@ footer {
 .service-detail p {
     font-size: 18px;
     color: #555;
-    line-height: 1.6;
 }
 
 /* 🚀 Translation Services Section */
@@ -550,71 +549,3 @@ ul.benefits-list li {
 
 .service {
     flex: 1 1 calc(33.333% - 20px);
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.service:hover {
-    transform: scale(1.05);
-}
-/* Adjust image sizes */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Specific adjustments for certain images */
-.custom-image {
-    width: 300px;
-    height: auto;
-}
-
-.responsive-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-}
-/* Professional logo styling */
-.professional-logo {
-    max-width: 150px; /* Adjust the size as needed */
-    height: auto;
-    display: block;
-    margin: auto;
-    padding: 10px 0;
-}
-
-/* Ensure all images are responsive and centered */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Specific adjustments for certain images */
-.custom-image {
-    width: 300px; /* Adjust the size as needed */
-    height: auto;
-}
-
-.responsive-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-}
-
-/* Professional logo styling */
-.professional-logo {
-    max-width: 150px; /* Adjust the size as needed */
-    height: auto;
-    display: block;
-    margin: auto;
-    padding: 10px 0;
-}
