@@ -544,3 +544,19 @@ header .logo-image:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
 }
+/* Styles for the top-left logo */
+.top-left-logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001; /* Ensure it sits above the header */
+}
+
+.top-left-logo .logo-image {
+    height: 50px; /* Adjust size as needed */
+    transition: transform 0.3s ease-in-out;
+}
+
+.top-left-logo:hover .logo-image {
+    transform: scale(1.1);
+}
