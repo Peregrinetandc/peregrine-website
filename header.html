@@ -38,27 +38,3 @@
         </div>
     </nav>
 </header>
-<body>
-    <div id="header-placeholder"></div>
-    <a href="/" class="logo top-left-logo">
-        <img src="images/logo.png" alt="Peregrine T&C Logo" class="logo-image">
-    </a>
-
-    <script>
-        // Load header (using best practices)
-        fetch('header.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error("Error loading header:", error);
-                document.getElementById('header-placeholder').innerHTML = `<div class="header-error">Error loading header. Please refresh the page.</div>`;
-            });
-    </script>
-</body>
