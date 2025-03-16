@@ -611,3 +611,62 @@ img {
 .slider-btn:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Darkens the background on hover */
 }
+/* General Styles for Navigation */
+.navbar {
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+}
+
+/* Sub-menu Styles */
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.sub-menu li {
+    width: 200px; /* Adjust width as needed */
+}
+
+.sub-menu-link {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.sub-menu-link:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show sub-menu on hover */
+.has-submenu:hover .sub-menu {
+    display: block;
+}
