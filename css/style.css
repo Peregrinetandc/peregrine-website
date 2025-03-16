@@ -560,3 +560,54 @@ header .logo-image:hover {
 .top-left-logo:hover .logo-image {
     transform: scale(1.1);
 }
+
+/* General Styles for Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Specific Styles for Slider Images */
+.slider-container .slider img {
+    width: 100%; /* Adjusts the width of the images to fit the container */
+    height: auto; /* Maintains the aspect ratio of the images */
+    border-radius: 10px; /* Adds rounded corners to the images */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow to the images */
+}
+
+/* Styles for Client Logos */
+.clients-grid .client img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintains the aspect ratio of the logos */
+    margin: 20px; /* Adds space around the logos */
+    transition: transform 0.3s ease-in-out; /* Adds a transition effect */
+}
+
+.clients-grid .client img:hover {
+    transform: scale(1.1); /* Scales up the image slightly on hover */
+}
+
+/* Styles for Service Images */
+.services-grid .service img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintains the aspect ratio of the images */
+    margin-bottom: 10px; /* Adds space below the images */
+    border-radius: 5px; /* Adds rounded corners to the images */
+}
+
+/* Styles for Image Slider Navigation Buttons */
+.slider-btn {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 50%; /* Circular buttons */
+    padding: 10px; /* Adjusts padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease-in-out; /* Adds a transition effect */
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darkens the background on hover */
+}
