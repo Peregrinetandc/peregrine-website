@@ -1,7 +1,14 @@
 {
+  "/about": "pages/about.js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/api/fetchLandingPageDetails": "pages/api/fetchLandingPageDetails.js"
+  "/api/fetchLandingPageDetails": "pages/api/fetchLandingPageDetails.js",
+  "/digital-marketing-services": "pages/digital-marketing-services.js",
+  "/career-counseling": "pages/career-counseling.js",
+  "/privacy-policy": "pages/privacy-policy.js",
+  "/terms-of-service": "pages/terms-of-service.js",
+  "/language-training": "pages/language-training.js",
+  "/translation-services": "pages/translation-services.js",
+  "/": "pages/index.js"
 }

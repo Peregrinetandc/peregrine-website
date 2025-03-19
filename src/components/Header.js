@@ -24,10 +24,6 @@ const Header = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Load header content dynamically if needed
-  }, []);
-
   return (
     <header className={`site-header ${isSticky ? 'sticky' : ''}`}>
       <nav className="navbar">
