@@ -1,15 +1,23 @@
 {
-  "title": "Language Training Services",
-  "intro": "At Peregrine T&C, we offer Language Training Services tailored to help individuals and businesses enhance their linguistic abilities.",
-  "whyLearnWithUs": "Why Learn with Us?",
+  "title": "Professional Translation Services",
+  "intro": "In today's interconnected world, clear and accurate communication across languages is no longer a luxury—it's a necessity. Peregrine T&C's Translation Services bridge language barriers, ensuring your message resonates with diverse audiences, accurately and effectively.",
+  "whyChooseUs": "Why Choose Our Translation Services?",
   "benefits": {
-    "experiencedInstructors": "Experienced Instructors",
-    "flexibleScheduling": "Flexible Scheduling",
-    "customizedPrograms": "Customized Programs",
-    "culturalImmersion": "Cultural Immersion"
+    "expertTranslators": "Expert Translators",
+    "culturalSensitivity": "Cultural Sensitivity",
+    "uncompromisingQuality": "Uncompromising Quality",
+    "confidentiality": "Confidentiality",
+    "timelyDelivery": "Timely Delivery"
   },
-  "offeredCourses": "Offered Language Courses",
-  "trainingMethodology": "Training Methodology",
-  "enrollmentInfo": "Enrollment Information",
-  "enrollNow": "Enroll Now"
+  "translationExpertise": "Our Translation Expertise",
+  "industriesWeServe": "Industries We Serve",
+  "getStarted": "Get Started with Our Services",
+  "process": {
+    "requestQuote": "Request a Quote",
+    "consultation": "Consultation",
+    "projectInitiation": "Project Initiation",
+    "qualityAssurance": "Quality Assurance",
+    "delivery": "Delivery"
+  },
+  "requestQuoteButton": "Request a Quote"
 }
