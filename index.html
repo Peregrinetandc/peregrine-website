@@ -16,7 +16,36 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div id="header-placeholder"></div>
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="logo-link">
+                    <img src="images/logo.png" alt="Peregrine T&C Logo" class="logo-image professional-logo">
+                </a>
+                <button class="menu-toggle" aria-label="Toggle Navigation">
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li class="has-submenu">
+                        <a href="/#our-services" class="nav-link">Services</a>
+                        <ul class="sub-menu">
+                            <li><a href="language-training.html" class="sub-menu-link">Language Training</a></li>
+                            <li><a href="translation-services.html" class="sub-menu-link">Translation Services</a></li>
+                            <li><a href="career-counseling.html" class="sub-menu-link">Career Counseling</a></li>
+                            <li><a href="digital-marketing-services.html" class="sub-menu-link">Digital Marketing Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <main>
         <section id="hero" class="content-section">
@@ -56,25 +85,7 @@
             </div>
         </section>
 
-        <section id="image-slider" class="content-section">
-            <div class="container">
-                <h2>Image Slider</h2>
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="images/bg.jpeg" alt="Background Image">
-                        <img src="images/consulting.html.jpeg" alt="Consulting">
-                        <img src="images/header.jpeg" alt="Header Image">
-                        <img src="images/header.jpg" alt="Header Image">
-                        <img src="images/iynulbayan.jpeg" alt="Iynulbayan">
-                        <img src="images/logo.png" alt="Logo">
-                        <img src="images/mes_logo.png" alt="MES Logo">
-                        <img src="images/Poster.jpeg" alt="Poster">
-                    </div>
-                    <button class="slider-btn prev" aria-label="Previous Slide">&#10094;</button>
-                    <button class="slider-btn next" aria-label="Next Slide">&#10095;</button>
-                </div>
-            </div>
-        </section>
+       
 
         <section id="our-services" class="content-section">
             <div class="container">
@@ -216,7 +227,7 @@
 
     <footer>
         <div class="container">
-            <p class="copyright">&copy; 2024 Peregrine T&C. All rights reserved.</p>
+            <p class="copyright">&copy; 2025 Peregrine T&C. All rights reserved.</p>
             <nav>
                 <ul class="footer-links">
                     <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
