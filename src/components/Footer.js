@@ -1,12 +1,26 @@
+import Link from 'next/link';
+
 const Footer = () => (
   <footer>
     <div className="footer-container">
-      <p className="copyright">&copy; 2025 Peregrine T&C. All rights reserved.</p>
+      <p>&copy; 2025 Peregrine T&C. All rights reserved.</p>
       <nav>
         <ul className="footer-links">
-          <li><a href="/privacy-policy" className="footer-link">Privacy Policy</a></li>
-          <li><a href="/terms-of-service" className="footer-link">Terms of Service</a></li>
-          <li><a href="/#contact" className="footer-link">Contact Us</a></li>
+          <li>
+            <Link href="/privacy-policy" legacyBehavior>
+              <a className="footer-link">Privacy Policy</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/terms-of-service" legacyBehavior>
+              <a className="footer-link">Terms of Service</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/#contact" legacyBehavior>
+              <a className="footer-link">Contact Us</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

@@ -32,7 +32,7 @@ const Header = () => {
     <header className={`site-header ${isSticky ? 'sticky' : ''}`}>
       <nav className="navbar">
         <div className="nav-container">
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="logo-link">
               <img src="/images/logo.png" alt="Peregrine T&C Logo" className="logo-image professional-logo" />
             </a>
@@ -45,15 +45,41 @@ const Header = () => {
             </div>
           </button>
           <ul className={`nav-links ${isMenuOpen ? 'show' : ''}`}>
-            <li><Link href="/"><a className="nav-link">Home</a></Link></li>
-            <li><Link href="/about"><a className="nav-link">About</a></Link></li>
+            <li>
+              <Link href="/" legacyBehavior>
+                <a className="nav-link">Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" legacyBehavior>
+                <a className="nav-link">About</a>
+              </Link>
+            </li>
             <li className="has-submenu">
-              <a href="/#our-services" className="nav-link">Services</a>
+              <Link href="/#our-services" legacyBehavior>
+                <a className="nav-link">Services</a>
+              </Link>
               <ul className="sub-menu">
-                <li><Link href="/language-training"><a className="sub-menu-link">Language Training</a></Link></li>
-                <li><Link href="/translation-services"><a className="sub-menu-link">Translation Services</a></Link></li>
-                <li><Link href="/career-counseling"><a className="sub-menu-link">Career Counseling</a></Link></li>
-                <li><Link href="/digital-marketing-services"><a className="sub-menu-link">Digital Marketing Services</a></Link></li>
+                <li>
+                  <Link href="/language-training" legacyBehavior>
+                    <a className="sub-menu-link">Language Training</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/translation-services" legacyBehavior>
+                    <a className="sub-menu-link">Translation Services</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/career-counseling" legacyBehavior>
+                    <a className="sub-menu-link">Career Counseling</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/digital-marketing-services" legacyBehavior>
+                    <a className="sub-menu-link">Digital Marketing Services</a>
+                  </Link>
+                </li>
               </ul>
             </li>
           </ul>
