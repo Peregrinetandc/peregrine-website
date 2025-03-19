@@ -1,0 +1,84 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-42372ed130431b0a.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/R4uVLcuUlwIqo7UYWu_SO/_buildManifest.js",
+    "static/R4uVLcuUlwIqo7UYWu_SO/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "rootMainFilesTree": {},
+  "pages": {
+    "/": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/695-4568df259c13997f.js",
+      "static/chunks/pages/index-620999224aed2b4b.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/pages/_app-9870c29906a46ef6.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/pages/_error-41608b100cc61246.js"
+    ],
+    "/about": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/695-4568df259c13997f.js",
+      "static/chunks/pages/about-0004474e2679ced1.js"
+    ],
+    "/career-counseling": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/695-4568df259c13997f.js",
+      "static/chunks/pages/career-counseling-66a77ce73419e197.js"
+    ],
+    "/digital-marketing-services": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/695-4568df259c13997f.js",
+      "static/chunks/pages/digital-marketing-services-4b0d08b3cc5cc16b.js"
+    ],
+    "/language-training": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/695-4568df259c13997f.js",
+      "static/chunks/pages/language-training-dd21c19776484ab7.js"
+    ],
+    "/privacy-policy": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/695-4568df259c13997f.js",
+      "static/chunks/pages/privacy-policy-79f0422800cf7687.js"
+    ],
+    "/terms-of-service": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/695-4568df259c13997f.js",
+      "static/chunks/pages/terms-of-service-f110719405fb3c6c.js"
+    ],
+    "/translation-services": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/framework-b8ed9b642a1d405a.js",
+      "static/chunks/main-b2a46e6c00f63865.js",
+      "static/chunks/695-4568df259c13997f.js",
+      "static/chunks/pages/translation-services-0e51c9696817f603.js"
+    ]
+  },
+  "ampFirstPages": []
+}

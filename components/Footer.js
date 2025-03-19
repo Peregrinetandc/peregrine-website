@@ -1,12 +1,26 @@
+import Link from 'next/link';
+
 const Footer = () => (
   <footer>
     <div className="footer-container">
-      <p className="copyright">&copy; 2025 Peregrine T&C. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Peregrine T&C. All rights reserved.</p>
       <nav>
         <ul className="footer-links">
-          <li><a href="/privacy-policy" className="footer-link">Privacy Policy</a></li>
-          <li><a href="/terms-of-service" className="footer-link">Terms of Service</a></li>
-          <li><a href="/#contact" className="footer-link">Contact Us</a></li>
+          <li>
+            <Link href="/privacy-policy">
+              <a className="footer-link">Privacy Policy</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/terms-of-service">
+              <a className="footer-link">Terms of Service</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/#contact">
+              <a className="footer-link">Contact Us</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
@@ -14,25 +28,3 @@ const Footer = () => (
 );
 
 export default Footer;
-```
-{
-  "name": "peregrine-website",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "test": "jest"
-  },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "gsap": "^3.12.2",
-    "font-awesome": "^6.0.0"
-  },
-  "devDependencies": {
-    "jest": "^27.0.6",
-    "babel-jest": "^27.0.6"
-  }
-}
