@@ -1,0 +1,68 @@
+// src/assets/styles/components/_buttons.scss
+
+@import '../../base/_variables';
+@import '../../utils/_mixins';
+@import '../../utils/_responsive';
+
+/* Button Styles */
+.button {
+    @include flex-center; /* Centering mixin */
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &--primary {
+        background-color: $primary-color;
+        color: white;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &--secondary {
+        background-color: $secondary-color;
+        color: white;
+
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &--outline {
+        background-color: transparent;
+        border: 2px solid $primary-color;
+        color: $primary-color;
+
+        &:hover {
+            background-color: rgba($primary-color, 0.1);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    /* Responsive Styles */
+    @include respond-to(md) {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    @include respond-to(sm) {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}

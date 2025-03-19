@@ -1,0 +1,29 @@
+// This file contains SCSS variables for colors, spacing, and other design tokens to maintain consistency.
+
+$primary-color: #009688;
+$secondary-color: #ff9800;
+$background-color: rgba(240, 240, 240, 0.9);
+$text-color: #333;
+$light-text-color: #555;
+$white: #ffffff;
+$black: #000000;
+
+$font-family-primary: 'Poppins', sans-serif;
+$font-family-secondary: 'Orbitron', sans-serif;
+
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-sm: 14px;
+
+$line-height-base: 1.5;
+$border-radius: 8px;
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+$box-shadow-light: 0px 4px 15px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0px 8px 20px rgba(0, 0, 0, 0.2);
+$box-shadow-heavy: 0px 12px 30px rgba(0, 0, 0, 0.3);

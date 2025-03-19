@@ -1,0 +1,29 @@
+// This file contains SCSS mixins for reusable styles, such as flexbox layouts and media queries.
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin responsive($property, $value) {
+    @media (max-width: 768px) {
+        #{$property}: $value;
+    }
+}
+
+@mixin transition($properties, $duration: 0.3s, $timing: ease) {
+    transition: $properties $duration $timing;
+}
+
+@mixin box-shadow($shadow: 0px 4px 10px rgba(0, 0, 0, 0.1)) {
+    box-shadow: $shadow;
+}
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

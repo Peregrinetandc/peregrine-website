@@ -1,8 +1,33 @@
 {
   "extends": [
-    "development"
+    "development",
+    "accessibility",
+    "seo",
+    "performance"
   ],
   "hints": {
-    "button-type": "off"
+    "button-type": "error",
+    "meta-charset-utf-8": "error",
+    "meta-viewport": "error",
+    "meta-description": "error",
+    "html-lang": "error",
+    "aria-roles": "error",
+    "aria-valid-attr": "error",
+    "aria-valid-attr-value": "error",
+    "image-alt": "error",
+    "input-btn-req-alt": "error",
+    "label": "error",
+    "link-rel-noopener": "error",
+    "script-src-async": "error",
+    "style-disabled": "error",
+    "use-strict": "error",
+    "no-inline-styles": "error",
+    "no-deprecated-attr": "error",
+    "no-deprecated-element": "error",
+    "no-duplicate-id": "error",
+    "no-empty-heading": "error",
+    "no-inline-scripts": "error",
+    "no-protocol-relative-urls": "error",
+    "no-unsupported-browser-features": ["error", { "browsers": ["last 2 versions", "not dead"] }]
   }
 }

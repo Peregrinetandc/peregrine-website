@@ -1,0 +1,84 @@
+// src/assets/styles/components/_navbar.scss
+
+@import '../../base/_variables';
+@import '../../utils/_mixins';
+@import '../../utils/_responsive';
+
+.navbar {
+    @include flex-center; // Using a mixin for flexbox centering
+    background-color: $navbar-bg; // Variable for navbar background
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1000;
+
+    .navbar-logo {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.5rem;
+        color: $primary-color;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $hover-color;
+        }
+    }
+
+    .nav-links {
+        @include flex-center; // Using a mixin for flexbox centering
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 1.5rem;
+
+        li {
+            position: relative;
+
+            .nav-link {
+                text-decoration: none;
+                color: $link-color;
+                padding: 0.5rem 1rem;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                &:hover {
+                    background-color: $link-hover-bg;
+                    color: $link-hover-color;
+                }
+            }
+
+            .sub-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: $white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+
+                li {
+                    width: 200px;
+
+                    .sub-menu-link {
+                        padding: 0.5rem 1rem;
+                        color: $link-color;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: $f0f0f0;
+                        }
+                    }
+                }
+            }
+
+            &:hover .sub-menu {
+                display: block;
+            }
+        }
+    }
+}
+
+// Responsive styles
+@include media-breakpoint-up(md) {
+    .navbar {
+        padding: 1rem 4rem;
+    }
+}

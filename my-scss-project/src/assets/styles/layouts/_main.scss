@@ -1,0 +1,40 @@
+@import '../base/_variables';
+@import '../base/_mixins';
+@import '../utils/_responsive';
+
+/* Main Layout Styles */
+.main-layout {
+    @include flex-center; /* Using a mixin for centering */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Responsive max width */
+}
+
+/* Content Area */
+.content {
+    background-color: $background-color; /* Using a variable */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: $tablet) {
+    .main-layout {
+        padding: 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: $mobile) {
+    .main-layout {
+        padding: 5px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,44 @@
+// src/assets/styles/components/_cards.scss
+
+@import '../../base/_variables';
+@import '../../utils/_mixins';
+@import '../../utils/_responsive';
+
+.card {
+    background-color: $card-background;
+    border-radius: $border-radius;
+    box-shadow: $card-shadow;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &__header {
+        padding: $spacing-md;
+        background-color: $card-header-background;
+        font-size: $font-size-lg;
+        font-weight: bold;
+    }
+
+    &__body {
+        padding: $spacing-md;
+        font-size: $font-size-md;
+        color: $text-color;
+    }
+
+    &__footer {
+        padding: $spacing-md;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $card-hover-shadow;
+    }
+
+    @include respond-to(md) {
+        & {
+            margin: $spacing-sm;
+        }
+    }
+}

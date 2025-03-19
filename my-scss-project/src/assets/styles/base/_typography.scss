@@ -1,0 +1,51 @@
+// Typography styles for the project
+// This file defines font sizes, weights, and line heights for consistent typography
+
+// Importing variables for font sizes and weights
+@import '../utils/_variables.scss';
+
+// Base font styles
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-size-base; // Base font size
+    line-height: $line-height-base; // Base line height
+    color: $text-color; // Base text color
+}
+
+// Headings
+h1 {
+    font-size: $font-size-xxl; // Extra large font size
+    font-weight: $font-weight-bold; // Bold font weight
+    line-height: $line-height-heading; // Heading line height
+}
+
+h2 {
+    font-size: $font-size-xl; // Large font size
+    font-weight: $font-weight-semibold; // Semi-bold font weight
+    line-height: $line-height-heading; // Heading line height
+}
+
+h3 {
+    font-size: $font-size-lg; // Medium font size
+    font-weight: $font-weight-semibold; // Semi-bold font weight
+    line-height: $line-height-heading; // Heading line height
+}
+
+// Paragraphs
+p {
+    font-size: $font-size-base; // Base font size
+    line-height: $line-height-base; // Base line height
+    margin-bottom: 1rem; // Space below paragraphs
+}
+
+// Links
+a {
+    color: $link-color; // Link color
+    text-decoration: none; // Remove underline
+    transition: color 0.3s ease; // Smooth color transition
+
+    &:hover {
+        color: $link-hover-color; // Change color on hover
+        text-decoration: underline; // Underline on hover
+    }
+}

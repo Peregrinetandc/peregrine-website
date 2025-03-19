@@ -1,0 +1,31 @@
+{
+  "name": "peregrine-website",
+  "version": "1.0.0",
+  "description": "A modern website with modular components and services.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "keywords": [
+    "website",
+    "modular",
+    "components",
+    "services"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "^3.9.1",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "babel-jest": "^27.0.6",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2",
+    "babel-loader": "^8.2.2"
+  }
+}

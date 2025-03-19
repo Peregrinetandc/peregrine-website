@@ -1,0 +1,35 @@
+// This file defines responsive breakpoints and media queries for mobile-first design.
+
+$breakpoint-xs: 0; // Extra small devices (phones)
+$breakpoint-sm: 576px; // Small devices (tablets)
+$breakpoint-md: 768px; // Medium devices (desktops)
+$breakpoint-lg: 992px; // Large devices (large desktops)
+$breakpoint-xl: 1200px; // Extra large devices (larger desktops)
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == xs {
+        @media (max-width: $breakpoint-sm - 1) {
+            @content;
+        }
+    }
+    @else if $breakpoint == sm {
+        @media (min-width: $breakpoint-sm) {
+            @content;
+        }
+    }
+    @else if $breakpoint == md {
+        @media (min-width: $breakpoint-md) {
+            @content;
+        }
+    }
+    @else if $breakpoint == lg {
+        @media (min-width: $breakpoint-lg) {
+            @content;
+        }
+    }
+    @else if $breakpoint == xl {
+        @media (min-width: $breakpoint-xl) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+// Footer styles for the layout, including background color and spacing
+.footer {
+    background-color: $footer-background-color; // Variable for footer background color
+    padding: 20px; // Padding for the footer
+    text-align: center; // Center text alignment
+    color: $footer-text-color; // Variable for footer text color
+    @include respond-to(md) { // Responsive styles for medium screens and up
+        padding: 30px; // Increased padding for larger screens
+    }
+}
+
+.footer__links {
+    display: flex; // Flexbox layout for links
+    justify-content: center; // Center the links
+    gap: 15px; // Space between links
+    margin-top: 10px; // Margin above the links
+}
+
+.footer__link {
+    text-decoration: none; // Remove underline from links
+    color: $footer-link-color; // Variable for link color
+    transition: color 0.3s ease; // Smooth color transition on hover
+
+    &:hover {
+        color: $footer-link-hover-color; // Variable for link hover color
+    }
+}
+
+.footer__copyright {
+    margin-top: 15px; // Margin above copyright text
+    font-size: 0.9rem; // Font size for copyright text
+}
