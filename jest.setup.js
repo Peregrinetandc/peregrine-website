@@ -20,5 +20,4 @@ peregrine-website
 |   ├── jest.config.js
 |   ├── jest.setup.js
 |   └── README.md
-```
 import '@testing-library/jest-dom';
