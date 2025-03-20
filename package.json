@@ -8,14 +8,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "@babel/runtime": "^7.26.10",
+    "axios": "^0.24.0",
+    "framer-motion": "^4.1.17",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "axios": "^0.24.0",
-    "framer-motion": "^4.1.17"
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "jest": "^27.0.6",
-    "babel-jest": "^27.0.6"
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6"
   }
 }
