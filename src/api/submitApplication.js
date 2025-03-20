@@ -1,5 +1,6 @@
 import multer from 'multer';
 import nextConnect from 'next-connect';
+import axios from 'axios';
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -8,7 +9,7 @@ const upload = multer({
 
 const apiRoute = nextConnect({
   onError(error, req, res) {
-    res.status(501).json({ error: `Sorry something Happened! ${error.message}` });
+    res.status(501).json({ error: `Sorry something happened! ${error.message}` });
   },
   onNoMatch(req, res) {
     res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
@@ -34,28 +35,3 @@ export const config = {
     bodyParser: false, // Disallow body parsing, since we're using multer
   },
 };
-
-{
-  "name": "peregrine-website",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "test": "jest"
-  },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "formik": "^2.2.9",
-    "yup": "^0.32.11",
-    "axios": "^0.24.0",
-    "multer": "^1.4.4",
-    "next-connect": "^0.11.0"
-  },
-  "devDependencies": {
-    "jest": "^27.0.6",
-    "babel-jest": "^27.0.6"
-  }
-}
