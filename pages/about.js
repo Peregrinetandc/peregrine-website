@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import TeamMember from '../components/TeamMember';
-import ValueItem from '../components/ValueItem';
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
+import TeamMember from '../src/components/TeamMember';
+import ValueItem from '../src/components/ValueItem';
 
 const About = () => {
   return (
